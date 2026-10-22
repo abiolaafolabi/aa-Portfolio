@@ -49,30 +49,36 @@ window.CONTENT = {
       "c": "#000000",
       "fg": "#ffffff",
       "images": [
-        "work/anixvrs/cover.jpg",
-        "work/anixvrs/posters.jpg",
-        "work/anixvrs/lookbook.jpg",
+        "work/anixvrs/abiola-portfolio-v174.jpg",
         {
-          "src": "work/anixvrs/tee-1.jpg",
-          "wide": false
+          "src": "work/anixvrs/posters.jpg",
+          "wide": true
         },
         {
-          "src": "work/anixvrs/tee-2.jpg",
-          "wide": false
+          "src": "work/anixvrs/artboard-8-300x-100.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/anixvrs/lookbook.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/anixvrs/cover.jpg",
+          "wide": true
         }
       ],
       "process": [
         {
-          "src": "work/anixvrs/construction.jpg",
-          "cap": "Logo construction"
+          "src": "work/anixvrs/wordmark-black.png",
+          "cap": "The wordmark"
         },
         {
           "src": "work/anixvrs/icon-black.png",
           "cap": "The icon"
         },
         {
-          "src": "work/anixvrs/wordmark-black.png",
-          "cap": "The wordmark"
+          "src": "work/anixvrs/construction.jpg",
+          "cap": "Logo construction"
         },
         {
           "src": "work/anixvrs/garment.jpg",
@@ -84,10 +90,9 @@ window.CONTENT = {
       "team": "Solo, with suppliers",
       "summary": "Where cultural heritage meets streetwear.",
       "body": [
-        "<span class=\"lbl\">Problem</span>Traditional clothing is hard to wear in modern contexts.",
-        "<span class=\"lbl\">Insight</span>Afrofuturism (think Black Panther) mixes cultural heritage and modern aesthetics seamlessly.",
-        "<span class=\"lbl\">Solution</span>Using that visual language, I built a brand that translates cultural heritage into modern streetwear: the identity, art direction, content, and the garments themselves, from The New Culture tee to the Art of Ori puffer, which uses an Ori pattern from Oshogbo, Nigeria, with a cowrie shell motif. It was the first garment I ever designed.",
-        "<span class=\"lbl\">Outcome</span>A few hundred thousand views, a mailing list of almost 400 people, our first sales, and invitations to four fashion shows."
+        "<span class=\"lbl\">Problem</span>Traditional African heritage is hard to express in modern streetwear.",
+        "<span class=\"lbl\">Solution</span>I built a brand that translates cultural heritage and patterns into modern streetwear",
+        "<span class=\"lbl\">Outcome</span>A few hundred thousand views, a mailing list of around 400 people, our first sales, and invitations to four fashion shows."
       ]
     },
     {
@@ -113,12 +118,12 @@ window.CONTENT = {
           "cap": "Full logo"
         },
         {
-          "src": "work/phenomenal-worlds/mark.svg",
-          "cap": "The mark: an assembly of phenomena"
-        },
-        {
           "src": "work/phenomenal-worlds/logo.jpg",
           "cap": "Clear space"
+        },
+        {
+          "src": "work/phenomenal-worlds/mark.svg",
+          "cap": "The mark: an assembly of phenomena"
         },
         {
           "src": "work/phenomenal-worlds/combinations.jpg",
@@ -237,8 +242,7 @@ window.CONTENT = {
       "team": "With Jack Harper",
       "summary": "Tech packs for the Air Company capsule.",
       "body": [
-        "Production-ready tech packs for the Air Company capsule: tees, hoodies, socks, quarter-zips, polos and caps, with trims, woven labels and placement specs.",
-        "From flat drawings to finished pieces: the capsule as it was made and shot."
+        "Production-ready m<span style=\"letter-spacing: -0.075px;\">easurements on&nbsp;</span>tech packs for the Air Company capsule: tees, hoodies, socks, quarter-zips, polos and caps, with trims, woven labels and placement specs."
       ]
     },
     {
@@ -251,6 +255,7 @@ window.CONTENT = {
       "c": "#000000",
       "fg": "#ffffff",
       "images": [
+        "work/wave/free-realistic-iphone-16-pro-in-hand-mockup2.png",
         "work/wave/screens.jpg",
         "work/wave/post-1.jpg",
         "work/wave/post-3.jpg",
