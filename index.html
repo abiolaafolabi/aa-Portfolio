@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Abiola Afolabi</title>
   <meta name="description" content="Abiola Afolabi — what I'm building, what I've made, and the things I love." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23141414%22%20d%3D%22M12%206.6c.75%200%201.25.6%201.25%201.35%200%20.2%200%20.3-.05.45C15.3%208.6%2018.7%2010.2%2022.6%2014.4%2019.5%2012.2%2016.4%2011.3%2013.4%2011.5l-.3%204.1.5.9h-3.2l.5-.9-.3-4.1C7.6%2011.3%204.5%2012.2%201.4%2014.4%205.3%2010.2%208.7%208.6%2010.8%208.4c-.05-.15-.05-.25-.05-.45%200-.75.5-1.35%201.25-1.35z%22/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
@@ -32,6 +33,7 @@
     /* ---------- Left column ---------- */
     .side { align-self: start; position: sticky; top: clamp(40px, 7vh, 80px); }
     .name { font-weight: 500; line-height: 1.4; }
+    .mark { width: 16px; height: 16px; margin-left: 6px; vertical-align: -3px; fill: currentColor; }
     .name small { display: block; font-size: 14px; font-weight: 400; color: var(--muted); }
     .bio { margin-top: 28px; color: #444; }
     .bio p + p { margin-top: 14px; }
@@ -166,6 +168,7 @@
           { t: "What it means to love someone" },
           { t: "What's true, and what it means to be right" },
           { t: "Wicked problems", d: "How do you solve a problem with no clear definition and no clean answer?" },
+          { t: "History", d: "Ancient history, African history, history in general." },
           { t: "Technology, business & startups", d: "And economics." }
         ] },
       { id: "proud", title: "Proud of", intro: "Things I've done that I'm proud of.",
@@ -235,7 +238,8 @@
           { t: "Football", d: "Ronaldo and Messi edit videos: top goals with the music playing behind them. I still miss those." },
           { t: "Games & toys", d: "Marbles, Battleship, and the rest." },
           { t: "Art & crafts", d: "Drawing, origami, making things by hand." },
-          { t: "Science & nature", d: "Atoms, minibeasts, birds, animals, anthropology." },
+          { t: "Birds", d: "Always have, always will. I used to name them all: blue tits, peregrine falcons, bald eagles, eagle owls, and the barn owl with its heart-shaped face. In Year 1 I drew birds that other kids took home to put up in their houses." },
+          { t: "Science & nature", d: "Atoms, minibeasts, animals, anthropology." },
           { t: "Tech & the future", d: "Corning\u2019s \u201cA Day Made of Glass\u201d and future-of-technology videos. They shaped how I see technology and the future, my optimism about both, and my love of Apple." }
         ] },
       { id: "hobbies", title: "Hobbies", intro: "What I do when I'm not working.",
@@ -272,9 +276,10 @@
           { t: "Ugandan Knuckles" },
           { t: "\u201cYou can't do this on concrete\u201d" }
         ] },
-      { id: "watch", title: "Watch", intro: "Favourite films and anime. YouTube favourites coming soon.",
+      { id: "watch", title: "Watch", intro: "Favourite films, TV and anime. YouTube favourites coming soon.",
         items: [
           { t: "Dune: Part One & Part Two", m: "Film", d: "Hands down." },
+          { t: "Severance", m: "TV" },
           { t: "Attack on Titan", m: "Anime" },
           { t: "Death Note", m: "Anime" },
           { t: "Dragon Ball Z", m: "Anime" }
@@ -291,6 +296,7 @@
     /* ========================================================= */
 
     const $ = (s) => document.querySelector(s);
+    const MARK = `<svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.6c.75 0 1.25.6 1.25 1.35 0 .2 0 .3-.05.45C15.3 8.6 18.7 10.2 22.6 14.4 19.5 12.2 16.4 11.3 13.4 11.5l-.3 4.1.5.9h-3.2l.5-.9-.3-4.1C7.6 11.3 4.5 12.2 1.4 14.4 5.3 10.2 8.7 8.6 10.8 8.4c-.05-.15-.05-.25-.05-.45 0-.75.5-1.35 1.25-1.35z"/></svg>`;
     const live = (url) => url && url !== "#";
     const link = (it, inner) => live(it.url) ? `<a href="${it.url}"${/^https?:/.test(it.url) ? ' target="_blank" rel="noopener"' : ""}>${inner}</a>` : inner;
     const initials = (n) => n.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
@@ -303,7 +309,7 @@
       document.body.classList.remove("in-section");
       document.title = ME.name;
       $("#side").innerHTML = `
-        <div class="name">${ME.name}<small>${ME.tagline}</small></div>
+        <div class="name">${ME.name}${MARK}<small>${ME.tagline}</small></div>
         <div class="bio">${ME.bio.map((p) => `<p>${p}</p>`).join("")}</div>
         <div class="links">${ME.links.filter((l) => live(l.url)).map((l) => `<a href="${l.url}"${/^https?:/.test(l.url) ? ' target="_blank" rel="noopener"' : ""}>${l.label}</a>`).join("")}</div>`;
       $("#main").innerHTML = `<div class="index fade">${SECTIONS.map((s) => `
@@ -319,7 +325,7 @@
       document.body.classList.add("in-section");
       document.title = `${s.title} — ${ME.name}`;
       $("#side").innerHTML = `
-        <a class="name" href="#">${ME.name}<small>${ME.tagline}</small></a>
+        <a class="name" href="#">${ME.name}${MARK}<small>${ME.tagline}</small></a>
         <ul class="nav">${SECTIONS.map((x) => `
           <li><a href="#${x.id}" class="${x.id === s.id ? "on" : ""}">${x.title}</a>
             ${x.id === s.id && !x.ask && !x.wall ? `<ul>${x.items.map((it) => `<li>${it.t}</li>`).join("")}</ul>` : ""}
