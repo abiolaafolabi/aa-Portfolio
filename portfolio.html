@@ -99,11 +99,11 @@
     .info-open .scrim { opacity: 1; pointer-events: auto; }
     .info-open .info { transform: none; }
     .info .close { position: absolute; top: var(--pad); right: var(--pad); }
-    .info p { font-size: 17px; line-height: 1.45; }
-    .info p + p { margin-top: 14px; }
-    .info h4 { font-weight: 400; color: var(--muted); font-size: 14px; margin: 36px 0 8px; }
+    .info p { font-size: 17px; line-height: 1.5; }
+    .info p + p { margin-top: 18px; }
+    .info h4 { font-weight: 400; color: var(--muted); font-size: 14px; margin: 48px 0 12px; }
     .info ul { list-style: none; font-size: 15px; }
-    .info li { padding: 3px 0; }
+    .info li { padding: 5px 0; }
     .info li a { border-bottom: 1px solid var(--line); }
     .info li a:hover { border-color: var(--text); }
 
@@ -113,7 +113,9 @@
       opacity: 0; transform: translateY(24px); pointer-events: none; transition: opacity .35s ease, transform .5s cubic-bezier(.3,.7,.2,1);
     }
     .proj-open .project { opacity: 1; transform: none; pointer-events: auto; }
-    .project .head { padding: 140px var(--pad) 48px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); }
+    .hero { padding: calc(var(--pad) + 48px) var(--pad) 0; }
+    .hero .cover { aspect-ratio: 16 / 8.5; }
+    .project .head { padding: 64px var(--pad) 48px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); }
     .project h1 { font-size: clamp(30px, 4vw, 56px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.05; }
     .project .sum { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.4; letter-spacing: -0.01em; }
     .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--pad); padding: 0 var(--pad) 40px; font-size: 14px; }
@@ -180,14 +182,14 @@
       .grid { gap: 36px; }
       .meta { grid-template-columns: 1fr 1fr; }
       .intro { min-height: 56vh; }
-      .project .head { padding-top: 96px; gap: 20px; }
+      .project .head { padding-top: 40px; gap: 20px; }
       footer .fine { order: 2; }
     }
   </style>
 </head>
 <body>
   <div class="bar">
-    <a class="pill" href="index.html" title="About me">Abiola Afolabi</a>
+    <a class="pill" href="#" title="All work">Abiola Afolabi</a>
     <button class="pill" id="infoBtn">Info</button>
   </div>
 
@@ -223,20 +225,16 @@
     const ME = {
       email: "abiolamd2004@gmail.com",
       bio: [
-        "Abiola Afolabi is a multidisciplinary designer and strategist building brands that think and feel, across fashion, identity, products and events.",
-        "I'm fascinated by psychology and philosophy, and how they shape what we build and how we live. I use first principles and systems thinking to get to the core of vague problems, then make them clearer, simpler and something people can interact with.",
-        "BA Graphic Design, University of Gloucestershire.",
-        "Open to work."
+        "Abiola Afolabi is a multidisciplinary designer and strategist building brands that think and feel.",
+        "I work across fashion, identity, products and events, using strategy to get to the core of a problem before designing.",
+        "BA Graphic Design, University of Gloucestershire. Open to work."
       ],
       services: [
-        "Brand strategy & positioning", "Brand narrative", "Audience & market research",
-        "Creative & art direction", "Identity & logo design", "Brand guidelines",
-        "Social media content", "Fashion design & tech packs", "Product design", "Event design"
+        "Brand strategy", "Identity design", "Art direction", "Fashion & tech packs", "Product & event design"
       ],
       clients: ["Aeliza", "Air Company", "Phenomenal Worlds", "The&Partnership", "Oakwood", "Brief Cases", "Dalziel & Pow"],
       links: [
-        { label: "Instagram (work)", url: "https://www.instagram.com/madebyabiola/" },
-        { label: "Instagram (personal)", url: "https://www.instagram.com/abiolafolabi/" },
+        { label: "Instagram", url: "https://www.instagram.com/madebyabiola/" },
         { label: "LinkedIn", url: "#" },
         { label: "TikTok", url: "#" }
       ]
@@ -415,9 +413,9 @@
     $("#infoBody").innerHTML = `
       ${ME.bio.map((p) => `<p>${p}</p>`).join("")}
       <h4>Services</h4><ul>${ME.services.map((s) => `<li>${s}</li>`).join("")}</ul>
-      <h4>Selected clients & projects</h4><ul>${ME.clients.map((s) => `<li>${s}</li>`).join("")}</ul>
+      <h4>Clients</h4><ul>${ME.clients.map((s) => `<li>${s}</li>`).join("")}</ul>
       <h4>Contact</h4><ul><li><a href="mailto:${ME.email}">${ME.email}</a></li>${ME.links.filter((l) => l.url && l.url !== "#").map((l) => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join("")}</ul>
-      <h4>Elsewhere</h4><ul><li><a href="index.html">The rest of me — my story, books, things I love</a></li></ul>`;
+      <h4>Elsewhere</h4><ul><li><a href="index.html">More about me</a></li></ul>`;
     const setInfo = (on) => { document.body.classList.toggle("info-open", on); };
     $("#infoBtn").onclick = () => setInfo(true);
     $("#infoClose").onclick = () => setInfo(false);
@@ -445,6 +443,7 @@
       const cls = w.pairs ? "shots pairs" : "shots";
       proj.innerHTML = `
         <div class="bar" style="position:absolute"><a class="pill" href="#">← All work</a><span></span></div>
+        <div class="hero">${art(w)}</div>
         <div class="head"><h1>${w.title}</h1><p class="sum">${w.summary}</p></div>
         <div class="meta">
           <div><span>Client</span>${w.client}</div><div><span>Role</span>${w.role}</div>
