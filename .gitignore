@@ -150,3 +150,6 @@ vite.config.ts.timestamp-*
 
 # Local preview settings
 .claude/
+
+# macOS
+.DS_Store
