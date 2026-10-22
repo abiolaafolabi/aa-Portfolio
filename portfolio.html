@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abiola Afolabi — Work</title>
+  <meta name="description" content="Selected work by Abiola Afolabi — product, brand, fashion and event design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #8a8a8a;
+      --line: #ececec;
+      --pad: clamp(16px, 2vw, 28px);
+      --sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font: 15px/1.5 var(--sans); -webkit-font-smoothing: antialiased; letter-spacing: -0.005em; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    body.lock { overflow: hidden; }
+
+    /* Pills */
+    .bar { position: fixed; inset: var(--pad) var(--pad) auto; display: flex; justify-content: space-between; z-index: 30; pointer-events: none; }
+    .pill { pointer-events: auto; font-size: 14px; color: var(--text); transition: color .2s; }
+    .pill:hover { color: var(--muted); }
+
+    /* Intro */
+    .intro { min-height: 78vh; display: flex; align-items: center; padding: 120px var(--pad) 40px; }
+    .intro p { font-size: clamp(22px, 2.6vw, 38px); line-height: 1.22; letter-spacing: -0.02em; max-width: 24em; }
+    .intro p span { color: var(--muted); }
+
+    .label { padding: 0 var(--pad); font-size: clamp(16px, 1.4vw, 20px); margin-bottom: 18px; }
+
+    /* Grid */
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px var(--pad); padding: 0 var(--pad); }
+    .item { display: block; cursor: pointer; text-align: left; width: 100%; }
+    .cover { aspect-ratio: 16 / 10.5; border-radius: 4px; overflow: hidden; position: relative; background: var(--c, #eee); }
+    .cover > * { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+    .item:hover .cover > * { transform: scale(1.03); }
+    .cover img, .cover video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cap { margin-top: 10px; font-size: 14px; }
+    .cap span { color: var(--muted); }
+
+    /* ---- Animated placeholder covers (used until you add a real image/video) ---- */
+    .art { position: absolute; inset: 0; display: grid; place-items: center; color: var(--fg, #fff); overflow: hidden; }
+    .art .word { font-size: clamp(28px, 4.2vw, 64px); font-weight: 500; letter-spacing: -0.04em; position: relative; z-index: 2; }
+
+    .orbs i { position: absolute; width: 55%; aspect-ratio: 1; border-radius: 50%; filter: blur(40px); opacity: .85; animation: drift 14s ease-in-out infinite alternate; }
+    .orbs i:nth-child(1) { background: var(--a); left: -10%; top: -20%; }
+    .orbs i:nth-child(2) { background: var(--b); right: -15%; bottom: -25%; animation-delay: -5s; animation-duration: 17s; }
+    .orbs i:nth-child(3) { background: var(--a); right: 20%; top: 30%; width: 30%; animation-delay: -9s; }
+    @keyframes drift { to { transform: translate(18%, 12%) scale(1.15); } }
+
+    .phone { height: 78%; aspect-ratio: 9 / 19; border-radius: 18px; background: var(--fg); padding: 5px; animation: bob 6s ease-in-out infinite; box-shadow: 0 30px 60px -20px rgba(0,0,0,.35); position: relative; z-index: 2; }
+    .phone div { width: 100%; height: 100%; border-radius: 14px; background: var(--a); overflow: hidden; display: flex; flex-direction: column; gap: 6%; padding: 18% 10%; }
+    .phone b { display: block; height: 7%; border-radius: 4px; background: rgba(255,255,255,.7); animation: grow 3s ease-in-out infinite alternate; transform-origin: left; }
+    .phone b:nth-child(2) { width: 70%; animation-delay: -1s; }
+    .phone b:nth-child(3) { flex: 1; background: rgba(255,255,255,.25); animation: none; }
+    @keyframes bob { 50% { transform: translateY(-4%) rotate(-2deg); } }
+    @keyframes grow { from { transform: scaleX(.55); } }
+
+    .marquee { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: .1em; font-size: clamp(36px, 6vw, 96px); font-weight: 500; letter-spacing: -0.05em; line-height: 1; }
+    .marquee div { white-space: nowrap; animation: slide 22s linear infinite; }
+    .marquee div:nth-child(2) { animation-direction: reverse; opacity: .35; }
+    @keyframes slide { to { transform: translateX(-50%); } }
+
+    .rings i { position: absolute; left: 50%; top: 50%; width: 20%; aspect-ratio: 1; border: 1px solid var(--fg); border-radius: 50%; transform: translate(-50%, -50%); animation: ring 6s linear infinite; opacity: 0; }
+    .rings i:nth-child(2) { animation-delay: -2s; } .rings i:nth-child(3) { animation-delay: -4s; }
+    @keyframes ring { 0% { width: 8%; opacity: .9; } 100% { width: 120%; opacity: 0; } }
+
+    .stripes { position: absolute; inset: -50%; background: repeating-linear-gradient(-45deg, var(--a) 0 22px, transparent 22px 44px); animation: stripe 6s linear infinite; opacity: .5; }
+    @keyframes stripe { to { transform: translate(62px, 0); } }
+
+    .tile { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 10%; }
+    .tile i { border-radius: 4px; background: var(--a); animation: flip 4.8s ease-in-out infinite; }
+    .tile i:nth-child(odd) { background: var(--b); }
+    .tile i:nth-child(3n) { animation-delay: -1.2s; } .tile i:nth-child(4n) { animation-delay: -2.4s; } .tile i:nth-child(5n) { animation-delay: -3.6s; }
+    @keyframes flip { 50% { transform: scale(.6) rotate(45deg); border-radius: 50%; } }
+
+    /* Footer */
+    footer { margin-top: 140px; padding: 0 var(--pad) var(--pad); display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); align-items: end; font-size: 14px; }
+    footer .big { font-size: clamp(22px, 2.6vw, 38px); letter-spacing: -0.02em; line-height: 1.2; }
+    footer .big a { border-bottom: 1px solid currentColor; }
+    footer .fine { color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    footer .fine a:hover { color: var(--text); }
+
+    /* Info panel */
+    .scrim { position: fixed; inset: 0; background: rgba(0,0,0,.12); opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 40; }
+    .info {
+      position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100%); background: var(--bg); z-index: 41;
+      padding: calc(var(--pad) + 52px) var(--pad) var(--pad); overflow-y: auto;
+      transform: translateX(100%); transition: transform .45s cubic-bezier(.3,.7,.2,1);
+    }
+    .info-open .scrim { opacity: 1; pointer-events: auto; }
+    .info-open .info { transform: none; }
+    .info .close { position: absolute; top: var(--pad); right: var(--pad); }
+    .info p { font-size: 17px; line-height: 1.45; }
+    .info p + p { margin-top: 14px; }
+    .info h4 { font-weight: 400; color: var(--muted); font-size: 14px; margin: 36px 0 8px; }
+    .info ul { list-style: none; font-size: 15px; }
+    .info li { padding: 3px 0; }
+    .info li a { border-bottom: 1px solid var(--line); }
+    .info li a:hover { border-color: var(--text); }
+
+    /* Project view */
+    .project {
+      position: fixed; inset: 0; z-index: 35; background: var(--bg); overflow-y: auto;
+      opacity: 0; transform: translateY(24px); pointer-events: none; transition: opacity .35s ease, transform .5s cubic-bezier(.3,.7,.2,1);
+    }
+    .proj-open .project { opacity: 1; transform: none; pointer-events: auto; }
+    .project .head { padding: 140px var(--pad) 48px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); }
+    .project h1 { font-size: clamp(30px, 4vw, 56px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.05; }
+    .project .sum { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.4; letter-spacing: -0.01em; }
+    .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--pad); padding: 0 var(--pad) 40px; font-size: 14px; }
+    .meta div span { display: block; color: var(--muted); }
+    .shots { display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); padding: 0 var(--pad); }
+    .shots .cover { aspect-ratio: 16 / 9; }
+    .shots .cover:first-child { grid-column: 1 / -1; }
+    .shots + .shots { margin-top: 0; }
+    .shots .cover:not(.plain) { background: #f4f4f4; }
+    .shots .cover.plain { background: #f4f4f4; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
+    .body { display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); padding: 64px var(--pad); }
+    .body p { max-width: 36em; color: #333; }
+    .body p + p { margin-top: 20px; }
+    .body .lbl { display: block; color: var(--muted); font-size: 13px; margin-bottom: 2px; }
+    .next { display: block; padding: 40px var(--pad) 80px; border-top: 1px solid var(--line); margin: 0 var(--pad); padding-left: 0; padding-right: 0; }
+    .next span { color: var(--muted); font-size: 14px; display: block; }
+    .next b { font-weight: 500; font-size: clamp(24px, 3vw, 44px); letter-spacing: -0.03em; transition: opacity .2s; }
+    .next:hover b { opacity: .6; }
+
+    /* Fade in on scroll */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 720px) {
+      .grid, .shots, .body, .project .head, footer { grid-template-columns: 1fr; }
+      .grid { gap: 36px; }
+      .meta { grid-template-columns: 1fr 1fr; }
+      .intro { min-height: 56vh; }
+      .project .head { padding-top: 96px; gap: 20px; }
+      footer .fine { order: 2; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <a class="pill" href="index.html" title="Back to the hub">Abiola Afolabi</a>
+    <button class="pill" id="infoBtn">Info</button>
+  </div>
+
+  <section class="intro">
+    <p class="reveal"><span>Abiola Afolabi</span> is a multidisciplinary designer and strategist building brands that think and feel — across fashion, identity, products and events.</p>
+  </section>
+
+  <div class="label reveal">Selected work ↓</div>
+  <main class="grid" id="grid"></main>
+
+  <footer>
+    <div class="big reveal">Have something in mind?<br /><a id="mail" href="#"></a></div>
+    <div class="fine"><span>© <span id="year"></span> Abiola Afolabi</span><a href="index.html">More about me →</a></div>
+  </footer>
+
+  <div class="scrim" id="scrim"></div>
+  <aside class="info" id="info" aria-label="Info">
+    <button class="pill light close" id="infoClose">Close</button>
+    <div id="infoBody"></div>
+  </aside>
+
+  <article class="project" id="project" aria-live="polite"></article>
+
+  <script>
+    /* =========================================================
+       YOUR CONTENT. Everything below is placeholder copy —
+       swap in the real details for each project.
+
+       cover: leave empty for an animated placeholder, or point
+       to an image ("work/annexpress.jpg") or a looping video
+       ("work/annexpress.mp4") to animate the real thing.
+       ========================================================= */
+    const ME = {
+      email: "abiolamd2004@gmail.com",
+      bio: [
+        "Abiola Afolabi is a multidisciplinary designer and strategist building brands that think and feel, across fashion, identity, products and events.",
+        "I'm fascinated by psychology and philosophy, and how they shape what we build and how we live. I like thinking from first principles, and I love taking vague, lofty ideas and making them concrete and interactable.",
+        "Open to work."
+      ],
+      services: [
+        "Brand strategy & positioning", "Brand narrative", "Audience & market research",
+        "Creative & art direction", "Identity & logo design", "Brand guidelines",
+        "Social media content", "Fashion design & tech packs", "Product design", "Event design"
+      ],
+      clients: ["ANIXVRS", "Phenomenal Worlds", "Wave", "Mothership", "Eliza"],
+      links: [
+        { label: "Instagram (work)", url: "https://www.instagram.com/madebyabiola/" },
+        { label: "Instagram (personal)", url: "https://www.instagram.com/abiolafolabi/" },
+        { label: "LinkedIn", url: "#" },
+        { label: "TikTok", url: "#" }
+      ]
+    };
+
+    const WORK = [
+      { id: "anixvrs", title: "ANIXVRS", type: "Fashion brand", year: "2020",
+        cover: "", art: "tile", c: "#ececec", a: "#1f1f1f", b: "#b4b4b4", fg: "#111111",
+        role: "Founder & designer", client: "Self-initiated", team: "Solo, with suppliers",
+        summary: "Where cultural heritage meets streetwear.",
+        body: [
+          "<span class=\"lbl\">Problem</span>Traditional clothing is hard to wear in modern contexts.",
+          "<span class=\"lbl\">Solution</span>Drawing on the visual language of Afrofuturism (think Black Panther), I created a brand that translates cultural heritage into modern streetwear. I designed the logo, the philosophy and the strategy, then the garments, including the ANIXVRS puffer jacket, the first garment I ever designed. I worked directly with suppliers to bring it to life.",
+          "<span class=\"lbl\">Outcome</span>A few hundred thousand views, a mailing list of almost 400 people, our first T-shirts sold, and invitations to four fashion shows."
+        ] },
+      { id: "phenomenal-worlds", title: "Phenomenal Worlds", type: "Brand identity", year: "2026",
+        cover: "work/phenomenal-worlds/cover.jpg",
+        images: [
+          "work/phenomenal-worlds/kit-of-parts.jpg", "work/phenomenal-worlds/logo.jpg", "work/phenomenal-worlds/combinations.jpg",
+          "work/phenomenal-worlds/one-page.jpg", "work/phenomenal-worlds/social.jpg", "work/phenomenal-worlds/campaign.jpg",
+          "work/phenomenal-worlds/posts.jpg", "work/phenomenal-worlds/colour.jpg"
+        ], art: "marquee", c: "#f3efe6", fg: "#1a1a1a",
+        role: "Identity designer", client: "Phenomenal Worlds", team: "Freelance",
+        summary: "Identity for a cultural research and strategy consultancy that analyses how meaning-making shapes behaviour.",
+        body: [
+          "<span class=\"lbl\">Brief</span>Phenomenal Worlds is a cultural consultancy that helps brands engage local communities authentically, through events and a values-based approach rather than purely data or trends.",
+          "<span class=\"lbl\">Insight</span>The identity is built on the idea of distinct, overlapping worlds. The logo is an assembly of phenomena that might make up someone's experience.",
+          "<span class=\"lbl\">Outcome</span>An identity that reflects the expansive nature of experience and the consultancy's positioning: fun yet mature, surreal but intentional. A bold semi-serif title font and calm sans-serif body, with an energetic colour palette and contemporary imagery."
+        ] },
+      { id: "wave", title: "Wave", type: "Mental health tool", year: "2025",
+        cover: "", art: "orbs", c: "#dff3ff", a: "#38bdf8", b: "#a78bfa", fg: "#0b2540",
+        role: "Designer & builder", client: "Self-initiated", team: "With a behavioural scientist",
+        summary: "A mental health tool that helps people keep perspective through life's ups and downs, and respond in healthy ways.",
+        body: [
+          "Wave is the app I've always wanted to build. I'm designing and building it with a behavioural scientist, grounding each part of the experience in how people actually think and cope.",
+          "Currently in progress."
+        ] },
+      { id: "mothership", title: "Mothership", type: "Event", year: "2026",
+        cover: "", art: "rings", c: "#111111", fg: "#ffffff",
+        role: "Co-organiser & designer", client: "Mothership × Phenomenal Worlds", team: "In partnership with Phenomenal Worlds",
+        summary: "An event platform helping people imagine new visions of the future for the African diaspora.",
+        body: [
+          "We ran Mothership in February 2026, in partnership with Phenomenal Worlds: a room of people imagining what the future could look like for the African diaspora.",
+          "It sold out, with around 34 tickets at about £30 each, and everyone had a really good time."
+        ] },
+      { id: "eliza", title: "Eliza", type: "Fashion design", year: "2025–26",
+        cover: "", art: "stripes", c: "#efe4da", a: "#c08457", fg: "#3b2414",
+        role: "Design assistant", client: "Eliza, London", team: "With founder Jack Harper",
+        summary: "About a year of design work for a premium street-luxury clothing brand in London.",
+        body: [
+          "I worked with Eliza's founder, Jack Harper, for about a year, helping on the brand's Key Stage Three season collection.",
+          "My work covered designing tech packs and editing, alongside other freelance pieces for the brand."
+        ] }
+    ];
+
+    /* ========================================================= */
+
+    const $ = (s) => document.querySelector(s);
+
+    function art(w) {
+      const vars = `--c:${w.c};--a:${w.a || w.fg};--b:${w.b || w.a || w.fg};--fg:${w.fg}`;
+      if (w.cover) {
+        const media = /\.(mp4|webm|mov)$/i.test(w.cover)
+          ? `<video src="${w.cover}" autoplay muted loop playsinline></video>`
+          : `<img src="${w.cover}" alt="${w.title}" loading="lazy" />`;
+        return `<div class="cover" style="${vars}">${media}</div>`;
+      }
+      const inner = {
+        phone: `<div class="art"><div class="phone"><div><b></b><b></b><b></b></div></div></div>`,
+        orbs: `<div class="art orbs"><i></i><i></i><i></i><span class="word">${w.title}</span></div>`,
+        rings: `<div class="art rings"><i></i><i></i><i></i><span class="word">${w.title}</span></div>`,
+        marquee: `<div class="art"><div class="marquee"><div>${(w.title + " — ").repeat(8)}</div><div>${(w.title + " — ").repeat(8)}</div></div></div>`,
+        stripes: `<div class="art"><div class="stripes"></div><span class="word">${w.title}</span></div>`,
+        tile: `<div class="art"><div class="tile">${"<i></i>".repeat(12)}</div></div>`
+      }[w.art] || `<div class="art"><span class="word">${w.title}</span></div>`;
+      return `<div class="cover" style="${vars}">${inner}</div>`;
+    }
+
+    // Grid
+    $("#grid").innerHTML = WORK.map((w) => `
+      <a class="item reveal" href="#${w.id}">
+        ${art(w)}
+        <div class="cap">${w.title} <span>• ${w.type}, ${w.year}</span></div>
+      </a>`).join("");
+
+    // Info panel
+    $("#infoBody").innerHTML = `
+      ${ME.bio.map((p) => `<p>${p}</p>`).join("")}
+      <h4>Services</h4><ul>${ME.services.map((s) => `<li>${s}</li>`).join("")}</ul>
+      <h4>Selected clients & projects</h4><ul>${ME.clients.map((s) => `<li>${s}</li>`).join("")}</ul>
+      <h4>Contact</h4><ul><li><a href="mailto:${ME.email}">${ME.email}</a></li>${ME.links.map((l) => `<li><a href="${l.url}">${l.label}</a></li>`).join("")}</ul>
+      <h4>Elsewhere</h4><ul><li><a href="index.html">The rest of me — writing, books, things I love</a></li></ul>`;
+    const setInfo = (on) => { document.body.classList.toggle("info-open", on); };
+    $("#infoBtn").onclick = () => setInfo(true);
+    $("#infoClose").onclick = () => setInfo(false);
+    $("#scrim").onclick = () => setInfo(false);
+
+    // Project view (hash routing: portfolio.html#annexpress)
+    const proj = $("#project");
+    function openProject(id) {
+      const i = WORK.findIndex((w) => w.id === id);
+      if (i < 0) { document.body.classList.remove("proj-open", "lock"); return; }
+      const w = WORK[i], next = WORK[(i + 1) % WORK.length];
+      const imgs = w.images || [];
+      const pic = (src) => `<div class="cover"><img src="${src}" alt="${w.title}" loading="lazy" /></div>`;
+      proj.innerHTML = `
+        <div class="bar" style="position:absolute"><a class="pill" href="#">← All work</a><span></span></div>
+        <div class="head"><h1>${w.title}</h1><p class="sum">${w.summary}</p></div>
+        <div class="meta">
+          <div><span>Client</span>${w.client}</div><div><span>Role</span>${w.role}</div>
+          <div><span>Type</span>${w.type}</div><div><span>Year</span>${w.year}</div>
+        </div>
+        <div class="shots">${imgs.length ? imgs.slice(0, 3).map(pic).join("") : `${art(w)}<div class="cover plain">Image</div><div class="cover plain">Image</div>`}</div>
+        <div class="body"><div></div><div>${w.body.map((p) => `<p>${p}</p>`).join("")}</div></div>
+        <div class="shots">${imgs.length ? imgs.slice(3).map(pic).join("") : `<div class="cover plain">Image</div>`}</div>
+        <a class="next" href="#${next.id}" style="margin-top:64px"><span>Next project</span><b>${next.title} →</b></a>`;
+      proj.scrollTop = 0;
+      document.body.classList.add("proj-open", "lock");
+      document.title = `${w.title} — Abiola Afolabi`;
+    }
+    function route() {
+      const id = location.hash.slice(1);
+      openProject(id);
+      if (!WORK.some((w) => w.id === id)) document.title = "Abiola Afolabi — Work";
+    }
+    window.addEventListener("hashchange", route);
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      if (document.body.classList.contains("info-open")) setInfo(false);
+      else if (location.hash) location.hash = "";
+    });
+    route();
+
+    // Fade in on scroll
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    $("#mail").href = "mailto:" + ME.email;
+    $("#mail").textContent = ME.email;
+    $("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
