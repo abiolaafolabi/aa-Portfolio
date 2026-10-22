@@ -141,6 +141,9 @@
     .process figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; }
     .art img.mark { width: 42%; filter: brightness(0) invert(1); animation: float 7s ease-in-out infinite; }
     @keyframes float { 50% { transform: translateY(-6%); } }
+    .shots .cover.logo-block { display: grid; place-items: center; }
+    .shots .cover.logo-block img { width: 24%; height: auto; animation: breathe 6s ease-in-out infinite; }
+    @keyframes breathe { 50% { transform: scale(1.06); } }
     .art .wavelogo { width: 46%; color: var(--fg); overflow: visible; }
     .wavelogo .w1, .wavelogo .w2 { animation: swell 5s ease-in-out infinite; transform-box: fill-box; }
     .wavelogo .w2 { animation-delay: -2.5s; }
@@ -229,7 +232,7 @@
     const WORK = [
       { id: "anixvrs", title: "ANIXVRS", type: "Fashion brand", year: "2020",
         cover: "work/anixvrs/cover.jpg",
-        images: ["work/anixvrs/logo.jpg", "work/anixvrs/posters.jpg", "work/anixvrs/lookbook.jpg",
+        images: [{ src: "work/anixvrs/logo-white.png", bg: "linear-gradient(90deg, #e93325, #eb33f7)" }, "work/anixvrs/posters.jpg", "work/anixvrs/lookbook.jpg",
           { src: "work/anixvrs/tee-1.jpg", wide: false }, { src: "work/anixvrs/tee-2.jpg", wide: false }],
         process: [
           { src: "work/anixvrs/construction.jpg", cap: "Logo construction" },
@@ -408,6 +411,7 @@
       const pic = (e, i) => {
         const x = typeof e === "string" ? { src: e } : e;
         const wide = x.wide ?? (!w.pairs && (i === 0 || i === split));
+        if (x.bg) return `<div class="cover logo-block${wide ? " wide" : ""}" style="background:${x.bg}"><img src="${x.src}" alt="${w.title} logo" /></div>`;
         return `<div class="cover img${wide ? " wide" : ""}"><img src="${x.src}" alt="${w.title}" loading="lazy" /></div>`;
       };
       const process = (w.process || []).length ? `
