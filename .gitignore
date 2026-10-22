@@ -153,3 +153,7 @@ vite.config.ts.timestamp-*
 
 # macOS
 .DS_Store
+
+# Phone preview builds
+.artifact/
+.artifact-build.py
