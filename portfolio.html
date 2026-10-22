@@ -156,7 +156,7 @@
 </head>
 <body>
   <div class="bar">
-    <a class="pill" href="index.html" title="Home">Abiola Afolabi</a>
+    <a class="pill" href="index.html" title="About me">Abiola Afolabi</a>
     <button class="pill" id="infoBtn">Info</button>
   </div>
 
@@ -169,7 +169,7 @@
 
   <footer>
     <div class="big reveal">Have something in mind?<br /><a id="mail" href="#"></a></div>
-    <div class="fine"><span>© <span id="year"></span> Abiola Afolabi</span><a href="about.html">More about me →</a></div>
+    <div class="fine"><span>© <span id="year"></span> Abiola Afolabi</span><a href="index.html">More about me →</a></div>
   </footer>
 
   <div class="scrim" id="scrim"></div>
@@ -337,7 +337,7 @@
       <h4>Services</h4><ul>${ME.services.map((s) => `<li>${s}</li>`).join("")}</ul>
       <h4>Selected clients & projects</h4><ul>${ME.clients.map((s) => `<li>${s}</li>`).join("")}</ul>
       <h4>Contact</h4><ul><li><a href="mailto:${ME.email}">${ME.email}</a></li>${ME.links.filter((l) => l.url && l.url !== "#").map((l) => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join("")}</ul>
-      <h4>Elsewhere</h4><ul><li><a href="about.html">The rest of me — my story, books, things I love</a></li></ul>`;
+      <h4>Elsewhere</h4><ul><li><a href="index.html">The rest of me — my story, books, things I love</a></li></ul>`;
     const setInfo = (on) => { document.body.classList.toggle("info-open", on); };
     $("#infoBtn").onclick = () => setInfo(true);
     $("#infoClose").onclick = () => setInfo(false);
