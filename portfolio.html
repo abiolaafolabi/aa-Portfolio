@@ -292,7 +292,7 @@
       ${ME.bio.map((p) => `<p>${p}</p>`).join("")}
       <h4>Services</h4><ul>${ME.services.map((s) => `<li>${s}</li>`).join("")}</ul>
       <h4>Selected clients & projects</h4><ul>${ME.clients.map((s) => `<li>${s}</li>`).join("")}</ul>
-      <h4>Contact</h4><ul><li><a href="mailto:${ME.email}">${ME.email}</a></li>${ME.links.map((l) => `<li><a href="${l.url}">${l.label}</a></li>`).join("")}</ul>
+      <h4>Contact</h4><ul><li><a href="mailto:${ME.email}">${ME.email}</a></li>${ME.links.filter((l) => l.url && l.url !== "#").map((l) => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join("")}</ul>
       <h4>Elsewhere</h4><ul><li><a href="index.html">The rest of me — writing, books, things I love</a></li></ul>`;
     const setInfo = (on) => { document.body.classList.toggle("info-open", on); };
     $("#infoBtn").onclick = () => setInfo(true);

@@ -162,9 +162,19 @@
           { t: "Building an app", d: "Something I've always wanted to do. Wave is that app." },
           { t: "Saracens Rugby Academy", d: "Played in the academy." },
           { t: "Benching 140 kg, squatting 210 kg", d: "Years of training, starting with push-ups at 11." },
-          { t: "American football", d: "Played and did well. Stats to add." }
+          { t: "American football", d: "Played and did well. Stats to add." },
+          { t: "Two silver awards", d: "One for a graphic design brief, one for an ad partnership brief." },
+          { t: "Sports day", d: "A lot of medals from a lot of sports days." }
         ] },
-      { id: "writing", title: "Writing", intro: "Essays and thoughts. Coming soon to this site.",
+      { id: "side-quests", title: "Side quests", intro: "Other things I've done along the way.",
+        items: [
+          { t: "Playground entrepreneur", d: "Sold cookies and Kool-Aid in the school playground, until someone snitched." },
+          { t: "Custom shoes", d: "Painted and customised shoes." },
+          { t: "Debate club", d: "Secondary school. I still love a good debate." },
+          { t: "Contemporary dance", d: "Took it for GCSE." },
+          { t: "Ballet", d: "Briefly, when I was very young." }
+        ] },
+      { id: "writing", title: "Writing", intro: "Essays and thoughts. Coming soon.",
         cta: { label: "Read me on Substack →", url: "#" },
         items: [] },
       { id: "books", title: "Books", intro: "Books I love and come back to.",
@@ -215,7 +225,9 @@
           { t: "Saxophone", d: "I've been playing the alto sax for a couple of months. I played Amazing Grace at my baptism after three weeks of practice." },
           { t: "Training", d: "I've trained since I was 11, starting with push-ups. My best is 130 in a row." },
           { t: "Reading", d: "See the bookshelf." },
-          { t: "Philosophy", d: "Studying it, practising it, and thinking about ideas." }
+          { t: "Philosophy", d: "Studying it, practising it, and thinking about ideas." },
+          { t: "Debating", d: "Ideas get better when they're argued with." },
+          { t: "Memes", d: "Dry humour, mostly. A few favourites coming soon." }
         ] },
       { id: "channels", title: "Channels", intro: "Where to find me.",
         items: [
@@ -231,7 +243,8 @@
     /* ========================================================= */
 
     const $ = (s) => document.querySelector(s);
-    const link = (it, inner) => it.url ? `<a href="${it.url}"${/^https?:/.test(it.url) ? ' target="_blank" rel="noopener"' : ""}>${inner}</a>` : inner;
+    const live = (url) => url && url !== "#";
+    const link = (it, inner) => live(it.url) ? `<a href="${it.url}"${/^https?:/.test(it.url) ? ' target="_blank" rel="noopener"' : ""}>${inner}</a>` : inner;
     const initials = (n) => n.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 
     $("#foot").innerHTML = `
@@ -244,7 +257,7 @@
       $("#side").innerHTML = `
         <div class="name">${ME.name}<small>${ME.tagline}</small></div>
         <div class="bio">${ME.bio.map((p) => `<p>${p}</p>`).join("")}</div>
-        <div class="links">${ME.links.map((l) => `<a href="${l.url}">${l.label}</a>`).join("")}</div>`;
+        <div class="links">${ME.links.filter((l) => live(l.url)).map((l) => `<a href="${l.url}"${/^https?:/.test(l.url) ? ' target="_blank" rel="noopener"' : ""}>${l.label}</a>`).join("")}</div>`;
       $("#main").innerHTML = `<div class="index fade">${SECTIONS.map((s) => `
         <section>
           <h2><a href="#${s.id}">${s.title}</a></h2>
@@ -278,7 +291,7 @@
         body = `<ul class="items">${s.items.map((it) => `
           <li><div class="t">${link(it, it.t)}${it.m ? `<span class="m">${it.m}</span>` : ""}${it.tag ? `<span class="tag">${it.tag}</span>` : ""}</div>
           ${it.d ? `<div class="d">${it.d}</div>` : ""}</li>`).join("")}</ul>
-          ${s.cta ? `<p style="margin-top:36px"><a href="${s.cta.url}" style="border-bottom:1px solid var(--text)">${s.cta.label}</a></p>` : ""}`;
+          ${s.cta && live(s.cta.url) ? `<p style="margin-top:36px"><a href="${s.cta.url}" style="border-bottom:1px solid var(--text)">${s.cta.label}</a></p>` : ""}`;
       }
       $("#main").innerHTML = `<div class="view fade"><h1>${s.title}</h1><p class="intro">${s.intro}</p>${body}</div>`;
 
