@@ -120,7 +120,10 @@
     .meta div span { display: block; color: var(--muted); }
     .shots { display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); padding: 0 var(--pad); }
     .shots .cover { aspect-ratio: 16 / 9; }
-    .shots .cover:first-child { grid-column: 1 / -1; }
+    .shots .cover:first-child, .shots .cover.wide { grid-column: 1 / -1; }
+    .shots .cover.img { aspect-ratio: auto; }
+    .shots .cover.img img { height: auto; }
+    .shots.pairs .cover.img:first-child { grid-column: auto; }
     .shots + .shots { margin-top: 0; }
     .shots .cover:not(.plain) { background: #f4f4f4; }
     .shots .cover.plain { background: #f4f4f4; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
@@ -199,7 +202,7 @@
         "Creative & art direction", "Identity & logo design", "Brand guidelines",
         "Social media content", "Fashion design & tech packs", "Product design", "Event design"
       ],
-      clients: ["ANIXVRS", "Phenomenal Worlds", "Wave", "Mothership", "Aeliza"],
+      clients: ["Aeliza", "Air Company", "Phenomenal Worlds", "The&Partnership", "Oakwood", "Brief Cases", "Dalziel & Pow"],
       links: [
         { label: "Instagram (work)", url: "https://www.instagram.com/madebyabiola/" },
         { label: "Instagram (personal)", url: "https://www.instagram.com/abiolafolabi/" },
@@ -210,13 +213,15 @@
 
     const WORK = [
       { id: "anixvrs", title: "ANIXVRS", type: "Fashion brand", year: "2020",
-        cover: "", art: "tile", c: "#ececec", a: "#1f1f1f", b: "#b4b4b4", fg: "#111111",
-        role: "Founder & designer", client: "Self-initiated", team: "Solo, with suppliers",
+        cover: "work/anixvrs/cover.jpg",
+        images: ["work/anixvrs/logo.jpg", "work/anixvrs/posters.jpg", "work/anixvrs/garment.jpg", "work/anixvrs/lookbook.jpg", "work/anixvrs/construction.jpg"],
+        role: "Founder & creative director", client: "Self-initiated", team: "Solo, with suppliers",
         summary: "Where cultural heritage meets streetwear.",
         body: [
           "<span class=\"lbl\">Problem</span>Traditional clothing is hard to wear in modern contexts.",
-          "<span class=\"lbl\">Solution</span>Drawing on the visual language of Afrofuturism (think Black Panther), I created a brand that translates cultural heritage into modern streetwear. I designed the logo, the philosophy and the strategy, then the garments, including the ANIXVRS puffer jacket, the first garment I ever designed. I worked directly with suppliers to bring it to life.",
-          "<span class=\"lbl\">Outcome</span>A few hundred thousand views, a mailing list of almost 400 people, our first T-shirts sold, and invitations to four fashion shows."
+          "<span class=\"lbl\">Insight</span>Afrofuturism (think Black Panther) mixes cultural heritage and modern aesthetics seamlessly.",
+          "<span class=\"lbl\">Solution</span>Using that visual language, I built a brand that translates cultural heritage into modern streetwear: the identity, art direction, content, and the garments themselves. The Art of Ori puffer jacket uses an Ori pattern from Oshogbo, Nigeria, with a cowrie shell motif and a bold red and white palette. It was the first garment I ever designed.",
+          "<span class=\"lbl\">Outcome</span>A few hundred thousand views, a mailing list of almost 400 people, our first sales, and invitations to four fashion shows."
         ] },
       { id: "phenomenal-worlds", title: "Phenomenal Worlds", type: "Brand identity", year: "2026",
         cover: "work/phenomenal-worlds/cover.jpg",
@@ -231,6 +236,52 @@
           "<span class=\"lbl\">Brief</span>Phenomenal Worlds is a cultural consultancy that helps brands engage local communities authentically, through events and a values-based approach rather than purely data or trends.",
           "<span class=\"lbl\">Insight</span>The identity is built on the idea of distinct, overlapping worlds. The logo is an assembly of phenomena that might make up someone's experience.",
           "<span class=\"lbl\">Outcome</span>An identity that reflects the expansive nature of experience and the consultancy's positioning: fun yet mature, surreal but intentional. A bold semi-serif title font and calm sans-serif body, with an energetic colour palette and contemporary imagery."
+        ] },
+      { id: "chase-run-club", title: "Chase Run Club", type: "Brand & campaign", year: "2024",
+        cover: "work/chase-run-club/cover.jpg",
+        images: ["work/chase-run-club/logo.jpg", "work/chase-run-club/construction.jpg", "work/chase-run-club/social.jpg", "work/chase-run-club/jersey.jpg", "work/chase-run-club/flags.jpg"],
+        role: "Founder & creative director", client: "Self-initiated", team: "Solo",
+        summary: "A men's support group disguised as a run club.",
+        body: [
+          "<span class=\"lbl\">Problem</span>For some men, discipline is just productive self-harm. And these men are unlikely to open up or go to therapy.",
+          "<span class=\"lbl\">Insight</span>Research and therapists have shown that men open up more naturally during side-by-side activities.",
+          "<span class=\"lbl\">Solution</span>A run club and men's support circle, where pain is processed in motion and men learn to chase goals out of love, not avoidance. Run towards, not away."
+        ] },
+      { id: "gargoyles", title: "Gloucestershire Gargoyles", type: "Sports rebrand", year: "2024",
+        cover: "work/gargoyles/cover.jpg",
+        images: ["work/gargoyles/new-logo.jpg", "work/gargoyles/old-logo.jpg", "work/gargoyles/sketches.jpg", "work/gargoyles/uniforms.jpg", "work/gargoyles/helmet.jpg", "work/gargoyles/iterations.jpg"],
+        role: "Brand designer", client: "University flag football team", team: "Self-initiated",
+        summary: "A modern rebrand for a university flag football team.",
+        body: [
+          "<span class=\"lbl\">Problem</span>The team was missing out on sponsors, and on buy-in from university resources and the community.",
+          "<span class=\"lbl\">Insight</span>There was an ongoing theme of them being overlooked and not taken seriously.",
+          "<span class=\"lbl\">Solution</span>Own that truth and make it an advantage. Gargoyles link to the area's Gothic roots, and they're creatures that thrive even when unseen."
+        ] },
+      { id: "art-of-life", title: "The Art of Life", type: "Editorial design", year: "2023",
+        cover: "work/art-of-life/cover.jpg",
+        images: ["work/art-of-life/spread.jpg", "work/art-of-life/sketches.jpg", "work/art-of-life/death.jpg", "work/art-of-life/spreads.jpg", "work/art-of-life/game.jpg", "work/art-of-life/sisyphus.jpg", "work/art-of-life/absurd.jpg"],
+        role: "Editorial designer", client: "Self-initiated", team: "Solo",
+        summary: "A magazine of ancient wisdom for modern life.",
+        body: [
+          "<span class=\"lbl\">Problem</span>Philosophy books are often dense and tough for younger readers to engage with.",
+          "<span class=\"lbl\">Solution</span>Translate complex philosophical ideas into a visually engaging youth magazine."
+        ] },
+      { id: "aeliza", title: "Aeliza", type: "Fashion design", year: "2025",
+        cover: "work/aeliza/cover.jpg", pairs: true,
+        images: ["work/aeliza/symbol.jpg", "work/aeliza/popup.jpg", "work/aeliza/lockup.jpg", "work/aeliza/window.jpg", "work/aeliza/muhaku.jpg"],
+        role: "Fashion brand intern", client: "Aeliza, London", team: "With founder Jack Harper",
+        summary: "Design for a premium street-luxury clothing brand in London.",
+        body: [
+          "I worked part-time with Aeliza's founder, Jack Harper: technical drawings for the CS4 collection, campaign art direction, the design of two published books, and presentation decks.",
+          "These are the window graphics I designed for the Aeliza pop-up, powered by MUHAKU."
+        ] },
+      { id: "air-company", title: "Air Company", type: "Tech packs", year: "2026",
+        cover: "work/air-company/cover.jpg",
+        images: ["work/air-company/socks.jpg", "work/air-company/quarter-zip.jpg", "work/air-company/cap.jpg", "work/air-company/label.jpg", "work/air-company/polo.jpg"],
+        role: "Technical designer", client: "Air Company, with Jack Harper", team: "With Jack Harper",
+        summary: "Tech packs for the Air Company capsule.",
+        body: [
+          "Production-ready technical drawings for a capsule of tees, socks, quarter-zips, polos and caps, with trims, labels and placement specs."
         ] },
       { id: "wave", title: "Wave", type: "Mental health tool", year: "2025",
         cover: "", art: "orbs", c: "#dff3ff", a: "#38bdf8", b: "#a78bfa", fg: "#0b2540",
@@ -247,14 +298,6 @@
         body: [
           "We ran Mothership in February 2026, in partnership with Phenomenal Worlds: a room of people imagining what the future could look like for the African diaspora.",
           "It sold out, with around 34 tickets at about £30 each, and everyone had a really good time."
-        ] },
-      { id: "aeliza", title: "Aeliza", type: "Fashion design", year: "2025–26",
-        cover: "", art: "stripes", c: "#efe4da", a: "#c08457", fg: "#3b2414",
-        role: "Design assistant", client: "Aeliza, London", team: "With founder Jack Harper",
-        summary: "About a year of design work for a premium street-luxury clothing brand in London.",
-        body: [
-          "I worked with Aeliza's founder, Jack Harper, for about a year, helping on the brand's Key Stage Three season collection.",
-          "My work covered designing tech packs and editing, alongside other freelance pieces for the brand."
         ] }
     ];
 
@@ -307,7 +350,8 @@
       if (i < 0) { document.body.classList.remove("proj-open", "lock"); return; }
       const w = WORK[i], next = WORK[(i + 1) % WORK.length];
       const imgs = w.images || [];
-      const pic = (src) => `<div class="cover"><img src="${src}" alt="${w.title}" loading="lazy" /></div>`;
+      const pic = (src) => `<div class="cover img"><img src="${src}" alt="${w.title}" loading="lazy" /></div>`;
+      const cls = w.pairs ? "shots pairs" : "shots";
       proj.innerHTML = `
         <div class="bar" style="position:absolute"><a class="pill" href="#">← All work</a><span></span></div>
         <div class="head"><h1>${w.title}</h1><p class="sum">${w.summary}</p></div>
@@ -315,9 +359,9 @@
           <div><span>Client</span>${w.client}</div><div><span>Role</span>${w.role}</div>
           <div><span>Type</span>${w.type}</div><div><span>Year</span>${w.year}</div>
         </div>
-        <div class="shots">${imgs.length ? imgs.slice(0, 3).map(pic).join("") : `${art(w)}<div class="cover plain">Image</div><div class="cover plain">Image</div>`}</div>
+        <div class="${cls}">${imgs.length ? imgs.slice(0, w.pairs ? 2 : 3).map(pic).join("") : `${art(w)}<div class="cover plain">Image</div><div class="cover plain">Image</div>`}</div>
         <div class="body"><div></div><div>${w.body.map((p) => `<p>${p}</p>`).join("")}</div></div>
-        <div class="shots">${imgs.length ? imgs.slice(3).map(pic).join("") : `<div class="cover plain">Image</div>`}</div>
+        <div class="${cls}">${imgs.length ? imgs.slice(w.pairs ? 2 : 3).map(pic).join("") : `<div class="cover plain">Image</div>`}</div>
         <a class="next" href="#${next.id}" style="margin-top:64px"><span>Next project</span><b>${next.title} →</b></a>`;
       proj.scrollTop = 0;
       document.body.classList.add("proj-open", "lock");
