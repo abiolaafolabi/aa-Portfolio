@@ -35,6 +35,16 @@
     .name small { display: block; font-size: 14px; font-weight: 400; color: var(--muted); }
     .bio { margin-top: 28px; color: #444; }
     .bio p + p { margin-top: 14px; }
+    .now { margin-top: 24px; color: #444; }
+    .now span { display: block; font-size: 12px; color: var(--muted); }
+    .prev { margin-top: 14px; color: var(--muted); }
+    .prev summary { cursor: pointer; list-style: none; font-size: 12px; }
+    .prev summary::-webkit-details-marker { display: none; }
+    .prev summary::after { content: " +"; }
+    .prev[open] summary::after { content: " \2212"; }
+    .prev summary:hover { color: var(--text); }
+    .prev ul { list-style: none; margin-top: 6px; padding-left: 12px; border-left: 1px solid var(--line); }
+    .prev li { padding: 2px 0; font-size: 13px; }
     .links { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--muted); font-size: 13px; }
     .links a:hover { color: var(--text); }
 
@@ -128,6 +138,14 @@
         "I use first principles and systems thinking to get to the core of things: what's really at play. I take big, vague ideas people say all the time, like a good life, love, or what's true, and make them clearer and simpler so we can actually work with them. Sometimes to solve a problem, sometimes just to explore.",
         "I love ideas about imagination and what things could be. I'm fascinated by technology, business, startups and economics."
       ],
+      now: "Building Wave, a mental health tool, with a behavioural scientist. Running ANIXVRS.",
+      previously: [
+        "Designed the Phenomenal Worlds identity",
+        "Co-ran Mothership, a sold-out event on the future of the African diaspora",
+        "A year of fashion design at Eliza, London",
+        "Two silver awards for design briefs",
+        "Saracens Rugby Academy"
+      ],
       email: "abiolamd2004@gmail.com",
       links: [
         { label: "Instagram", url: "https://www.instagram.com/abiolafolabi/" },
@@ -152,6 +170,11 @@
           { t: "ANIXVRS", tag: "Since 2020", d: "Where cultural heritage meets streetwear. A fashion brand I designed and run.", url: "portfolio.html#anixvrs" },
           { t: "Chase Run Club", d: "A men's support group disguised as a run club. Men open up more during side-by-side activities, so ambitious young men learn to process in motion and chase out of love, not avoidance. Run towards, not away." }
         ] },
+      { id: "updates", title: "Updates", intro: "What I'm up to and how things are progressing. The same notes I send to people in my network.",
+        cta: { label: "Get these by email →", url: "mailto:abiolamd2004@gmail.com?subject=Add%20me%20to%20your%20updates" },
+        items: [
+          { t: "Launched this site", m: "Oct 2026", d: "A home for my work, what I'm building, and everything else I'm into." }
+        ] },
       { id: "events", title: "Events", intro: "Rooms I've brought people together in.",
         items: [
           { t: "Mothership", m: "Feb 2026", d: "Imagining new visions of the future for the African diaspora. Sold out, run in partnership with Phenomenal Worlds.", url: "portfolio.html#mothership" }
@@ -166,6 +189,8 @@
           { t: "What it means to love someone" },
           { t: "What's true, and what it means to be right" },
           { t: "Wicked problems", d: "How do you solve a problem with no clear definition and no clean answer?" },
+          { t: "Simulation & simulacra", d: "Copies, reality, and what's real." },
+          { t: "Jungian psychology", d: "The persona, anima and animus, and all that jazz." },
           { t: "History", d: "Ancient history, African history, history in general." },
           { t: "Technology, business & startups", d: "And economics." }
         ] },
@@ -179,15 +204,6 @@
           { t: "American football", d: "Played and did well. Stats to add." },
           { t: "Two silver awards", d: "One for a graphic design brief, one for an ad partnership brief." },
           { t: "Sports day", d: "A lot of medals from a lot of sports days." }
-        ] },
-      { id: "failures", title: "Museum of Failure", intro: "The rest of this site is a highlight reel. Here's what didn't work.",
-        items: [
-          { t: "My first clothing drop flopped", d: "About four sales. Pricey products, to be fair, but I didn't do enough marketing." },
-          { t: "University", d: "I almost didn't finish, and got a lower grade than I know I could have." },
-          { t: "Saracens", d: "Didn't make it past the under-18s." },
-          { t: "The playground business", d: "Selling cookies and Kool-Aid. The margins weren't the best, and I got snitched on. Peak." },
-          { t: "Content", d: "I've made content for a long time but never broken past 3K, and never been consistent with it." },
-          { t: "Unread books", d: "I've bought a lot of books I haven't read. Very embarrassing." }
         ] },
       { id: "side-quests", title: "Side quests", intro: "Other things I've done along the way.",
         items: [
@@ -298,7 +314,16 @@
           { t: "Instagram (design)", m: "@madebyabiola", url: "https://www.instagram.com/madebyabiola/" }
         ] },
       { id: "ask", title: "Ask me", intro: "Send me a question. I'll answer some of them here, publicly.", ask: true,
-        items: [] }
+        items: [] },
+      { id: "failures", title: "Museum of Failure", intro: "The rest of this site is a highlight reel. Here's what didn't work.",
+        items: [
+          { t: "My first clothing drop flopped", d: "About four sales. Pricey products, to be fair, but I didn't do enough marketing." },
+          { t: "University", d: "I almost didn't finish, and got a lower grade than I know I could have." },
+          { t: "Saracens", d: "Didn't make it past the under-18s." },
+          { t: "The playground business", d: "Selling cookies and Kool-Aid. The margins weren't the best, and I got snitched on. Peak." },
+          { t: "Content", d: "I've made content for a long time but never broken past 3K, and never been consistent with it." },
+          { t: "Unread books", d: "I've bought a lot of books I haven't read. Very embarrassing." }
+        ] }
     ];
 
     /* ========================================================= */
@@ -318,6 +343,8 @@
       $("#side").innerHTML = `
         <div class="name">${ME.name}<small>${ME.tagline}</small></div>
         <div class="bio">${ME.bio.map((p) => `<p>${p}</p>`).join("")}</div>
+        <div class="now"><span>Now</span>${ME.now}</div>
+        <details class="prev"><summary>Previously</summary><ul>${ME.previously.map((p) => `<li>${p}</li>`).join("")}</ul></details>
         <div class="links">${ME.links.filter((l) => live(l.url)).map((l) => `<a href="${l.url}"${/^https?:/.test(l.url) ? ' target="_blank" rel="noopener"' : ""}>${l.label}</a>`).join("")}</div>`;
       $("#main").innerHTML = `<div class="index fade">${SECTIONS.map((s) => `
         <section>
