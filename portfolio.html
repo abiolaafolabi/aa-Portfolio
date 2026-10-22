@@ -120,10 +120,10 @@
     .meta div span { display: block; color: var(--muted); }
     .shots { display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); padding: 0 var(--pad); }
     .shots .cover { aspect-ratio: 16 / 9; }
-    .shots .cover:first-child, .shots .cover.wide { grid-column: 1 / -1; }
-    .shots .cover.img { aspect-ratio: auto; }
+    .shots .cover.wide { grid-column: 1 / -1; }
+    .shots .cover.img { aspect-ratio: auto; background: transparent; }
+    .shots { align-items: start; }
     .shots .cover.img img { height: auto; }
-    .shots.pairs .cover.img:first-child { grid-column: auto; }
     .shots + .shots { margin-top: 0; }
     .shots .cover:not(.plain) { background: #f4f4f4; }
     .shots .cover.plain { background: #f4f4f4; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
@@ -131,6 +131,15 @@
     .body p { max-width: 36em; color: #333; }
     .body p + p { margin-top: 20px; }
     .body .lbl { display: block; color: var(--muted); font-size: 13px; margin-bottom: 2px; }
+    .process { margin: 96px var(--pad) 0; padding: clamp(24px, 3vw, 48px); background: #f5f5f3; border-radius: 6px; }
+    .process-head { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; margin-bottom: clamp(20px, 2.4vw, 36px); }
+    .process-head span:last-child { color: var(--muted); }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 24px); }
+    .process figure div { aspect-ratio: 1; background: #fff; border-radius: 4px; display: grid; place-items: center; overflow: hidden; }
+    .process figure img { max-width: 86%; max-height: 86%; object-fit: contain; display: block; }
+    .process figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; }
+    .art img.mark { width: 42%; filter: brightness(0) invert(1); animation: float 7s ease-in-out infinite; }
+    @keyframes float { 50% { transform: translateY(-6%); } }
     .next { display: block; padding: 40px var(--pad) 80px; border-top: 1px solid var(--line); margin: 0 var(--pad); padding-left: 0; padding-right: 0; }
     .next span { color: var(--muted); font-size: 14px; display: block; }
     .next b { font-weight: 500; font-size: clamp(24px, 3vw, 44px); letter-spacing: -0.03em; transition: opacity .2s; }
@@ -146,6 +155,7 @@
     }
     @media (max-width: 720px) {
       .grid, .shots, .body, .project .head, footer { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
       .grid { gap: 36px; }
       .meta { grid-template-columns: 1fr 1fr; }
       .intro { min-height: 56vh; }
@@ -214,13 +224,19 @@
     const WORK = [
       { id: "anixvrs", title: "ANIXVRS", type: "Fashion brand", year: "2020",
         cover: "work/anixvrs/cover.jpg",
-        images: ["work/anixvrs/logo.jpg", "work/anixvrs/posters.jpg", "work/anixvrs/garment.jpg", "work/anixvrs/lookbook.jpg", "work/anixvrs/construction.jpg"],
+        images: ["work/anixvrs/logo.jpg", "work/anixvrs/posters.jpg", "work/anixvrs/lookbook.jpg",
+          { src: "work/anixvrs/tee-1.jpg", wide: false }, { src: "work/anixvrs/tee-2.jpg", wide: false }],
+        process: [
+          { src: "work/anixvrs/construction.jpg", cap: "Logo construction" },
+          { src: "work/anixvrs/icon.jpg", cap: "The icon" },
+          { src: "work/anixvrs/garment.jpg", cap: "Art of Ori puffer, garment development" }
+        ],
         role: "Founder & creative director", client: "Self-initiated", team: "Solo, with suppliers",
         summary: "Where cultural heritage meets streetwear.",
         body: [
           "<span class=\"lbl\">Problem</span>Traditional clothing is hard to wear in modern contexts.",
           "<span class=\"lbl\">Insight</span>Afrofuturism (think Black Panther) mixes cultural heritage and modern aesthetics seamlessly.",
-          "<span class=\"lbl\">Solution</span>Using that visual language, I built a brand that translates cultural heritage into modern streetwear: the identity, art direction, content, and the garments themselves. The Art of Ori puffer jacket uses an Ori pattern from Oshogbo, Nigeria, with a cowrie shell motif and a bold red and white palette. It was the first garment I ever designed.",
+          "<span class=\"lbl\">Solution</span>Using that visual language, I built a brand that translates cultural heritage into modern streetwear: the identity, art direction, content, and the garments themselves, from The New Culture tee to the Art of Ori puffer, which uses an Ori pattern from Oshogbo, Nigeria, with a cowrie shell motif. It was the first garment I ever designed.",
           "<span class=\"lbl\">Outcome</span>A few hundred thousand views, a mailing list of almost 400 people, our first sales, and invitations to four fashion shows."
         ] },
       { id: "phenomenal-worlds", title: "Phenomenal Worlds", type: "Brand identity", year: "2026",
@@ -267,13 +283,23 @@
           "<span class=\"lbl\">Solution</span>Translate complex philosophical ideas into a visually engaging youth magazine."
         ] },
       { id: "aeliza", title: "Aeliza", type: "Fashion design", year: "2025",
-        cover: "work/aeliza/cover.jpg", pairs: true,
-        images: ["work/aeliza/symbol.jpg", "work/aeliza/popup.jpg", "work/aeliza/lockup.jpg", "work/aeliza/window.jpg", "work/aeliza/muhaku.jpg"],
+        cover: "work/aeliza/lookbook-1.jpg", pairs: true,
+        images: ["work/aeliza/lookbook-2.jpg", "work/aeliza/lookbook-3.jpg",
+          "work/aeliza/flat-1.jpg", "work/aeliza/flat-2.jpg", "work/aeliza/lookbook-4.jpg", "work/aeliza/flat-3.jpg",
+          "work/aeliza/popup.jpg", "work/aeliza/lockup.jpg"],
+        process: [
+          { src: "work/aeliza/p-1.jpg", cap: "CS4 sketchbook" },
+          { src: "work/aeliza/p-2.jpg", cap: "" },
+          { src: "work/aeliza/p-3.jpg", cap: "" },
+          { src: "work/aeliza/p-4.jpg", cap: "" },
+          { src: "work/aeliza/p-5.jpg", cap: "" },
+          { src: "work/aeliza/p-6.jpg", cap: "" }
+        ],
         role: "Fashion brand intern", client: "Aeliza, London", team: "With founder Jack Harper",
         summary: "Design for a premium street-luxury clothing brand in London.",
         body: [
-          "I worked part-time with Aeliza's founder, Jack Harper: technical drawings for the CS4 collection, campaign art direction, the design of two published books, and presentation decks.",
-          "These are the window graphics I designed for the Aeliza pop-up, powered by MUHAKU."
+          "I worked part-time with Aeliza's founder, Jack Harper, on the CS4 collection: technical drawings, campaign art direction, the design of two published books, and presentation decks.",
+          "I also designed the window graphics for the Aeliza pop-up in New York, powered by MUHAKU."
         ] },
       { id: "air-company", title: "Air Company", type: "Tech packs", year: "2026",
         cover: "work/air-company/cover.jpg",
@@ -283,21 +309,41 @@
         body: [
           "Production-ready technical drawings for a capsule of tees, socks, quarter-zips, polos and caps, with trims, labels and placement specs."
         ] },
-      { id: "wave", title: "Wave", type: "Mental health tool", year: "2025",
-        cover: "", art: "orbs", c: "#dff3ff", a: "#38bdf8", b: "#a78bfa", fg: "#0b2540",
-        role: "Designer & builder", client: "Self-initiated", team: "With a behavioural scientist",
-        summary: "A mental health tool that helps people keep perspective through life's ups and downs, and respond in healthy ways.",
+      { id: "wave", title: "Wave", type: "App design", year: "2025",
+        cover: "", art: "mark", mark: "work/wave/lockup.svg", c: "#260ec2", fg: "#ffffff",
+        images: ["work/wave/screens.jpg", "work/wave/post-1.jpg", "work/wave/post-3.jpg"],
+        process: [
+          { src: "work/wave/p-1.jpg", cap: "Early mark: the infinity loop" },
+          { src: "work/wave/p-2.jpg", cap: "Mono exploration" },
+          { src: "work/wave/p-3.jpg", cap: "The circle 'w'" },
+          { src: "work/wave/p-4.jpg", cap: "Final mark" },
+          { src: "work/wave/p-5.jpg", cap: "The Wave Model" },
+          { src: "work/wave/p-6.jpg", cap: "Working from first principles" }
+        ],
+        role: "Founder, designer & builder", client: "Self-initiated", team: "With a behavioural scientist",
+        summary: "A journal for noticing how you're doing and finding better ways to respond in the moment.",
         body: [
-          "Wave is the app I've always wanted to build. I'm designing and building it with a behavioural scientist, grounding each part of the experience in how people actually think and cope.",
-          "Currently in progress."
+          "You slide a wave to where you are emotionally, log how you feel in seconds, and see whether you're in a phase of chaos or order, with guidance on how to respond to each.",
+          "I'm designing and building it with a behavioural scientist, grounded in a model of the ups and downs we all move through. Wave is in private testing now. <a href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" style=\"border-bottom:1px solid currentColor\">Join the waitlist →</a>"
         ] },
-      { id: "mothership", title: "Mothership", type: "Event", year: "2026",
-        cover: "", art: "rings", c: "#111111", fg: "#ffffff",
+      { id: "mothership", title: "Mothership", type: "Events & identity", year: "2026",
+        cover: "work/mothership/cover.jpg", pairs: true,
+        images: ["work/mothership/guests.jpg", "work/mothership/serving.jpg",
+          "work/mothership/plates.jpg", "work/mothership/menus.jpg", "work/mothership/candles.jpg", "work/mothership/recap.jpg",
+          "work/mothership/panel-poster.jpg", "work/mothership/callout.jpg"],
+        process: [
+          { src: "work/mothership/p-logo.jpg", cap: "Final mark" },
+          { src: "work/mothership/p-1.jpg", cap: "Wordmark exploration" },
+          { src: "work/mothership/p-2.jpg", cap: "M S / H Q" },
+          { src: "work/mothership/p-3.jpg", cap: "Bold monogram" },
+          { src: "work/mothership/p-4.jpg", cap: "M—S" },
+          { src: "work/mothership/p-sketch.jpg", cap: "First sketches" }
+        ],
         role: "Co-organiser & designer", client: "Mothership × Phenomenal Worlds", team: "In partnership with Phenomenal Worlds",
         summary: "An event platform helping people imagine new visions of the future for the African diaspora.",
         body: [
-          "We ran Mothership in February 2026, in partnership with Phenomenal Worlds: a room of people imagining what the future could look like for the African diaspora.",
-          "It sold out, with around 34 tickets at about £30 each, and everyone had a really good time."
+          "Our first event was an immersive Afrofuturist dinner, A Taste of the Future, in February 2026, run in partnership with Phenomenal Worlds. It sold out, with around 34 tickets at about £30 each.",
+          "I designed the brand and everything around the night: the identity, posters, menus and social. For our second event, an Afrofuturist literature panel talk, I designed the call-out for panellists and the posters."
         ] }
     ];
 
@@ -315,6 +361,7 @@
       }
       const inner = {
         phone: `<div class="art"><div class="phone"><div><b></b><b></b><b></b></div></div></div>`,
+        mark: `<div class="art"><img class="mark" src="${w.mark}" alt="${w.title}" /></div>`,
         orbs: `<div class="art orbs"><i></i><i></i><i></i><span class="word">${w.title}</span></div>`,
         rings: `<div class="art rings"><i></i><i></i><i></i><span class="word">${w.title}</span></div>`,
         marquee: `<div class="art"><div class="marquee"><div>${(w.title + " — ").repeat(8)}</div><div>${(w.title + " — ").repeat(8)}</div></div></div>`,
@@ -350,7 +397,16 @@
       if (i < 0) { document.body.classList.remove("proj-open", "lock"); return; }
       const w = WORK[i], next = WORK[(i + 1) % WORK.length];
       const imgs = w.images || [];
-      const pic = (src) => `<div class="cover img"><img src="${src}" alt="${w.title}" loading="lazy" /></div>`;
+      const split = w.pairs ? 2 : 3;
+      const pic = (e, i) => {
+        const x = typeof e === "string" ? { src: e } : e;
+        const wide = x.wide ?? (!w.pairs && (i === 0 || i === split));
+        return `<div class="cover img${wide ? " wide" : ""}"><img src="${x.src}" alt="${w.title}" loading="lazy" /></div>`;
+      };
+      const process = (w.process || []).length ? `
+        <section class="process"><div class="process-head"><span>Process</span><span>${w.processNote || ""}</span></div>
+          <div class="process-grid">${w.process.map((x) => `<figure><div><img src="${x.src}" alt="" loading="lazy" /></div><figcaption>${x.cap || ""}</figcaption></figure>`).join("")}</div>
+        </section>` : "";
       const cls = w.pairs ? "shots pairs" : "shots";
       proj.innerHTML = `
         <div class="bar" style="position:absolute"><a class="pill" href="#">← All work</a><span></span></div>
@@ -359,9 +415,10 @@
           <div><span>Client</span>${w.client}</div><div><span>Role</span>${w.role}</div>
           <div><span>Type</span>${w.type}</div><div><span>Year</span>${w.year}</div>
         </div>
-        <div class="${cls}">${imgs.length ? imgs.slice(0, w.pairs ? 2 : 3).map(pic).join("") : `${art(w)}<div class="cover plain">Image</div><div class="cover plain">Image</div>`}</div>
+        <div class="${cls}">${imgs.length ? imgs.slice(0, split).map(pic).join("") : `${art(w).replace('class="cover"', 'class="cover wide"')}<div class="cover plain">Image</div><div class="cover plain">Image</div>`}</div>
         <div class="body"><div></div><div>${w.body.map((p) => `<p>${p}</p>`).join("")}</div></div>
-        <div class="${cls}">${imgs.length ? imgs.slice(w.pairs ? 2 : 3).map(pic).join("") : `<div class="cover plain">Image</div>`}</div>
+        <div class="${cls}">${imgs.length ? imgs.slice(split).map((e, i) => pic(e, i + split)).join("") : `<div class="cover plain wide">Image</div>`}</div>
+        ${process}
         <a class="next" href="#${next.id}" style="margin-top:64px"><span>Next project</span><b>${next.title} →</b></a>`;
       proj.scrollTop = 0;
       document.body.classList.add("proj-open", "lock");
