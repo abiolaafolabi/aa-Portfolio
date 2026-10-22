@@ -138,6 +138,29 @@
     });
   }
 
+  /* ---------- logos ---------- */
+  function decorateLogos() {
+    C.logos = C.logos || [];
+    $$("[data-logo]").forEach((tile) => {
+      const k = +tile.dataset.logo;
+      const cap = $("[data-edit-logo]", tile);
+      cap.contentEditable = "true";
+      cap.addEventListener("blur", () => { C.logos[k].name = cap.textContent.trim(); markDirty(); });
+      tools($(".lt", tile), [
+        ["←", () => { move(C.logos, k, k - 1); markDirty(); refreshLogos(); }],
+        ["→", () => { move(C.logos, k, k + 1); markDirty(); refreshLogos(); }],
+        ["Replace", async () => { const [f] = await pick("image/svg+xml,image/png,image/*"); if (!f) return; [C.logos[k].src] = await upload([f], "logos"); refreshLogos(); }],
+        ["Remove", (b) => confirmBtn(b, () => { C.logos.splice(k, 1); markDirty(); refreshLogos(); })]
+      ]);
+      draggable(tile, "logos", k, (from, to) => { move(C.logos, from, to); markDirty(); refreshLogos(); });
+    });
+    const add = document.createElement("button");
+    add.className = "ed-add"; add.textContent = "+ Add logos";
+    add.onclick = async () => { const fs = await pick("image/svg+xml,image/png,image/*", true); if (!fs.length) return; const ps = await upload(fs, "logos"); C.logos.push(...ps.map((src) => ({ src, name: "" }))); refreshLogos(); };
+    $("#logos").after(add);
+  }
+  function refreshLogos() { $$("#logos + .ed-add").forEach((b) => b.remove()); SITE.renderLogos(); decorateLogos(); }
+
   /* ---------- project ---------- */
   function decorateProject() {
     const proj = $("#project");
@@ -209,7 +232,7 @@
   }
 
   /* ---------- re-render ---------- */
-  function decorate() { decorateGrid(); decorateProject(); }
+  function decorate() { decorateGrid(); decorateLogos(); decorateProject(); }
   function refresh() { SITE.renderGrid(); decorate(); }
   function rerender() {
     const proj = $("#project"), y = proj.scrollTop, w = W[+proj.dataset.i];

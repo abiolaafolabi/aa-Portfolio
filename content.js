@@ -136,34 +136,6 @@ window.CONTENT = {
       ]
     },
     {
-      "id": "chase-run-club",
-      "title": "Chase Run Club",
-      "type": "Brand & campaign",
-      "year": "2024",
-      "cover": "work/chase-run-club/logo-black.jpg",
-      "images": [
-        "work/chase-run-club/logo-red.jpg",
-        "work/chase-run-club/cover.jpg",
-        "work/chase-run-club/logo.jpg",
-        "work/chase-run-club/jersey.jpg",
-        "work/chase-run-club/social.jpg",
-        "work/chase-run-club/flags.jpg",
-        {
-          "src": "work/chase-run-club/construction.jpg",
-          "wide": true
-        }
-      ],
-      "role": "Founder & creative director",
-      "client": "Self-initiated",
-      "team": "Solo",
-      "summary": "A men's support group disguised as a run club.",
-      "body": [
-        "<span class=\"lbl\">Problem</span>For some men, discipline is just productive self-harm. And these men are unlikely to open up or go to therapy.",
-        "<span class=\"lbl\">Insight</span>Research and therapists have shown that men open up more naturally during side-by-side activities.",
-        "<span class=\"lbl\">Solution</span>A run club and men's support circle, where pain is processed in motion and men learn to chase goals out of love, not avoidance. Run towards, not away."
-      ]
-    },
-    {
       "id": "aeliza",
       "title": "Aeliza",
       "type": "Fashion design",
@@ -378,6 +350,32 @@ window.CONTENT = {
         "Our first event was an immersive Afrofuturist dinner, A Taste of the Future, in February 2026, run in partnership with Phenomenal Worlds. It sold out, with around 34 tickets at about £30 each.",
         "I designed the brand and everything around the night: the identity, posters, menus and social. For our second event, an Afrofuturist literature panel talk, I designed the call-out for panellists, the posters, and the partnership proposal we pitched to Morley College, where the talk was held."
       ]
+    }
+  ],
+  "logos": [
+    {
+      "src": "work/logos/logo-4.svg",
+      "name": "ANIXVRS"
+    },
+    {
+      "src": "work/logos/logo-3.svg",
+      "name": "Gloucestershire Gargoyles"
+    },
+    {
+      "src": "work/logos/logo-5.svg",
+      "name": "The Stockroom"
+    },
+    {
+      "src": "work/logos/logo-2.svg",
+      "name": ""
+    },
+    {
+      "src": "work/logos/logo-6.svg",
+      "name": ""
+    },
+    {
+      "src": "work/logos/logo-7.svg",
+      "name": ""
     }
   ]
 };

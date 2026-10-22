@@ -126,6 +126,14 @@
     .meta b { font-weight: inherit; }
     .intro em { font-style: normal; }
     .item.is-hidden { opacity: .35; }
+    .logos-label { margin-top: 120px; }
+    .logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px var(--pad); padding: 0 var(--pad); }
+    .logo-tile figure { margin: 0; }
+    .logo-tile .lt { aspect-ratio: 1; background: #f3f3f1; border-radius: 4px; display: grid; place-items: center; overflow: hidden; }
+    .logo-tile .lt img { width: 46%; height: 46%; object-fit: contain; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .logo-tile:hover .lt img { transform: scale(1.06); }
+    .logo-tile figcaption { margin-top: 10px; font-size: 14px; min-height: 1.5em; }
+    @media (max-width: 720px) { .logos { grid-template-columns: 1fr 1fr; gap: 20px 12px; } .logos-label { margin-top: 80px; } }
     .shots .cover.img { aspect-ratio: auto; background: transparent; }
     .shots { align-items: start; }
     .shots .cover.img img, .shots .cover.img video { height: auto; }
@@ -203,6 +211,9 @@
   <div class="label reveal">Selected work ↓</div>
   <main class="grid" id="grid"></main>
 
+  <div class="label reveal logos-label">Logos</div>
+  <section class="logos" id="logos"></section>
+
   <footer>
     <div class="big reveal">Have something in mind?<br /><a id="mail" href="#"></a></div>
     <div class="fine"><span>© <span id="year"></span> Abiola Afolabi</span><a href="index.html">More about me →</a></div>
@@ -271,6 +282,17 @@
       </a>`).join("");
     }
 
+    // Logos
+    function renderLogos() {
+      const L = window.CONTENT.logos || [];
+      $("#logos").innerHTML = L.map((l, k) => `
+        <div class="logo-tile reveal${EDITING ? " in" : ""}" data-logo="${k}"><figure>
+          <div class="lt"><img src="${l.src}" alt="${l.name || "Logo"}" loading="lazy" /></div>
+          <figcaption data-edit-logo="${k}">${l.name || ""}</figcaption>
+        </figure></div>`).join("");
+      document.querySelectorAll(".logos-label").forEach((el) => { el.hidden = !L.length && !EDITING; });
+    }
+
     // Info panel
     function renderInfo() {
     $("#infoBody").innerHTML = `
@@ -329,8 +351,8 @@
       openProject(id);
       if (!WORK.some((w) => w.id === id)) document.title = "Abiola Afolabi — Work";
     }
-    renderIntro(); renderGrid(); renderInfo();
-    window.SITE = { renderIntro, renderGrid, renderInfo, openProject, route, art };
+    renderIntro(); renderGrid(); renderLogos(); renderInfo();
+    window.SITE = { renderIntro, renderGrid, renderLogos, renderInfo, openProject, route, art };
     window.addEventListener("hashchange", route);
     document.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
