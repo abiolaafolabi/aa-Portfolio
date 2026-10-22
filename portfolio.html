@@ -123,7 +123,7 @@
     .shots .cover.wide { grid-column: 1 / -1; }
     .shots .cover.img { aspect-ratio: auto; background: transparent; }
     .shots { align-items: start; }
-    .shots .cover.img img { height: auto; }
+    .shots .cover.img img, .shots .cover.img video { height: auto; }
     .shots + .shots { margin-top: 0; }
     .shots .cover:not(.plain) { background: #f4f4f4; }
     .shots .cover.plain { background: #f4f4f4; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
@@ -148,14 +148,14 @@
     .logo-block .lockup img { width: 62%; height: auto; animation: breathe 6s ease-in-out infinite; }
     .logo-block .lockup img.word { width: 100%; animation: none; }
     @keyframes breathe { 50% { transform: scale(1.06); } }
-    .cover .art img.logomark { width: 34%; height: auto; object-fit: contain; animation: breathe 6s ease-in-out infinite; }
-    .art .pwmark { width: 33%; color: var(--fg); overflow: visible; }
+    .cover .art img.logomark { width: 28%; height: auto; object-fit: contain; animation: breathe 6s ease-in-out infinite; }
+    .art .pwmark { width: 28%; color: var(--fg); overflow: visible; }
     .pwmark .pp { animation: drift ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
     @keyframes drift { from { transform: translate(0, 0) rotate(0); } to { transform: translate(var(--x), var(--y)) rotate(var(--r)); } }
-    .art .msmark { width: 31%; color: var(--fg); overflow: visible; }
+    .art .msmark { width: 26%; color: var(--fg); overflow: visible; }
     .msmark .pb { animation: pebble 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
     @keyframes pebble { 50% { transform: translateY(-5%) scale(1.04); } }
-    .art .wavelogo { width: 46%; color: var(--fg); overflow: visible; }
+    .art .wavelogo { width: 40%; color: var(--fg); overflow: visible; }
     .wavelogo .w1, .wavelogo .w2 { animation: swell 5s ease-in-out infinite; transform-box: fill-box; }
     .wavelogo .w2 { animation-delay: -2.5s; }
     @keyframes swell { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-3%, -9%); } }
@@ -309,13 +309,25 @@
           "I worked part-time with Aeliza's founder, Jack Harper, on the CS4 collection: technical drawings, campaign art direction, the design of two published books, and presentation decks.",
           "I also designed the window graphics for the Aeliza pop-up in New York, powered by MUHAKU."
         ] },
-      { id: "air-company", title: "Air Company", type: "Tech packs", year: "2026",
-        cover: "work/air-company/cover.jpg",
-        images: ["work/air-company/socks.jpg", "work/air-company/quarter-zip.jpg", "work/air-company/cap.jpg", "work/air-company/label.jpg", "work/air-company/polo.jpg"],
+      { id: "air-company", title: "Air Company", type: "Capsule & tech packs", year: "2026",
+        cover: "work/air-company/rack.mp4", pairs: true,
+        images: ["work/air-company/glove.jpg", "work/air-company/hoodie.jpg",
+          "work/air-company/label-film.mp4", "work/air-company/hood.mp4",
+          "work/air-company/socks-photo.jpg", "work/air-company/tee.jpg",
+          "work/air-company/cap-photo.jpg", "work/air-company/rack.mp4"],
+        process: [
+          { src: "work/air-company/cover.jpg", cap: "Tee tech pack" },
+          { src: "work/air-company/socks.jpg", cap: "Socks" },
+          { src: "work/air-company/quarter-zip.jpg", cap: "Quarter-zip" },
+          { src: "work/air-company/cap.jpg", cap: "Cap" },
+          { src: "work/air-company/polo.jpg", cap: "Polo" },
+          { src: "work/air-company/label.jpg", cap: "Woven label" }
+        ],
         role: "Technical designer", client: "Air Company, with Jack Harper", team: "With Jack Harper",
         summary: "Tech packs for the Air Company capsule.",
         body: [
-          "Production-ready technical drawings for a capsule of tees, socks, quarter-zips, polos and caps, with trims, labels and placement specs."
+          "Production-ready tech packs for the Air Company capsule: tees, hoodies, socks, quarter-zips, polos and caps, with trims, woven labels and placement specs.",
+          "From flat drawings to finished pieces: the capsule as it was made and shot."
         ] },
       { id: "wave", title: "Wave", type: "App design", year: "2025",
         cover: "", art: "wave", c: "#260ec2", fg: "#ffffff",
@@ -421,6 +433,7 @@
         const x = typeof e === "string" ? { src: e } : e;
         const wide = x.wide ?? (!w.pairs && (i === 0 || i === split));
         if (x.bg) return `<div class="cover logo-block${wide ? " wide" : ""}" style="background:${x.bg}"><div class="lockup"><img src="${x.src}" alt="${w.title} logo" />${x.word ? `<img class="word" src="${x.word}" alt="" />` : ""}</div></div>`;
+        if (/\.(mp4|webm|mov)$/i.test(x.src)) return `<div class="cover img${wide ? " wide" : ""}"><video src="${x.src}" autoplay muted loop playsinline></video></div>`;
         return `<div class="cover img${wide ? " wide" : ""}"><img src="${x.src}" alt="${w.title}" loading="lazy" /></div>`;
       };
       const process = (w.process || []).length ? `
