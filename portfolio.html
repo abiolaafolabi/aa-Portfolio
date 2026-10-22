@@ -312,7 +312,7 @@
           "I also designed the window graphics for the Aeliza pop-up in New York, powered by MUHAKU."
         ] },
       { id: "air-company", title: "Air Company", type: "Capsule & tech packs", year: "2026",
-        cover: "work/air-company/rack.mp4", overlay: "work/air-company/mark-white.png", pairs: true,
+        cover: "work/air-company/rack.mp4", overlay: "work/air-company/wordmark-white.png", overlayWidth: "30%", pairs: true,
         images: ["work/air-company/glove.jpg", "work/air-company/hoodie.jpg",
           "work/air-company/label-film.mp4", "work/air-company/hood.mp4",
           "work/air-company/socks-photo.jpg", "work/air-company/tee.jpg",
@@ -332,7 +332,7 @@
           "From flat drawings to finished pieces: the capsule as it was made and shot."
         ] },
       { id: "wave", title: "Wave", type: "App design", year: "2025",
-        cover: "", art: "wave", c: "#260ec2", fg: "#ffffff",
+        cover: "", art: "wave", c: "#000000", fg: "#ffffff",
         images: ["work/wave/screens.jpg", "work/wave/post-1.jpg", "work/wave/post-3.jpg", "work/wave/brand.jpg"],
         process: [
           { src: "work/wave/p-1.jpg", cap: "Early mark: the infinity loop" },
@@ -381,7 +381,7 @@
         const media = /\.(mp4|webm|mov)$/i.test(w.cover)
           ? `<video src="${w.cover}" autoplay muted loop playsinline></video>`
           : `<img src="${w.cover}" alt="${w.title}" loading="lazy" />`;
-        return `<div class="cover" style="${vars}">${media}${w.overlay ? `<div class="overlay"><img src="${w.overlay}" alt="${w.title} logo" /></div>` : ""}</div>`;
+        return `<div class="cover" style="${vars}">${media}${w.overlay ? `<div class="overlay"><img src="${w.overlay}" alt="${w.title} logo"${w.overlayWidth ? ` style="width:${w.overlayWidth}"` : ""} /></div>` : ""}</div>`;
       }
       const inner = {
         phone: `<div class="art"><div class="phone"><div><b></b><b></b><b></b></div></div></div>`,
