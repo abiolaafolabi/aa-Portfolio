@@ -112,6 +112,14 @@
       after(d.index, index);
     });
   }
+  function plainPaste(e) { // keep pasted text clean: no fonts, colours or spacing from other apps
+    e.preventDefault();
+    document.execCommand("insertText", false, (e.clipboardData || window.clipboardData).getData("text/plain"));
+  }
+  function clean(html) {
+    return html.replace(/<(?!\/?(span class="lbl"|span|a |a>|\/a|br|b>|\/b|em|\/em|i>|\/i))[^>]*>/g, "")
+      .replace(/<span(?! class="lbl")[^>]*>(.*?)<\/span>/g, "$1").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+  }
   function setPath(obj, path, val) {
     const keys = path.split("."); let o = obj;
     while (keys.length > 1) o = o[keys.shift()];
@@ -123,7 +131,8 @@
     const intro = $("[data-edit-global=intro]");
     if (intro) {
       intro.contentEditable = "true";
-      intro.oninput = () => { C.intro = intro.innerHTML.trim(); markDirty(); };
+      intro.addEventListener("paste", plainPaste);
+      intro.oninput = () => { C.intro = clean(intro.innerHTML); markDirty(); };
     }
     $$("#grid .item").forEach((card) => {
       const i = +card.dataset.i, w = W[i];
@@ -144,7 +153,7 @@
     $$("[data-logo]").forEach((tile) => {
       const k = +tile.dataset.logo;
       const cap = $("[data-edit-logo]", tile);
-      cap.contentEditable = "true";
+      cap.contentEditable = "true"; cap.addEventListener("paste", plainPaste);
       cap.addEventListener("blur", () => { C.logos[k].name = cap.textContent.trim(); markDirty(); });
       tools($(".lt", tile), [
         ["←", () => { move(C.logos, k, k - 1); markDirty(); refreshLogos(); }],
@@ -170,9 +179,10 @@
 
     $$("[data-edit]", proj).forEach((el) => {
       el.contentEditable = "true";
+      el.addEventListener("paste", plainPaste);
       el.addEventListener("click", (e) => e.preventDefault());
       el.addEventListener("blur", () => {
-        const path = el.dataset.edit, val = el.innerHTML.trim();
+        const path = el.dataset.edit, val = clean(el.innerHTML);
         if (path.startsWith("body.") && !el.textContent.trim()) { w.body.splice(+path.split(".")[1], 1); markDirty(); return rerender(); }
         setPath(w, path, val); markDirty();
         if (["title", "type", "year"].includes(path)) SITE.renderGrid(), decorateGrid();

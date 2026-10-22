@@ -17,6 +17,7 @@ PORT = 4321
 
 try:
     from PIL import Image, ImageOps
+    Image.MAX_IMAGE_PIXELS = None  # large exports are fine; they get shrunk below
 except ImportError:  # images are saved as-is without Pillow
     Image = None
 

@@ -242,7 +242,7 @@ window.CONTENT = {
       "team": "With Jack Harper",
       "summary": "Tech packs for the Air Company capsule.",
       "body": [
-        "Production-ready m<span style=\"letter-spacing: -0.075px;\">easurements on&nbsp;</span>tech packs for the Air Company capsule: tees, hoodies, socks, quarter-zips, polos and caps, with trims, woven labels and placement specs."
+        "Production-ready measurements on tech packs for the Air Company capsule: tees, hoodies, socks, quarter-zips, polos and caps, with trims, woven labels and placement specs."
       ]
     },
     {
