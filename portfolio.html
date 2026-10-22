@@ -123,6 +123,9 @@
     .shots { display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); padding: 0 var(--pad); }
     .shots .cover { aspect-ratio: 16 / 9; }
     .shots .cover.wide { grid-column: 1 / -1; }
+    .meta b { font-weight: inherit; }
+    .intro em { font-style: normal; }
+    .item.is-hidden { opacity: .35; }
     .shots .cover.img { aspect-ratio: auto; background: transparent; }
     .shots { align-items: start; }
     .shots .cover.img img, .shots .cover.img video { height: auto; }
@@ -194,7 +197,7 @@
   </div>
 
   <section class="intro">
-    <p class="reveal"><span>Abiola Afolabi</span> is a multidisciplinary designer and strategist building brands that think and feel.</p>
+    <p class="reveal" id="intro"></p>
   </section>
 
   <div class="label reveal">Selected work ↓</div>
@@ -213,161 +216,11 @@
 
   <article class="project" id="project" aria-live="polite"></article>
 
+  <script src="content.js"></script>
   <script>
-    /* =========================================================
-       YOUR CONTENT. Everything below is placeholder copy —
-       swap in the real details for each project.
+    const ME = window.CONTENT.me;
+    const WORK = window.CONTENT.work;
 
-       cover: leave empty for an animated placeholder, or point
-       to an image ("work/annexpress.jpg") or a looping video
-       ("work/annexpress.mp4") to animate the real thing.
-       ========================================================= */
-    const ME = {
-      email: "abiolamd2004@gmail.com",
-      bio: [
-        "Abiola Afolabi is a multidisciplinary designer and strategist building brands that think and feel.",
-        "I work across fashion, identity, products and events, using strategy to get to the core of a problem before designing.",
-        "BA Graphic Design, University of Gloucestershire. Open to work."
-      ],
-      services: [
-        "Brand strategy", "Identity design", "Art direction", "Fashion & tech packs", "Product & event design"
-      ],
-      clients: ["Aeliza", "Air Company", "Phenomenal Worlds", "The&Partnership", "Oakwood", "Brief Cases", "Dalziel & Pow"],
-      links: [
-        { label: "Instagram", url: "https://www.instagram.com/madebyabiola/" },
-        { label: "LinkedIn", url: "#" },
-        { label: "TikTok", url: "#" }
-      ]
-    };
-
-    const WORK = [
-      { id: "anixvrs", title: "ANIXVRS", type: "Fashion brand", year: "2020",
-        cover: "", art: "logo", logo: "work/anixvrs/logo-white.png", c: "#000000", fg: "#ffffff",
-        images: ["work/anixvrs/cover.jpg", "work/anixvrs/posters.jpg", "work/anixvrs/lookbook.jpg",
-          { src: "work/anixvrs/tee-1.jpg", wide: false }, { src: "work/anixvrs/tee-2.jpg", wide: false }],
-        process: [
-          { src: "work/anixvrs/construction.jpg", cap: "Logo construction" },
-          { src: "work/anixvrs/icon-black.png", cap: "The icon" },
-          { src: "work/anixvrs/wordmark-black.png", cap: "The wordmark" },
-          { src: "work/anixvrs/garment.jpg", cap: "Art of Ori puffer, garment development" }
-        ],
-        role: "Founder & creative director", client: "Self-initiated", team: "Solo, with suppliers",
-        summary: "Where cultural heritage meets streetwear.",
-        body: [
-          "<span class=\"lbl\">Problem</span>Traditional clothing is hard to wear in modern contexts.",
-          "<span class=\"lbl\">Insight</span>Afrofuturism (think Black Panther) mixes cultural heritage and modern aesthetics seamlessly.",
-          "<span class=\"lbl\">Solution</span>Using that visual language, I built a brand that translates cultural heritage into modern streetwear: the identity, art direction, content, and the garments themselves, from The New Culture tee to the Art of Ori puffer, which uses an Ori pattern from Oshogbo, Nigeria, with a cowrie shell motif. It was the first garment I ever designed.",
-          "<span class=\"lbl\">Outcome</span>A few hundred thousand views, a mailing list of almost 400 people, our first sales, and invitations to four fashion shows."
-        ] },
-      { id: "phenomenal-worlds", title: "Phenomenal Worlds", type: "Brand identity", year: "2026",
-        cover: "", art: "pw", c: "#000000", fg: "#ffffff",
-        images: [
-          "work/phenomenal-worlds/kit-of-parts.jpg", "work/phenomenal-worlds/one-page.jpg", "work/phenomenal-worlds/social.jpg",
-          "work/phenomenal-worlds/campaign.jpg", "work/phenomenal-worlds/posts.jpg", "work/phenomenal-worlds/colour.jpg"
-        ],
-        process: [
-          { src: "work/phenomenal-worlds/logo-full.svg", cap: "Full logo" },
-          { src: "work/phenomenal-worlds/mark.svg", cap: "The mark: an assembly of phenomena" },
-          { src: "work/phenomenal-worlds/logo.jpg", cap: "Clear space" },
-          { src: "work/phenomenal-worlds/combinations.jpg", cap: "Colour combinations" }
-        ],
-        role: "Identity designer", client: "Phenomenal Worlds", team: "Freelance",
-        summary: "Identity for a cultural research and strategy consultancy that analyses how meaning-making shapes behaviour.",
-        body: [
-          "<span class=\"lbl\">Brief</span>Phenomenal Worlds is a cultural consultancy that helps brands engage local communities authentically, through events and a values-based approach rather than purely data or trends.",
-          "<span class=\"lbl\">Insight</span>The identity is built on the idea of distinct, overlapping worlds. The logo is an assembly of phenomena that might make up someone's experience.",
-          "<span class=\"lbl\">Outcome</span>An identity that reflects the expansive nature of experience and the consultancy's positioning: fun yet mature, surreal but intentional. A bold semi-serif title font and calm sans-serif body, with an energetic colour palette and contemporary imagery."
-        ] },
-      { id: "chase-run-club", title: "Chase Run Club", type: "Brand & campaign", year: "2024",
-        cover: "work/chase-run-club/logo-black.jpg",
-        images: ["work/chase-run-club/logo-red.jpg", "work/chase-run-club/cover.jpg", "work/chase-run-club/logo.jpg",
-          "work/chase-run-club/jersey.jpg", "work/chase-run-club/social.jpg", "work/chase-run-club/flags.jpg",
-          { src: "work/chase-run-club/construction.jpg", wide: true }],
-        role: "Founder & creative director", client: "Self-initiated", team: "Solo",
-        summary: "A men's support group disguised as a run club.",
-        body: [
-          "<span class=\"lbl\">Problem</span>For some men, discipline is just productive self-harm. And these men are unlikely to open up or go to therapy.",
-          "<span class=\"lbl\">Insight</span>Research and therapists have shown that men open up more naturally during side-by-side activities.",
-          "<span class=\"lbl\">Solution</span>A run club and men's support circle, where pain is processed in motion and men learn to chase goals out of love, not avoidance. Run towards, not away."
-        ] },
-      { id: "aeliza", title: "Aeliza", type: "Fashion design", year: "2025",
-        cover: "work/aeliza/lookbook-1.jpg", pairs: true,
-        images: ["work/aeliza/lookbook-2.jpg", "work/aeliza/lookbook-3.jpg",
-          "work/aeliza/flat-1.jpg", "work/aeliza/flat-2.jpg", "work/aeliza/lookbook-4.jpg", "work/aeliza/flat-3.jpg",
-          "work/aeliza/popup.jpg", "work/aeliza/lockup.jpg"],
-        process: [
-          { src: "work/aeliza/p-1.jpg", cap: "CS4 sketchbook" },
-          { src: "work/aeliza/p-2.jpg", cap: "" },
-          { src: "work/aeliza/p-3.jpg", cap: "" },
-          { src: "work/aeliza/p-4.jpg", cap: "" },
-          { src: "work/aeliza/p-5.jpg", cap: "" },
-          { src: "work/aeliza/p-6.jpg", cap: "" }
-        ],
-        role: "Fashion brand intern", client: "Aeliza, London", team: "With founder Jack Harper",
-        summary: "Design for a premium street-luxury clothing brand in London.",
-        body: [
-          "I worked part-time with Aeliza's founder, Jack Harper, on the CS4 collection: technical drawings, campaign art direction, the design of two published books, and presentation decks.",
-          "I also designed the window graphics for the Aeliza pop-up in New York, powered by MUHAKU."
-        ] },
-      { id: "air-company", title: "Air Company", type: "Capsule & tech packs", year: "2026",
-        cover: "work/air-company/rack.mp4", overlay: "work/air-company/wordmark-white.png", overlayWidth: "30%", pairs: true,
-        images: ["work/air-company/glove.jpg", "work/air-company/hoodie.jpg",
-          "work/air-company/label-film.mp4", "work/air-company/hood.mp4",
-          "work/air-company/socks-photo.jpg", "work/air-company/tee.jpg",
-          "work/air-company/cap-photo.jpg", "work/air-company/rack.mp4"],
-        process: [
-          { src: "work/air-company/cover.jpg", cap: "Tee tech pack" },
-          { src: "work/air-company/socks.jpg", cap: "Socks" },
-          { src: "work/air-company/quarter-zip.jpg", cap: "Quarter-zip" },
-          { src: "work/air-company/cap.jpg", cap: "Cap" },
-          { src: "work/air-company/polo.jpg", cap: "Polo" },
-          { src: "work/air-company/label.jpg", cap: "Woven label" }
-        ],
-        role: "Technical designer", client: "Air Company, with Jack Harper", team: "With Jack Harper",
-        summary: "Tech packs for the Air Company capsule.",
-        body: [
-          "Production-ready tech packs for the Air Company capsule: tees, hoodies, socks, quarter-zips, polos and caps, with trims, woven labels and placement specs.",
-          "From flat drawings to finished pieces: the capsule as it was made and shot."
-        ] },
-      { id: "wave", title: "Wave", type: "App design", year: "2025",
-        cover: "", art: "wave", c: "#000000", fg: "#ffffff",
-        images: ["work/wave/screens.jpg", "work/wave/post-1.jpg", "work/wave/post-3.jpg", "work/wave/brand.jpg"],
-        process: [
-          { src: "work/wave/p-1.jpg", cap: "Early mark: the infinity loop" },
-          { src: "work/wave/p-2.jpg", cap: "Mono exploration" },
-          { src: "work/wave/p-3.jpg", cap: "The circle 'w'" },
-          { src: "work/wave/mark.svg", cap: "Final mark" },
-          { src: "work/wave/p-5.jpg", cap: "The Wave Model" },
-          { src: "work/wave/p-6.jpg", cap: "Working from first principles" }
-        ],
-        role: "Founder, designer & builder", client: "Self-initiated", team: "With a behavioural scientist",
-        summary: "A journal for noticing how you're doing and finding better ways to respond in the moment.",
-        body: [
-          "A compass for life. Wave gives you back the one thing that gets lost during chaos: perspective. When you see emotional transitions as normal, temporary and useful, you bounce back faster.",
-          "You slide a wave to where you are emotionally, log how you feel in seconds, and see whether you're in a phase of chaos or order, with guidance on how to respond to each. The mission is simple: to make sure everyone can say, \u201cNo matter what, I\u2019ll be okay.\u201d",
-          "I'm designing and building it with a behavioural scientist, grounded in a model of the ups and downs we all move through. Wave is in private testing now. <a href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" style=\"border-bottom:1px solid currentColor\">Join the waitlist →</a>"
-        ] },
-      { id: "mothership", title: "Mothership", type: "Events & identity", year: "2026",
-        cover: "", art: "ms", c: "#0b0b0c", fg: "#ffffff", pairs: true,
-        images: ["work/mothership/guests.jpg", "work/mothership/serving.jpg",
-          "work/mothership/cover.jpg", "work/mothership/candles.jpg", "work/mothership/plates.jpg", "work/mothership/menus.jpg",
-          { src: "work/mothership/proposal.jpg", wide: true },
-          "work/mothership/panel-poster.jpg", "work/mothership/callout.jpg"],
-        process: [
-          { src: "work/mothership/mark.svg", cap: "Final mark" },
-          { src: "work/mothership/stacked.svg", cap: "Stacked lockup" },
-          { src: "work/mothership/p-logo.jpg", cap: "Earlier direction" },
-          { src: "work/mothership/p-marks.jpg", cap: "Mark explorations" },
-          { src: "work/mothership/p-type.jpg", cap: "Wordmark tests" },
-          { src: "work/mothership/p-sketch2.jpg", cap: "Early sketches" }
-        ],
-        role: "Co-organiser & designer", client: "Mothership × Phenomenal Worlds", team: "In partnership with Phenomenal Worlds",
-        summary: "An event platform helping people imagine new visions of the future for the African diaspora.",
-        body: [
-          "Our first event was an immersive Afrofuturist dinner, A Taste of the Future, in February 2026, run in partnership with Phenomenal Worlds. It sold out, with around 34 tickets at about £30 each.",
-          "I designed the brand and everything around the night: the identity, posters, menus and social. For our second event, an Afrofuturist literature panel talk, I designed the call-out for panellists, the posters, and the partnership proposal we pitched to Morley College, where the talk was held."
-        ] }
-    ];
 
     /* ========================================================= */
 
@@ -402,20 +255,31 @@
       return `<div class="cover" style="${vars}">${inner}</div>`;
     }
 
+    const EDITING = /[?&]edit\b/.test(location.search);
+
+    // Intro
+    function renderIntro() {
+      $("#intro").innerHTML = `<span>Abiola Afolabi</span> <em data-edit-global="intro">${window.CONTENT.intro}</em>`;
+    }
+
     // Grid
-    $("#grid").innerHTML = WORK.map((w) => `
-      <a class="item reveal" href="#${w.id}">
+    function renderGrid() {
+      $("#grid").innerHTML = WORK.map((w, i) => (w.hidden && !EDITING) ? "" : `
+      <a class="item reveal${EDITING ? " in" : ""}${w.hidden ? " is-hidden" : ""}" href="#${w.id}" data-i="${i}">
         ${art(w)}
         <div class="cap">${w.title} <span>• ${w.type}, ${w.year}</span></div>
       </a>`).join("");
+    }
 
     // Info panel
+    function renderInfo() {
     $("#infoBody").innerHTML = `
       ${ME.bio.map((p) => `<p>${p}</p>`).join("")}
       <h4>Services</h4><ul>${ME.services.map((s) => `<li>${s}</li>`).join("")}</ul>
       <h4>Clients</h4><ul>${ME.clients.map((s) => `<li>${s}</li>`).join("")}</ul>
       <h4>Contact</h4><ul><li><a href="mailto:${ME.email}">${ME.email}</a></li>${ME.links.filter((l) => l.url && l.url !== "#").map((l) => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join("")}</ul>
       <h4>Elsewhere</h4><ul><li><a href="index.html">More about me</a></li></ul>`;
+    }
     const setInfo = (on) => { document.body.classList.toggle("info-open", on); };
     $("#infoBtn").onclick = () => setInfo(true);
     $("#infoClose").onclick = () => setInfo(false);
@@ -432,28 +296,30 @@
       const pic = (e, i) => {
         const x = typeof e === "string" ? { src: e } : e;
         const wide = x.wide ?? (!w.pairs && (i === 0 || i === split));
-        if (x.bg) return `<div class="cover logo-block${wide ? " wide" : ""}" style="background:${x.bg}"><div class="lockup"><img src="${x.src}" alt="${w.title} logo" />${x.word ? `<img class="word" src="${x.word}" alt="" />` : ""}</div></div>`;
-        if (/\.(mp4|webm|mov)$/i.test(x.src)) return `<div class="cover img${wide ? " wide" : ""}"><video src="${x.src}" autoplay muted loop playsinline></video></div>`;
-        return `<div class="cover img${wide ? " wide" : ""}"><img src="${x.src}" alt="${w.title}" loading="lazy" /></div>`;
+        const tag = ` data-img="${i}"`;
+        if (x.bg) return `<div class="cover logo-block${wide ? " wide" : ""}"${tag} style="background:${x.bg}"><div class="lockup"><img src="${x.src}" alt="${w.title} logo" />${x.word ? `<img class="word" src="${x.word}" alt="" />` : ""}</div></div>`;
+        if (/\.(mp4|webm|mov)$/i.test(x.src)) return `<div class="cover img${wide ? " wide" : ""}"${tag}><video src="${x.src}" autoplay muted loop playsinline></video></div>`;
+        return `<div class="cover img${wide ? " wide" : ""}"${tag}><img src="${x.src}" alt="${w.title}" loading="lazy" /></div>`;
       };
       const process = (w.process || []).length ? `
         <section class="process"><div class="process-head"><span>Process</span><span>${w.processNote || ""}</span></div>
-          <div class="process-grid"${w.process.length === 4 ? ' style="grid-template-columns:1fr 1fr"' : ""}>${w.process.map((x) => `<figure><div><img src="${x.src}" alt="" loading="lazy" /></div><figcaption>${x.cap || ""}</figcaption></figure>`).join("")}</div>
+          <div class="process-grid"${w.process.length === 4 ? ' style="grid-template-columns:1fr 1fr"' : ""}>${w.process.map((x, k) => `<figure data-proc="${k}"><div><img src="${x.src}" alt="" loading="lazy" /></div><figcaption data-edit="process.${k}.cap">${x.cap || ""}</figcaption></figure>`).join("")}</div>
         </section>` : "";
       const cls = w.pairs ? "shots pairs" : "shots";
       proj.innerHTML = `
         <div class="bar" style="position:absolute"><a class="pill" href="#">← All work</a><span></span></div>
-        <div class="hero">${art(w)}</div>
-        <div class="head"><h1>${w.title}</h1><p class="sum">${w.summary}</p></div>
+        <div class="hero" data-hero>${art(w)}</div>
+        <div class="head"><h1 data-edit="title">${w.title}</h1><p class="sum" data-edit="summary">${w.summary}</p></div>
         <div class="meta">
-          <div><span>Client</span>${w.client}</div><div><span>Role</span>${w.role}</div>
-          <div><span>Type</span>${w.type}</div><div><span>Year</span>${w.year}</div>
+          <div><span>Client</span><b data-edit="client">${w.client}</b></div><div><span>Role</span><b data-edit="role">${w.role}</b></div>
+          <div><span>Type</span><b data-edit="type">${w.type}</b></div><div><span>Year</span><b data-edit="year">${w.year}</b></div>
         </div>
         <div class="${cls}">${imgs.length ? imgs.slice(0, split).map(pic).join("") : `${art(w).replace('class="cover"', 'class="cover wide"')}<div class="cover plain">Image</div><div class="cover plain">Image</div>`}</div>
-        <div class="body"><div></div><div>${w.body.map((p) => `<p>${p}</p>`).join("")}</div></div>
+        <div class="body"><div></div><div>${w.body.map((p, k) => `<p data-edit="body.${k}">${p}</p>`).join("")}</div></div>
         <div class="${cls}">${imgs.length ? imgs.slice(split).map((e, i) => pic(e, i + split)).join("") : `<div class="cover plain wide">Image</div>`}</div>
         ${process}
         <a class="next" href="#${next.id}" style="margin-top:64px"><span>Next project</span><b>${next.title} →</b></a>`;
+      proj.dataset.i = i;
       proj.scrollTop = 0;
       document.body.classList.add("proj-open", "lock");
       document.title = `${w.title} — Abiola Afolabi`;
@@ -463,6 +329,8 @@
       openProject(id);
       if (!WORK.some((w) => w.id === id)) document.title = "Abiola Afolabi — Work";
     }
+    renderIntro(); renderGrid(); renderInfo();
+    window.SITE = { renderIntro, renderGrid, renderInfo, openProject, route, art };
     window.addEventListener("hashchange", route);
     document.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
@@ -478,6 +346,7 @@
     $("#mail").href = "mailto:" + ME.email;
     $("#mail").textContent = ME.email;
     $("#year").textContent = new Date().getFullYear();
+    if (EDITING) { const sc = document.createElement("script"); sc.src = "editor.js"; document.body.appendChild(sc); }
   </script>
 </body>
 </html>
