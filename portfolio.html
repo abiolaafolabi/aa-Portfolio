@@ -148,11 +148,11 @@
     .logo-block .lockup img { width: 62%; height: auto; animation: breathe 6s ease-in-out infinite; }
     .logo-block .lockup img.word { width: 100%; animation: none; }
     @keyframes breathe { 50% { transform: scale(1.06); } }
-    .cover .art img.logomark { width: 21%; height: auto; object-fit: contain; animation: breathe 6s ease-in-out infinite; }
-    .art .pwmark { width: 26%; color: var(--fg); overflow: visible; }
+    .cover .art img.logomark { width: 34%; height: auto; object-fit: contain; animation: breathe 6s ease-in-out infinite; }
+    .art .pwmark { width: 33%; color: var(--fg); overflow: visible; }
     .pwmark .pp { animation: drift ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
     @keyframes drift { from { transform: translate(0, 0) rotate(0); } to { transform: translate(var(--x), var(--y)) rotate(var(--r)); } }
-    .art .msmark { width: 24%; color: var(--fg); overflow: visible; }
+    .art .msmark { width: 31%; color: var(--fg); overflow: visible; }
     .msmark .pb { animation: pebble 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
     @keyframes pebble { 50% { transform: translateY(-5%) scale(1.04); } }
     .art .wavelogo { width: 46%; color: var(--fg); overflow: visible; }
@@ -190,7 +190,7 @@
   </div>
 
   <section class="intro">
-    <p class="reveal"><span>Abiola Afolabi</span> is a multidisciplinary designer and strategist building brands that think and feel — across fashion, identity, products and events.</p>
+    <p class="reveal"><span>Abiola Afolabi</span> is a multidisciplinary designer and strategist building brands that think and feel.</p>
   </section>
 
   <div class="label reveal">Selected work ↓</div>
@@ -279,8 +279,10 @@
           "<span class=\"lbl\">Outcome</span>An identity that reflects the expansive nature of experience and the consultancy's positioning: fun yet mature, surreal but intentional. A bold semi-serif title font and calm sans-serif body, with an energetic colour palette and contemporary imagery."
         ] },
       { id: "chase-run-club", title: "Chase Run Club", type: "Brand & campaign", year: "2024",
-        cover: "work/chase-run-club/cover.jpg",
-        images: ["work/chase-run-club/logo.jpg", "work/chase-run-club/construction.jpg", "work/chase-run-club/social.jpg", "work/chase-run-club/jersey.jpg", "work/chase-run-club/flags.jpg"],
+        cover: "work/chase-run-club/logo-red.jpg",
+        images: ["work/chase-run-club/logo-black.jpg", "work/chase-run-club/cover.jpg", "work/chase-run-club/logo.jpg",
+          "work/chase-run-club/jersey.jpg", "work/chase-run-club/social.jpg", "work/chase-run-club/flags.jpg",
+          { src: "work/chase-run-club/construction.jpg", wide: true }],
         role: "Founder & creative director", client: "Self-initiated", team: "Solo",
         summary: "A men's support group disguised as a run club.",
         body: [
