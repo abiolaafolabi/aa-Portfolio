@@ -1,12 +1,11 @@
 /* Site content. Edited by hand or by edit mode (python3 edit_server.py, then add ?edit to the page URL). */
 window.CONTENT = {
-  "intro": "is a designer and strategist building visual identities for purpose driven startups.",
+  "intro": "is a multidisciplinary designer and strategist building visual identities for purpose-driven startups.",
   "me": {
     "email": "abiolamd2004@gmail.com",
     "bio": [
-      "Abiola Afolabi is a multidisciplinary designer and strategist building brands that think and feel.",
       "I work across fashion, identity, products and events, using strategy to get to the core of a problem before designing.",
-      "BA Graphic Design, University of Gloucestershire."
+      "BA Graphic Design."
     ],
     "services": [
       "Brand strategy",
@@ -14,11 +13,10 @@ window.CONTENT = {
       "Art direction"
     ],
     "clients": [
-      "Aeliza",
       "Air Company",
-      "Phenomenal Worlds",
+      "Oakwood",
       "The&Partnership",
-      "Oakwood"
+      "Aeliza"
     ],
     "links": [
       {

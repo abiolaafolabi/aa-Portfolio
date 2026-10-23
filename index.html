@@ -16,6 +16,7 @@
       --faint: #b8b8b8;
       --line: #ededed;
       --sans: "Inter", system-ui, -apple-system, sans-serif;
+      color-scheme: light;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); font: 14px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
@@ -56,12 +57,28 @@
     .updates ul { list-style: none; }
     .updates li { padding: 2px 0; }
     .updates b { font-weight: 500; color: var(--text); margin-right: 4px; }
-    .about-part + .about-part { margin-top: 72px; }
-    .about-part h2 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .about-parts { max-width: 640px; border-top: 1px solid var(--line); }
+    .about-part { border-bottom: 1px solid var(--line); }
+    .about-part summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; padding: 16px 0; }
+    .about-part summary::-webkit-details-marker { display: none; }
+    .about-part h2 { font-size: 14px; font-weight: 500; }
+    .about-part summary .intro { grid-column: 1; margin: 0; color: var(--muted); }
+    .about-part summary::after { content: "+"; grid-column: 2; grid-row: 1; color: var(--muted); transition: transform .2s; }
+    .about-part[open] summary::after { transform: rotate(45deg); }
+    .about-part summary:hover h2, .about-part summary:hover::after { color: var(--text); }
+    .about-part > .inner { padding: 12px 0 40px; }
+    .about-part[open] > .inner { animation: fade .35s ease both; }
+    .timeline { list-style: none; position: relative; max-width: 640px; }
+    .timeline::before { content: ""; position: absolute; left: 4px; top: 10px; bottom: 10px; width: 1px; background: var(--line); }
+    .timeline li { position: relative; padding-left: 28px; }
+    .timeline li + li { margin-top: 22px; }
+    .timeline li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 1px solid var(--muted); }
+    .timeline li:last-child::before { background: var(--text); border-color: var(--text); }
+    .timeline .d { color: var(--muted); margin-top: 2px; }
     .foot-ask { flex: 1 1 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
     .foot-ask label { color: var(--text); font-size: 13px; }
     .foot-ask div { display: flex; gap: 8px; max-width: 460px; }
-    .foot-ask input { flex: 1; min-width: 0; font: inherit; font-size: 13px; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; outline: none; }
+    .foot-ask input { flex: 1; min-width: 0; font: inherit; font-size: 13px; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; outline: none; background: var(--bg); color: var(--text); }
     .foot-ask input:focus { border-color: var(--muted); }
     .foot-ask button { font: inherit; font-size: 13px; border: 0; border-radius: 6px; padding: 0 14px; background: var(--text); color: var(--bg); cursor: pointer; }
     .now { margin-top: 24px; color: #444; }
@@ -115,7 +132,7 @@
 
     /* Ask */
     .ask { display: flex; gap: 8px; max-width: 520px; margin-bottom: 8px; }
-    .ask input { flex: 1; min-width: 0; font: inherit; border: 1px solid var(--line); border-radius: 6px; padding: 9px 12px; outline: none; }
+    .ask input { flex: 1; min-width: 0; font: inherit; border: 1px solid var(--line); border-radius: 6px; padding: 9px 12px; outline: none; background: var(--bg); color: var(--text); }
     .ask input:focus { border-color: var(--muted); }
     .ask button { border-radius: 6px; padding: 0 16px; background: var(--text); color: var(--bg); }
     .ask-note { font-size: 12px; color: var(--faint); margin-bottom: 44px; }
@@ -191,18 +208,6 @@
         },
         "items": [
           {
-            "t": "ANIXVRS",
-            "m": "Fashion brand, 2020",
-            "url": "portfolio.html#anixvrs",
-            "img": "work/anixvrs/cover.jpg"
-          },
-          {
-            "t": "Phenomenal Worlds",
-            "m": "Brand identity, 2026",
-            "url": "portfolio.html#phenomenal-worlds",
-            "img": "work/phenomenal-worlds/kit-of-parts.jpg"
-          },
-          {
             "t": "Aeliza",
             "m": "Fashion design, 2025",
             "url": "portfolio.html#aeliza",
@@ -215,23 +220,17 @@
             "img": "work/air-company/glove.jpg"
           },
           {
-            "t": "Wave",
-            "m": "Mental health tool, 2025",
-            "url": "portfolio.html#wave",
-            "img": "work/wave/screens.jpg"
-          },
-          {
-            "t": "Mothership",
-            "m": "Event, 2026",
-            "url": "portfolio.html#mothership",
-            "img": "work/mothership/cover.jpg"
+            "t": "Phenomenal Worlds",
+            "m": "Brand identity, 2026",
+            "url": "portfolio.html#phenomenal-worlds",
+            "img": "work/phenomenal-worlds/kit-of-parts.jpg"
           }
         ]
       },
       {
         "id": "projects",
         "title": "Projects & ideas",
-        "intro": "Things I've made, am making, or am still turning over. Some are fully baked, some half-baked. Some you can see, buy or back.",
+        "intro": "Things I've made, am making, or am still turning over.",
         "items": [
           {
             "t": "Wave",
@@ -265,41 +264,6 @@
           "url": "#"
         },
         "items": []
-      },
-      {
-        "id": "side-quests",
-        "title": "Side quests",
-        "intro": "Other things I've done along the way, in order.",
-        "items": [
-          {
-            "t": "Ballet",
-            "d": "Briefly, when I was very young."
-          },
-          {
-            "t": "First great artwork",
-            "d": "A drawing of Ronaldo doing a bicycle kick. I've loved drawing since I was a kid."
-          },
-          {
-            "t": "Debate club",
-            "d": "Secondary school. I still love a good debate."
-          },
-          {
-            "t": "Playground entrepreneur",
-            "d": "Sold cookies and Kool-Aid in the school playground, until someone snitched."
-          },
-          {
-            "t": "Custom shoes",
-            "d": "Painted and customised shoes."
-          },
-          {
-            "t": "Contemporary dance",
-            "d": "Took it for GCSE."
-          },
-          {
-            "t": "Student films",
-            "d": "Acted in three. A budding acting career."
-          }
-        ]
       },
       {
         "id": "talk",
@@ -389,6 +353,43 @@
           {
             "t": "Sports day",
             "d": "A lot of medals from a lot of sports days."
+          }
+        ],
+        "about": true
+      },
+      {
+        "id": "side-quests",
+        "title": "Side quests",
+        "intro": "Other things I've done along the way, in order.",
+        "timeline": true,
+        "items": [
+          {
+            "t": "Ballet",
+            "d": "Briefly, when I was very young."
+          },
+          {
+            "t": "First great artwork",
+            "d": "A drawing of Ronaldo doing a bicycle kick. I've loved drawing since I was a kid."
+          },
+          {
+            "t": "Debate club",
+            "d": "Secondary school. I still love a good debate."
+          },
+          {
+            "t": "Playground entrepreneur",
+            "d": "Sold cookies and Kool-Aid in the school playground, until someone snitched."
+          },
+          {
+            "t": "Custom shoes",
+            "d": "Painted and customised shoes."
+          },
+          {
+            "t": "Contemporary dance",
+            "d": "Took it for GCSE."
+          },
+          {
+            "t": "Student films",
+            "d": "Acted in three. A budding acting career."
           }
         ],
         "about": true
@@ -738,14 +739,13 @@
       $("#side").innerHTML = `
         <div class="name">${ME.name}<small>${ME.tagline}</small></div>
         <div class="bio">${ME.bio.map((p) => `<p>${p}</p>`).join("")}</div>
-        ${ME.updates && ME.updates.length ? `<div class="updates"><span>Updates</span><ul>${ME.updates.map((u) => `<li><b>${u.m}</b> ${u.t}${u.d ? `. ${u.d}` : ""}</li>`).join("")}</ul></div>` : ""}
-        <div class="links">${ME.links.filter((l) => live(l.url)).map((l) => `<a href="${l.url}"${/^https?:/.test(l.url) ? ' target="_blank" rel="noopener"' : ""}>${l.label}</a>`).join("")}</div>`;
-      const tiles = [...SECTIONS.filter((s) => !s.about), { id: "about", title: "About me", items: SECTIONS.filter((s) => s.about).map((s) => ({ t: s.title, id: s.id })) }];
+        ${ME.updates && ME.updates.length ? `<div class="updates"><span>Updates</span><ul>${ME.updates.map((u) => `<li><b>${u.m}</b> ${u.t}${u.d ? `. ${u.d}` : ""}</li>`).join("")}</ul></div>` : ""}`;
+      const tiles = [{ id: "about", title: "About me", items: SECTIONS.filter((s) => s.about).map((s) => ({ t: s.title, id: s.id })) }, ...SECTIONS.filter((s) => !s.about)];
       $("#main").innerHTML = `<div class="index fade">${tiles.map((s) => `
         <section>
           <h2><a href="#${s.id}">${s.title}</a></h2>
           <ul>${s.items.length
-            ? s.items.slice(0, s.id === "about" ? 9 : 4).map((it) => `<li><a href="${it.url && s.id === "work" ? it.url : `#${it.id || s.id}`}"${it.img ? ` data-peek="${it.img}"` : ""}>${it.t}</a></li>`).join("")
+            ? s.items.slice(0, s.id === "about" ? 12 : 4).map((it) => `<li><a href="${it.url && s.id === "work" ? it.url : `#${it.id || s.id}`}"${it.img ? ` data-peek="${it.img}"` : ""}>${it.t}</a></li>`).join("")
             : `<li><a href="#${s.id}">${s.ask ? "Ask a question" : "Coming soon"}</a></li>`}</ul>
         </section>`).join("")}</div>`;
     }
@@ -755,22 +755,22 @@
       const onAbout = activeId === "about" || about.some((x) => x.id === activeId);
       $("#side").innerHTML = `
         <a class="name" href="#">${ME.name}<small>${ME.tagline}</small></a>
-        <ul class="nav">${SECTIONS.filter((x) => !x.about).map((x) => `
-          <li><a href="#${x.id}" class="${x.id === activeId ? "on" : ""}">${x.title}</a>
-            ${x.id === activeId && !x.wall ? `<ul>${x.items.map((it) => `<li>${it.t}</li>`).join("")}</ul>` : ""}
-          </li>`).join("")}
+        <ul class="nav">
           <li><a href="#about" class="${onAbout ? "on" : ""}">About me</a>
             ${onAbout ? `<ul>${about.map((x) => `<li><a href="#${x.id}">${x.title}</a></li>`).join("")}</ul>` : ""}
-          </li></ul>`;
+          </li>${SECTIONS.filter((x) => !x.about).map((x) => `
+          <li><a href="#${x.id}" class="${x.id === activeId ? "on" : ""}">${x.title}</a>
+            ${x.id === activeId && !x.wall ? `<ul>${x.items.map((it) => `<li>${it.t}</li>`).join("")}</ul>` : ""}
+          </li>`).join("")}</ul>`;
     }
 
     function renderAbout(focusId) {
       document.body.classList.add("in-section");
       document.title = `About me — ${ME.name}`;
       renderSide(focusId || "about");
-      $("#main").innerHTML = `<div class="view fade"><h1>About me</h1>${SECTIONS.filter((x) => x.about).map((x) => `
-        <section class="about-part" id="part-${x.id}"><h2>${x.title}</h2><p class="intro">${x.intro}</p>${sectionBody(x)}</section>`).join("")}</div>`;
-      if (focusId) { const el = document.getElementById(`part-${focusId}`); if (el) setTimeout(() => el.scrollIntoView(), 0); }
+      $("#main").innerHTML = `<div class="view fade"><h1>About me</h1><p class="intro">The rest of me, a section at a time.</p><div class="about-parts">${SECTIONS.filter((x) => x.about).map((x) => `
+        <details class="about-part" id="part-${x.id}"${x.id === focusId ? " open" : ""}><summary><h2>${x.title}</h2><p class="intro">${x.intro}</p></summary><div class="inner">${sectionBody(x)}</div></details>`).join("")}</div></div>`;
+      if (focusId) { const el = document.getElementById(`part-${focusId}`); if (el) setTimeout(() => el.scrollIntoView({ block: "start" }), 0); }
     }
 
     function sectionBody(s) {
@@ -779,6 +779,8 @@
         body = `<div class="wall">${s.items.map((it) => `
           <div><div class="face">${it.img ? `<img src="${it.img}" alt="${it.t}" />` : initials(it.t)}</div>
           <div>${it.t}</div><div class="d">${it.d || ""}</div></div>`).join("")}</div>`;
+      } else if (s.timeline) {
+        body = `<ol class="timeline">${s.items.map((it) => `<li><div>${it.t}</div>${it.d ? `<div class="d">${it.d}</div>` : ""}</li>`).join("")}</ol>`;
       } else if (s.ask) {
         body = `
           <form class="ask" id="askForm"><input id="askInput" placeholder="Your question" aria-label="Your question" required /><button>Send</button></form>

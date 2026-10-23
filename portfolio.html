@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
+      color-scheme: light;
       --bg: #ffffff;
       --text: #111111;
       --muted: #8a8a8a;
@@ -304,6 +305,7 @@
     // Info panel
     function renderInfo() {
     $("#infoBody").innerHTML = `
+      <p>Abiola Afolabi ${window.CONTENT.intro}</p>
       ${ME.bio.map((p) => `<p>${p}</p>`).join("")}
       ${ME.openToWork ? `<p><a class="otw" href="mailto:${ME.email}?subject=${encodeURIComponent("Working together")}"><i></i>Open to work. Get in touch →</a></p>` : ""}
       <h4>Services</h4><ul>${ME.services.map((s) => `<li>${s}</li>`).join("")}</ul>
@@ -324,6 +326,7 @@
       if (i < 0) {
         const wasOpen = document.body.classList.contains("proj-open");
         document.body.classList.remove("proj-open", "lock");
+        proj.innerHTML = "";
         if (wasOpen) window.scrollTo({ top: gridY, behavior: "instant" });
         return;
       }
@@ -344,6 +347,9 @@
           <div class="process-grid"${w.process.length === 4 ? ' style="grid-template-columns:1fr 1fr"' : ""}>${w.process.map((x, k) => `<figure data-proc="${k}"><div><img src="${x.src}" alt="" loading="lazy" /></div><figcaption data-edit="process.${k}.cap">${x.cap || ""}</figcaption></figure>`).join("")}</div>
         </section>` : "";
       const cls = w.pairs ? "shots pairs" : "shots";
+      // Take the panel out of rendering while its contents swap, so the browser
+      // drops tiles painted for the previous project instead of reusing them.
+      proj.style.display = "none";
       proj.innerHTML = `
         <div class="bar" style="position:absolute"><a class="pill" href="#">← All work</a><span></span></div>
         <div class="hero" data-hero>${art(w)}</div>
@@ -358,6 +364,8 @@
         ${process}
         <a class="next" href="#${next.id}" style="margin-top:64px"><span>Next project</span><b>${next.title} →</b></a>`;
       proj.dataset.i = i;
+      proj.style.display = "";
+      void proj.offsetHeight; // let the fade-in start from the hidden state
       proj.scrollTop = 0;
       document.body.classList.add("proj-open", "lock");
       document.title = `${w.title} — Abiola Afolabi`;
