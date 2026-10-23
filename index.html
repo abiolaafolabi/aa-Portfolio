@@ -433,6 +433,7 @@
 
     function route() {
       const id = location.hash.slice(1);
+      try { sessionStorage.setItem("hubSection", location.hash); } catch {} // lets the portfolio's Home button bring you back here
       const s = SECTIONS.find((x) => x.id === id);
       if (id === "about") renderAbout();
       else if (s && s.about) renderAbout(s.id);
