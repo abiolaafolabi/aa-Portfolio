@@ -230,11 +230,11 @@ window.CONTENT = {
       ],
       "process": [
         {
-          "src": "work/wave/p-1.jpg",
+          "src": "",
           "cap": "Early mark: the infinity loop"
         },
         {
-          "src": "work/wave/p-2.jpg",
+          "src": "",
           "cap": "Mono exploration"
         },
         {
@@ -250,7 +250,7 @@ window.CONTENT = {
           "cap": "The Wave Model"
         },
         {
-          "src": "work/wave/p-6.jpg",
+          "src": "",
           "cap": "Working from first principles"
         }
       ],
@@ -284,27 +284,27 @@ window.CONTENT = {
       "process": [
         {
           "src": "work/aeliza/p-1.jpg",
-          "cap": "CS4 sketchbook"
+          "cap": "CS4 sketchbook - Jack Harper"
         },
         {
           "src": "work/aeliza/p-2.jpg",
-          "cap": ""
+          "cap": "CS4 sketchbook - Jack Harper"
         },
         {
           "src": "work/aeliza/p-3.jpg",
-          "cap": ""
+          "cap": "CS4 sketchbook - Jack Harper"
         },
         {
           "src": "work/aeliza/p-4.jpg",
-          "cap": ""
-        },
-        {
-          "src": "work/aeliza/p-5.jpg",
-          "cap": ""
+          "cap": "CS4 sketchbook - Jack Harper"
         },
         {
           "src": "work/aeliza/p-6.jpg",
-          "cap": ""
+          "cap": "CS4 sketchbook - Jack Harper"
+        },
+        {
+          "src": "work/aeliza/p-5.jpg",
+          "cap": "CS4 sketchbook - Jack Harper"
         }
       ],
       "role": "Fashion brand intern",
@@ -337,27 +337,27 @@ window.CONTENT = {
       ],
       "process": [
         {
-          "src": "work/air-company/cover.jpg",
+          "src": "",
           "cap": "Tee tech pack"
         },
         {
-          "src": "work/air-company/socks.jpg",
+          "src": "",
           "cap": "Socks"
         },
         {
-          "src": "work/air-company/quarter-zip.jpg",
+          "src": "",
           "cap": "Quarter-zip"
         },
         {
-          "src": "work/air-company/cap.jpg",
+          "src": "",
           "cap": "Cap"
         },
         {
-          "src": "work/air-company/polo.jpg",
+          "src": "",
           "cap": "Polo"
         },
         {
-          "src": "work/air-company/label.jpg",
+          "src": "",
           "cap": "Woven label"
         }
       ],
