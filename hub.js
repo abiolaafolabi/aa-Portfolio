@@ -60,22 +60,22 @@ window.HUB = {
       },
       "items": [
         {
+          "t": "Phenomenal Worlds",
+          "m": "Brand identity, 2026",
+          "url": "portfolio.html#phenomenal-worlds",
+          "img": "work/phenomenal-worlds/kit-of-parts.jpg"
+        },
+        {
           "t": "Aeliza",
-          "m": "Fashion design, 2025",
+          "m": "Fashion & Graphic design, 2025 - 2026",
           "url": "portfolio.html#aeliza",
           "img": "work/aeliza/lookbook-1.jpg"
         },
         {
           "t": "Air Company",
-          "m": "Tech packs, 2026",
+          "m": "Tech packs, 2025",
           "url": "portfolio.html#air-company",
           "img": "work/air-company/glove.jpg"
-        },
-        {
-          "t": "Phenomenal Worlds",
-          "m": "Brand identity, 2026",
-          "url": "portfolio.html#phenomenal-worlds",
-          "img": "work/phenomenal-worlds/kit-of-parts.jpg"
         }
       ]
     },
