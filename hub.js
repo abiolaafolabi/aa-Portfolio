@@ -89,20 +89,20 @@ window.HUB = {
           "tag": "Building",
           "d": "A mental health tool that helps people keep perspective through life's ups and downs, and respond in healthy ways. Built with a behavioural scientist.",
           "img": "work/wave/screens.jpg",
-          "url": "https://abiolaafolabi.github.io/Wave-Onboarding/"
+          "url": "portfolio.html#wave"
         },
         {
           "t": "ANIXVRS",
           "tag": "Since 2020",
           "d": "Where cultural heritage meets streetwear. A fashion brand I designed and run.",
-          "url": "https://www.instagram.com/anixvrs/",
+          "url": "portfolio.html#anixvrs",
           "img": "work/anixvrs/lookbook.jpg"
         },
         {
           "t": "Mothership",
           "m": "Feb 2026",
           "d": "Imagining new visions of the future for the African diaspora. Sold out, run in partnership with TROS London.",
-          "url": "https://www.instagram.com/mothershipheadquarters/",
+          "url": "portfolio.html#mothership",
           "tag": "Event",
           "img": "work/mothership/cover.jpg"
         }
