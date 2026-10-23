@@ -261,34 +261,6 @@ window.HUB = {
           "year": 2019
         },
         {
-          "t": "Essentialism",
-          "m": "Greg McKeown",
-          "img": "work/hub/books/essentialism.jpg",
-          "spine": {
-            "bg": "#fbfbf8",
-            "fg": "#d0245e",
-            "font": "sans",
-            "h": 212
-          },
-          "pages": 266,
-          "year": 2014
-        },
-        {
-          "t": "The E-Myth Revisited",
-          "m": "Michael E. Gerber",
-          "img": "work/hub/books/the-e-myth-revisited.jpg",
-          "spine": {
-            "bg": "#ffffff",
-            "fg": "#2c5ea8",
-            "ac": "#2c5ea8",
-            "font": "serif",
-            "h": 216,
-            "label": "The E-Myth"
-          },
-          "pages": 268,
-          "year": 1995
-        },
-        {
           "t": "Same as Ever",
           "m": "Morgan Housel",
           "img": "work/hub/books/same-as-ever.jpg",
