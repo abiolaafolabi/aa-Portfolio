@@ -93,10 +93,11 @@
     update: () => ({ m: month(), t: "New update" }),
     answer: () => ({ q: "The question?", a: "Your answer.", m: month() }),
     item: () => ({ t: "New item" }),
-    person: () => ({ t: "Name", img: "" })
+    person: () => ({ t: "Name", img: "" }),
+    lately: () => ({ m: month(), t: "A topic" })
   };
-  const ADD_LABEL = { paragraph: "+ Paragraph", update: "+ Update", answer: "+ Answered question", item: "+ Item", person: "+ Person" };
-  const PREPEND = new Set(["update", "answer"]); // running lists, newest first
+  const ADD_LABEL = { paragraph: "+ Paragraph", update: "+ Update", answer: "+ Answered question", item: "+ Item", person: "+ Person", lately: "+ Topic" };
+  const PREPEND = new Set(["update", "answer", "lately"]); // running lists, newest first
 
   function rerender() { const y = scrollY; window.HUB_SITE.route(); scrollTo(0, y); }
 

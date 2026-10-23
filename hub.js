@@ -112,6 +112,14 @@ window.HUB = {
       "items": []
     },
     {
+      "id": "lately",
+      "title": "On my mind lately",
+      "intro": "What I keep thinking about, month by month. Ask me about any of them.",
+      "lately": true,
+      "items": [],
+      "about": true
+    },
+    {
       "id": "talk",
       "title": "Talk to me about",
       "intro": "Things I could talk about for hours, and the ideas I'm turning over right now. Good ways to start a conversation.",
@@ -201,38 +209,117 @@ window.HUB = {
       "items": [
         {
           "t": "The 7 Habits of Highly Effective People",
-          "m": "Stephen R. Covey"
+          "m": "Stephen R. Covey",
+          "img": "work/hub/books/the-7-habits-of-highly-effective-people.jpg",
+          "spine": {
+            "bg": "#f3ece0",
+            "fg": "#1f6f8b",
+            "ac": "#e8742c",
+            "font": "sans",
+            "h": 240,
+            "label": "The 7 Habits"
+          },
+          "pages": 374,
+          "year": 1989
         },
         {
           "t": "Mastery",
-          "m": "Robert Greene"
+          "m": "Robert Greene",
+          "img": "work/hub/books/mastery.jpg",
+          "spine": {
+            "bg": "#141414",
+            "fg": "#bda97c",
+            "font": "serif",
+            "h": 232
+          },
+          "pages": 344,
+          "year": 2012
         },
         {
           "t": "Alchemy",
-          "m": "Rory Sutherland"
+          "m": "Rory Sutherland",
+          "img": "work/hub/books/alchemy.jpg",
+          "spine": {
+            "bg": "#f0ea4a",
+            "fg": "#111111",
+            "font": "cond",
+            "h": 222
+          },
+          "pages": 384,
+          "year": 2019
         },
         {
           "t": "Essentialism",
-          "m": "Greg McKeown"
+          "m": "Greg McKeown",
+          "img": "work/hub/books/essentialism.jpg",
+          "spine": {
+            "bg": "#fbfbf8",
+            "fg": "#d0245e",
+            "font": "sans",
+            "h": 212
+          },
+          "pages": 266,
+          "year": 2014
         },
         {
           "t": "The E-Myth Revisited",
-          "m": "Michael E. Gerber"
+          "m": "Michael E. Gerber",
+          "img": "work/hub/books/the-e-myth-revisited.jpg",
+          "spine": {
+            "bg": "#ffffff",
+            "fg": "#2c5ea8",
+            "ac": "#2c5ea8",
+            "font": "serif",
+            "h": 216,
+            "label": "The E-Myth"
+          },
+          "pages": 268,
+          "year": 1995
         },
         {
           "t": "Same as Ever",
-          "m": "Morgan Housel"
+          "m": "Morgan Housel",
+          "img": "work/hub/books/same-as-ever.jpg",
+          "spine": {
+            "bg": "#ffffff",
+            "fg": "#111111",
+            "ac": "#e6603c",
+            "font": "sans",
+            "h": 206
+          },
+          "pages": 256,
+          "year": 2023
         },
         {
           "t": "The War of Art",
-          "m": "Steven Pressfield"
+          "m": "Steven Pressfield",
+          "img": "work/hub/books/the-war-of-art.jpg",
+          "spine": {
+            "bg": "#fafafa",
+            "fg": "#111111",
+            "ac": "#c8202f",
+            "font": "cond",
+            "h": 200
+          },
+          "pages": 192,
+          "year": 2002
         },
         {
           "t": "Made to Stick",
-          "m": "Chip Heath & Dan Heath"
+          "m": "Chip Heath & Dan Heath",
+          "img": "work/hub/books/made-to-stick.jpg",
+          "spine": {
+            "bg": "#e2522b",
+            "fg": "#ffffff",
+            "font": "serif",
+            "h": 226
+          },
+          "pages": 291,
+          "year": 1998
         }
       ],
-      "about": true
+      "about": true,
+      "shelf": true
     },
     {
       "id": "role-models",
@@ -242,47 +329,69 @@ window.HUB = {
       "items": [
         {
           "t": "Steve Jobs",
-          "img": ""
+          "img": "work/hub/people/steve-jobs.jpg",
+          "credit": "Matthew Yohe, CC BY-SA 3.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010_(cropped_4).jpg"
         },
         {
           "t": "Jony Ive",
-          "img": ""
+          "img": "work/hub/people/jony-ive.jpg",
+          "credit": "Marcus Dawes, CC BY-SA 3.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Jonathan_Ive_(OTRS).jpg"
         },
         {
           "t": "Dieter Rams",
-          "img": ""
+          "img": "work/hub/people/dieter-rams.jpg",
+          "credit": "Vitsœ, CC BY-SA 3.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Designer-Dieter_Rams.jpg"
         },
         {
           "t": "Virgil Abloh",
-          "img": ""
+          "img": "work/hub/people/virgil-abloh.jpg",
+          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Virgil_Abloh_Paris_Fashion_Week_Autumn_Winter_2019_(cropped).jpg"
         },
         {
           "t": "Leonardo da Vinci",
-          "img": ""
+          "img": "work/hub/people/leonardo-da-vinci.jpg",
+          "credit": "Attributed to Francesco Melzi, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo_(colour_correction).png"
         },
         {
           "t": "Nikola Tesla",
-          "img": ""
+          "img": "work/hub/people/nikola-tesla.jpg",
+          "credit": "Napoleon Sarony, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg"
         },
         {
           "t": "Benjamin Franklin",
-          "img": ""
+          "img": "work/hub/people/benjamin-franklin.jpg",
+          "credit": "Joseph-Siffred Duplessis, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg"
         },
         {
           "t": "Julius Caesar",
-          "img": ""
+          "img": "work/hub/people/julius-caesar.jpg",
+          "credit": "Ángel M. Felicísimo from Mérida, España, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Retrato_de_Julio_C%C3%A9sar_(26724093101)_(cropped).jpg"
         },
         {
           "t": "Napoleon Bonaparte",
-          "img": ""
+          "img": "work/hub/people/napoleon.jpg",
+          "credit": "Jacques-Louis David, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg"
         },
         {
           "t": "Michael Jackson",
-          "img": ""
+          "img": "work/hub/people/michael-jackson.jpg",
+          "credit": "Matthew Rolston; Distributed by Epic Records, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1983_(3x4_cropped)_(contrast).jpg"
         },
         {
           "t": "Cristiano Ronaldo",
-          "img": ""
+          "img": "work/hub/people/cristiano-ronaldo.jpg",
+          "credit": "Bryan Berlin, CC BY-SA 4.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_(cropped).jpg"
         },
         {
           "t": "Alex Hormozi",
@@ -290,7 +399,9 @@ window.HUB = {
         },
         {
           "t": "Ronnie Coleman",
-          "img": ""
+          "img": "work/hub/people/ronnie-coleman.jpg",
+          "credit": "Haribhagirath, CC BY-SA 4.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Ronnie_Coleman_Invited_Guest.jpg"
         },
         {
           "t": "Serge Nubret",
