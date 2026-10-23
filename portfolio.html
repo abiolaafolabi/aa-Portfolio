@@ -124,6 +124,8 @@
     .hero .cover { aspect-ratio: 16 / 8.5; }
     .project .head { padding: 64px var(--pad) 48px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); }
     .project h1 { font-size: clamp(30px, 4vw, 56px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.05; }
+    .project .live { display: inline-block; margin-top: 16px; font-size: 14px; border-bottom: 1px solid currentColor; }
+    .project .live:hover { color: var(--muted); }
     .project .sum { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.4; letter-spacing: -0.01em; }
     .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--pad); padding: 0 var(--pad) 40px; font-size: 14px; }
     .meta div span { display: block; color: var(--muted); }
@@ -353,7 +355,7 @@
       proj.innerHTML = `
         <div class="bar" style="position:absolute"><a class="pill" href="#">← All work</a><a class="pill" href="index.html">Home</a></div>
         <div class="hero" data-hero>${art(w)}</div>
-        <div class="head"><h1 data-edit="title">${w.title}</h1><p class="sum" data-edit="summary">${w.summary}</p></div>
+        <div class="head"><h1 data-edit="title">${w.title}</h1><div><p class="sum" data-edit="summary">${w.summary}</p>${w.live && w.live.url ? `<a class="live" href="${w.live.url}" target="_blank" rel="noopener">${w.live.label || "See it live"} ↗</a>` : ""}</div></div>
         <div class="meta">
           <div><span>Client</span><b data-edit="client">${w.client}</b></div><div><span>Role</span><b data-edit="role">${w.role}</b></div>
           <div><span>Type</span><b data-edit="type">${w.type}</b></div><div><span>Year</span><b data-edit="year">${w.year}</b></div>

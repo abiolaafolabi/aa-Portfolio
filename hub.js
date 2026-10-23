@@ -88,7 +88,8 @@ window.HUB = {
           "t": "Wave",
           "tag": "Building",
           "d": "A mental health tool that helps people keep perspective through life's ups and downs, and respond in healthy ways. Built with a behavioural scientist.",
-          "img": "work/wave/screens.jpg"
+          "img": "work/wave/screens.jpg",
+          "url": "https://abiolaafolabi.github.io/Wave-Onboarding/"
         },
         {
           "t": "ANIXVRS",

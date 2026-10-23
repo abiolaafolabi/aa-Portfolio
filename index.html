@@ -133,6 +133,7 @@
     .items .t { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
     .items .t a { border-bottom: 1px solid var(--line); transition: border-color .15s; }
     .items .t a:hover { border-color: var(--text); }
+    .items .ext { margin-left: 3px; color: var(--muted); font-size: 11px; }
     .items .m { color: var(--faint); font-size: 1em; }
     .items .d { color: var(--muted); margin-top: 2px; }
     .tag { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; }
@@ -250,7 +251,8 @@
     const $ = (s) => document.querySelector(s);
     let BIO = (new URLSearchParams(location.search).get("bio") || ME.bioPick).toLowerCase();
     const live = (url) => url && url !== "#";
-    const link = (it, inner) => live(it.url) && !EDITING ? `<a href="${it.url}"${/^https?:/.test(it.url) ? ' target="_blank" rel="noopener"' : ""}>${inner}</a>` : inner;
+    // Outside links open in a new tab and get a small arrow
+    const link = (it, inner) => live(it.url) && !EDITING ? (/^https?:/.test(it.url) ? `<a href="${it.url}" target="_blank" rel="noopener">${inner}<span class="ext">↗</span></a>` : `<a href="${it.url}">${inner}</a>`) : inner;
     // About me sits after Projects, before Writing
     const withAbout = (list, about) => { const k = list.findIndex((x) => x.id === "projects") + 1; return [...list.slice(0, k), about, ...list.slice(k)]; };
     const initials = (n) => n.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
