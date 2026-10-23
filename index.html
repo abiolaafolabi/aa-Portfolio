@@ -19,21 +19,21 @@
       color-scheme: light;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font: 14px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg); color: var(--text); font: 12px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 
     .page {
       min-height: 100vh; display: flex; flex-direction: column;
-      max-width: 1240px; margin: 0 auto; padding: clamp(40px, 7vh, 80px) clamp(20px, 5vw, 72px) 32px;
+      padding: clamp(32px, 7vh, 64px) clamp(20px, 5vw, 64px) 24px;
     }
-    .layout { flex: 1; display: grid; grid-template-columns: 250px 1fr; gap: clamp(40px, 8vw, 128px); }
+    .layout { flex: 1; display: grid; grid-template-columns: 200px 1fr; gap: clamp(40px, 7vw, 96px); }
     .layout > * { min-width: 0; }
 
     /* ---------- Left column ---------- */
-    .side { align-self: start; position: sticky; top: clamp(40px, 7vh, 80px); }
+    .side { align-self: start; position: sticky; top: clamp(32px, 7vh, 64px); }
     .name { font-weight: 500; line-height: 1.4; }
-    .name small { display: block; font-size: 14px; font-weight: 400; color: var(--muted); }
+    .name small { display: block; font-size: 1em; font-weight: 400; color: var(--muted); }
     .bio { margin-top: 28px; color: #444; }
     .bio p + p { margin-top: 14px; }
     .bio a { border-bottom: 1px solid var(--line); transition: border-color .15s; }
@@ -43,7 +43,7 @@
     .chip { display: inline-flex; align-items: center; gap: 6px; vertical-align: -3px; padding: 1px 9px 1px 4px; margin: 0 1px;
       border: 1px solid var(--line) !important; border-radius: 999px; background: #fafafa; color: var(--text); line-height: 1.5; transition: background .15s, border-color .15s; }
     .chip:hover { background: #f0f0f0; border-color: #d8d8d8 !important; }
-    .chip img { width: 16px; height: 16px; object-fit: contain; }
+    .chip img { width: 13px; height: 13px; object-fit: contain; }
     #peek { position: fixed; z-index: 60; width: 260px; pointer-events: none; opacity: 0; transform: translate(16px, 16px) scale(.96); transition: opacity .18s, transform .18s; }
     #peek.on { opacity: 1; transform: translate(16px, 16px) scale(1); }
     #peek img { width: 100%; display: block; border-radius: 6px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.35); }
@@ -52,16 +52,22 @@
     #zoom img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 4px; }
     .items li[data-zoom] .t { cursor: zoom-in; }
     @media (hover: none) { #peek { display: none; } }
-    .updates { margin-top: 24px; font-size: 13px; color: var(--muted); }
-    .updates > span { display: block; font-size: 12px; margin-bottom: 4px; }
-    .updates ul { list-style: none; }
-    .updates li { padding: 2px 0; }
-    .updates b { font-weight: 500; color: var(--text); margin-right: 4px; }
+    .updates { margin-top: 24px; color: var(--muted); }
+    .updates summary { cursor: pointer; list-style: none; font-size: 11px; color: var(--muted); }
+    .updates summary::-webkit-details-marker { display: none; }
+    .updates summary::after { content: " +"; }
+    .updates[open] > summary::after, .earlier[open] > summary::after { content: " \2212"; }
+    .updates summary:hover { color: var(--text); }
+    .updates ul { margin: 6px 0 0 14px; }
+    .updates li { padding: 2px 0; color: #444; }
+    .updates li::marker { color: var(--faint); }
+    .updates li span { color: var(--muted); margin-right: 6px; }
+    .earlier { margin-top: 6px; }
     .about-parts { max-width: 640px; border-top: 1px solid var(--line); }
     .about-part { border-bottom: 1px solid var(--line); }
     .about-part summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; padding: 16px 0; }
     .about-part summary::-webkit-details-marker { display: none; }
-    .about-part h2 { font-size: 14px; font-weight: 500; }
+    .about-part h2 { font-size: 1em; font-weight: 500; }
     .about-part summary .intro { grid-column: 1; margin: 0; color: var(--muted); }
     .about-part summary::after { content: "+"; grid-column: 2; grid-row: 1; color: var(--muted); transition: transform .2s; }
     .about-part[open] summary::after { transform: rotate(45deg); }
@@ -76,22 +82,28 @@
     .timeline li:last-child::before { background: var(--text); border-color: var(--text); }
     .timeline .d { color: var(--muted); margin-top: 2px; }
     .foot-ask { flex: 1 1 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
-    .foot-ask label { color: var(--text); font-size: 13px; }
-    .foot-ask div { display: flex; gap: 8px; max-width: 460px; }
-    .foot-ask input { flex: 1; min-width: 0; font: inherit; font-size: 13px; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; outline: none; background: var(--bg); color: var(--text); }
+    .foot-ask form { display: flex; flex-direction: column; gap: 8px; }
+    .qa-feed { list-style: none; max-width: 460px; max-height: 240px; overflow-y: auto; margin-top: 10px; padding-right: 8px; }
+    .qa-feed li + li { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .qa-feed .q { color: var(--text); font-weight: 500; }
+    .qa-feed .a { color: #444; margin-top: 2px; }
+    .qa-feed .m, .qa-empty { color: var(--faint); margin-top: 2px; }
+    .foot-ask label { color: var(--text); font-size: 1em; }
+    .foot-ask form div { display: flex; gap: 8px; max-width: 460px; }
+    .foot-ask input { flex: 1; min-width: 0; font: inherit; font-size: 1em; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; outline: none; background: var(--bg); color: var(--text); }
     .foot-ask input:focus { border-color: var(--muted); }
-    .foot-ask button { font: inherit; font-size: 13px; border: 0; border-radius: 6px; padding: 0 14px; background: var(--text); color: var(--bg); cursor: pointer; }
+    .foot-ask button { font: inherit; font-size: 1em; border: 0; border-radius: 6px; padding: 0 14px; background: var(--text); color: var(--bg); cursor: pointer; }
     .now { margin-top: 24px; color: #444; }
-    .now span { display: block; font-size: 12px; color: var(--muted); }
+    .now span { display: block; font-size: 11px; color: var(--muted); }
     .prev { margin-top: 14px; color: var(--muted); }
-    .prev summary { cursor: pointer; list-style: none; font-size: 12px; }
+    .prev summary { cursor: pointer; list-style: none; font-size: 11px; }
     .prev summary::-webkit-details-marker { display: none; }
     .prev summary::after { content: " +"; }
     .prev[open] summary::after { content: " \2212"; }
     .prev summary:hover { color: var(--text); }
     .prev ul { list-style: none; margin-top: 6px; padding-left: 12px; border-left: 1px solid var(--line); }
-    .prev li { padding: 2px 0; font-size: 13px; }
-    .links { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--muted); font-size: 13px; }
+    .prev li { padding: 2px 0; font-size: 1em; }
+    .links { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--muted); font-size: 1em; }
     .links a:hover { color: var(--text); }
 
     /* Left nav (inside a section) */
@@ -101,60 +113,61 @@
     .nav a:hover, .nav a.on { color: var(--text); }
     .nav a.on { font-weight: 500; }
     .nav ul { list-style: none; margin: 6px 0 6px 2px; padding-left: 16px; border-left: 1px solid var(--line); }
-    .nav ul li { padding: 3px 0; font-size: 13px; color: var(--faint); }
+    .nav ul li { padding: 3px 0; font-size: 1em; color: var(--faint); }
 
     /* ---------- Home grid ---------- */
-    .index { display: grid; grid-template-columns: repeat(4, 1fr); gap: 56px 40px; align-content: start; }
-    .index h2 { font-size: 14px; font-weight: 500; margin-bottom: 10px; }
+    .index { display: grid; grid-template-columns: repeat(4, 180px); gap: 48px 0; align-content: start; }
+    .index section { padding-right: 20px; }
+    .index h2 { font-size: 1em; font-weight: 500; margin-bottom: 10px; }
     .index h2 a:hover { color: var(--muted); }
     .index ul { list-style: none; }
     .index li { color: var(--muted); padding: 2px 0; }
     .index li a:hover { color: var(--text); }
 
     /* ---------- Section view ---------- */
-    .view h1 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .view h1 { font-size: 1em; font-weight: 500; margin-bottom: 4px; }
     .view .intro { color: var(--muted); max-width: 52ch; margin-bottom: 36px; }
     .items { list-style: none; max-width: 640px; }
     .items li + li { margin-top: 26px; }
     .items .t { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
     .items .t a { border-bottom: 1px solid var(--line); transition: border-color .15s; }
     .items .t a:hover { border-color: var(--text); }
-    .items .m { color: var(--faint); font-size: 13px; }
+    .items .m { color: var(--faint); font-size: 1em; }
     .items .d { color: var(--muted); margin-top: 2px; }
-    .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; }
+    .tag { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; }
 
     /* Role model wall */
     .wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 32px 20px; max-width: 760px; }
-    .face { aspect-ratio: 1; border-radius: 4px; background: #f3f3f3; display: grid; place-items: center; overflow: hidden; color: var(--faint); font-size: 22px; letter-spacing: .02em; margin-bottom: 10px; filter: grayscale(1); transition: filter .3s; }
+    .face { aspect-ratio: 1; border-radius: 4px; background: #f3f3f3; display: grid; place-items: center; overflow: hidden; color: var(--faint); font-size: 18px; letter-spacing: .02em; margin-bottom: 10px; filter: grayscale(1); transition: filter .3s; }
     .face img { width: 100%; height: 100%; object-fit: cover; }
     .wall div:hover .face { filter: none; }
-    .wall .d { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .wall .d { color: var(--muted); font-size: 1em; line-height: 1.5; }
 
     /* Ask */
     .ask { display: flex; gap: 8px; max-width: 520px; margin-bottom: 8px; }
     .ask input { flex: 1; min-width: 0; font: inherit; border: 1px solid var(--line); border-radius: 6px; padding: 9px 12px; outline: none; background: var(--bg); color: var(--text); }
     .ask input:focus { border-color: var(--muted); }
     .ask button { border-radius: 6px; padding: 0 16px; background: var(--text); color: var(--bg); }
-    .ask-note { font-size: 12px; color: var(--faint); margin-bottom: 44px; }
+    .ask-note { font-size: 11px; color: var(--faint); margin-bottom: 44px; }
     .qa { max-width: 600px; list-style: none; }
     .qa li + li { margin-top: 28px; }
     .qa .q { font-weight: 500; }
     .qa .a { color: #444; margin-top: 4px; }
-    .qa .m { color: var(--faint); font-size: 12px; margin-top: 6px; }
+    .qa .m { color: var(--faint); font-size: 11px; margin-top: 6px; }
 
     .fade { animation: fade .4s ease both; }
     @keyframes fade { from { opacity: 0; transform: translateY(4px); } }
 
     /* ---------- Footer ---------- */
-    footer { margin-top: 96px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+    footer { margin-top: 96px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; font-size: 10.5px; color: var(--muted); }
     footer a { color: var(--text); }
 
     @media (prefers-reduced-motion: reduce) { .fade { animation: none; } }
-    @media (max-width: 1080px) { .index { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 1080px) { .index { grid-template-columns: repeat(3, 180px); } }
     @media (max-width: 820px) {
       .layout { grid-template-columns: 1fr; gap: 48px; }
       .side { position: static; }
-      .index { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
+      .index { grid-template-columns: repeat(2, 1fr); gap: 40px 0; }
       .in-section .nav ul { display: none; }
       .in-section .nav { display: flex; flex-wrap: wrap; gap: 2px 14px; }
       .in-section .bio, .in-section .links { display: none; }
@@ -181,14 +194,33 @@
     const ME = {
       name: "Abiola Afolabi",
       tagline: "Designer & builder",
-      bio: [
-        "Hi, I'm Abiola, a trained graphic designer, curious about all things.",
-        "I'm currently building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\" />Wave</a>, an app for noticing how you're doing and finding better ways to respond in the moment.",
-        "I design brands and campaigns. <a class=\"go\" href=\"portfolio.html\">See my work →</a>",
-        "And I run <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\" />ANIXVRS</a>, a streetwear brand preserving cultural heritage, and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\" />Mothership</a>, events imagining the future of the African diaspora.",
-        "You can reach me by <a href=\"mailto:abiolamd2004@gmail.com\">email</a> or on <a href=\"https://www.instagram.com/abiolafolabi/\" target=\"_blank\" rel=\"noopener\">Instagram</a>."
+      // Three versions of the bio to compare. "c" uses the short bio and moves
+      // what I'm working on into About me. Switch with bioPick, or ?bio=a|b|c.
+      bioPick: "b",
+      bios: {
+        a: [
+          "I'm a designer. I work on strategy, visual identity, fashion and product design. I come up with ideas and make them real. <a class=\"go\" href=\"portfolio.html\">See my work →</a>",
+          "I studied graphic design. I'm Nigerian and based in London."
+        ],
+        b: [
+          "I'm a designer. I work on strategy, visual identity, fashion and product design. <a class=\"go\" href=\"portfolio.html\">See my work →</a>",
+          "I also come up with ideas and make them. Right now I'm building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\" />Wave</a>, an app for noticing how you're doing. I run <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\" />ANIXVRS</a>, a streetwear brand preserving cultural heritage, and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\" />Mothership</a>, events imagining the future of the African diaspora.",
+          "I studied graphic design. I'm Nigerian and based in London."
+        ],
+        c: [
+          "I'm a designer. I work on strategy, visual identity, fashion and product design. I come up with ideas and make them real. <a class=\"go\" href=\"portfolio.html\">See my work →</a>",
+          "I studied graphic design. I'm Nigerian and based in London."
+        ]
+      },
+      // Shown at the top of About me when bioPick is "c"
+      now: "Right now I'm building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\" />Wave</a>, an app for noticing how you're doing. I run <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\" />ANIXVRS</a>, a streetwear brand preserving cultural heritage, and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\" />Mothership</a>, events imagining the future of the African diaspora.",
+      // Newest first. Add a line to keep the running list going.
+      updates: [
+        { m: "Oct 2026", t: "Launched this site" }
       ],
-      updates: [{"t":"Launched this site","m":"Oct 2026","d":"A home for my work, what I'm building, and everything else I'm into."}],
+      // Questions people have asked, with my answers. Newest first.
+      // { q: "The question", a: "My answer", m: "Oct 2026" }
+      answers: [],
       email: "abiolamd2004@gmail.com",
       links: [
         { label: "Instagram", url: "https://www.instagram.com/abiolafolabi/" },
@@ -200,7 +232,7 @@
     const SECTIONS = [
       {
         "id": "work",
-        "title": "Portfolio",
+        "title": "Clients",
         "intro": "Brand, product, fashion and event design. The full portfolio lives on its own page.",
         "cta": {
           "label": "Open the portfolio →",
@@ -229,7 +261,7 @@
       },
       {
         "id": "projects",
-        "title": "Projects & ideas",
+        "title": "Projects",
         "intro": "Things I've made, am making, or am still turning over.",
         "items": [
           {
@@ -313,46 +345,6 @@
           {
             "t": "Technology, business & startups",
             "d": "And economics."
-          }
-        ],
-        "about": true
-      },
-      {
-        "id": "proud",
-        "title": "Proud of",
-        "intro": "Things I've done that I'm proud of.",
-        "items": [
-          {
-            "t": "Building a clothing brand",
-            "d": "ANIXVRS: a few hundred thousand views, almost 400 people on the mailing list, and invitations to four fashion shows."
-          },
-          {
-            "t": "Designing my first garment",
-            "d": "The ANIXVRS puffer jacket."
-          },
-          {
-            "t": "Building an app",
-            "d": "Something I've always wanted to do. Wave is that app."
-          },
-          {
-            "t": "Saracens Rugby Academy",
-            "d": "Played in the academy."
-          },
-          {
-            "t": "Benching 140 kg, squatting 210 kg",
-            "d": "Years of training, starting with push-ups at 11."
-          },
-          {
-            "t": "American football",
-            "d": "Played and did well. Stats to add."
-          },
-          {
-            "t": "Two silver awards",
-            "d": "One for a graphic design brief, one for an ad partnership brief."
-          },
-          {
-            "t": "Sports day",
-            "d": "A lot of medals from a lot of sports days."
           }
         ],
         "about": true
@@ -544,35 +536,6 @@
         "about": true
       },
       {
-        "id": "watch",
-        "title": "Watch",
-        "intro": "Favourite films, TV and anime. YouTube favourites coming soon.",
-        "items": [
-          {
-            "t": "Dune: Part One & Part Two",
-            "m": "Film",
-            "d": "Hands down."
-          },
-          {
-            "t": "Severance",
-            "m": "TV"
-          },
-          {
-            "t": "Attack on Titan",
-            "m": "Anime"
-          },
-          {
-            "t": "Death Note",
-            "m": "Anime"
-          },
-          {
-            "t": "Dragon Ball Z",
-            "m": "Anime"
-          }
-        ],
-        "about": true
-      },
-      {
         "id": "cookies",
         "title": "Cookies & Milk Review",
         "intro": "I love a good cookies and milk, so here's my unsolicited review. Ranked by taste and dipability, tested in hot chocolate and oat milk.",
@@ -634,97 +597,23 @@
           }
         ],
         "about": true
-      },
-      {
-        "id": "references",
-        "title": "References",
-        "intro": "Niche cuts. Things I reference all the time. You either get them or you don't.",
-        "items": [
-          {
-            "t": "Supa Strikas"
-          },
-          {
-            "t": "Indominus Rex"
-          },
-          {
-            "t": "Upside-down Squidward"
-          },
-          {
-            "t": "Patrick"
-          },
-          {
-            "t": "Ugandan Knuckles"
-          },
-          {
-            "t": "“You can't do this on concrete”"
-          }
-        ],
-        "about": true
-      },
-      {
-        "id": "formative",
-        "title": "Formative",
-        "intro": "The things I grew up on that shaped how I see, think and make.",
-        "cta": {
-          "label": "See the full board on Pinterest →",
-          "url": "https://uk.pinterest.com/abiolamd2004/formative-inspirations/"
-        },
-        "items": [
-          {
-            "t": "Shows",
-            "d": "Ben 10, Power Rangers."
-          },
-          {
-            "t": "Superheroes",
-            "d": "Spider-Man, Green Lantern, Daredevil, Deadpool."
-          },
-          {
-            "t": "Monsters & character creation",
-            "d": "Creature evolutions, fantasy worlds, designing characters."
-          },
-          {
-            "t": "Football",
-            "d": "Ronaldo and Messi edit videos: top goals with the music playing behind them. I still miss those."
-          },
-          {
-            "t": "Games & toys",
-            "d": "Marbles, Battleship, and the rest."
-          },
-          {
-            "t": "Art & crafts",
-            "d": "Drawing, origami, making things by hand."
-          },
-          {
-            "t": "Birds",
-            "d": "Always have, always will. I used to name them all: blue tits, peregrine falcons, bald eagles, eagle owls, and the barn owl with its heart-shaped face. In Year 1 I drew birds that other kids took home to put up in their houses."
-          },
-          {
-            "t": "Science & nature",
-            "d": "Atoms, minibeasts, animals, anthropology."
-          },
-          {
-            "t": "Museums",
-            "d": "I've loved them since I was a kid. So much history and culture living in the same place."
-          },
-          {
-            "t": "Tech & the future",
-            "d": "Corning’s “A Day Made of Glass” and future-of-technology videos. They shaped how I see technology and the future, my optimism about both, and my love of Apple."
-          }
-        ],
-        "about": true
       }
     ];
 
     /* ========================================================= */
 
     const $ = (s) => document.querySelector(s);
+    const BIO = (new URLSearchParams(location.search).get("bio") || ME.bioPick).toLowerCase();
     const live = (url) => url && url !== "#";
     const link = (it, inner) => live(it.url) ? `<a href="${it.url}"${/^https?:/.test(it.url) ? ' target="_blank" rel="noopener"' : ""}>${inner}</a>` : inner;
+    // About me sits after Projects, before Writing
+    const withAbout = (list, about) => { const k = list.findIndex((x) => x.id === "projects") + 1; return [...list.slice(0, k), about, ...list.slice(k)]; };
     const initials = (n) => n.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 
     $("#foot").innerHTML = `
-      <form class="foot-ask" id="askForm"><label for="askInput">Ask me anything</label>
+      <div class="foot-ask"><form id="askForm"><label for="askInput">Ask me anything</label>
         <div><input id="askInput" placeholder="Your question" required /><button>Send</button></div></form>
+        ${ME.answers.length ? `<ul class="qa-feed">${ME.answers.map((x) => `<li><div class="q">${x.q}</div><div class="a">${x.a}</div>${x.m ? `<div class="m">${x.m}</div>` : ""}</li>`).join("")}</ul>` : `<p class="qa-empty">Answered questions show up here.</p>`}</div>
       <div>For inquiries, contact <a href="mailto:${ME.email}">${ME.email}</a><br />All views here are my own.</div>
       <div>© ${new Date().getFullYear()} ${ME.name}</div>`;
     $("#askForm").onsubmit = (e) => {
@@ -733,14 +622,16 @@
       if (q) location.href = `mailto:${ME.email}?subject=${encodeURIComponent("A question for you")}&body=${encodeURIComponent(q)}`;
     };
 
+    const update = (u) => `<li><span>${u.m}</span>${u.t}</li>`;
+
     function renderHome() {
       document.body.classList.remove("in-section");
       document.title = ME.name;
       $("#side").innerHTML = `
         <div class="name">${ME.name}<small>${ME.tagline}</small></div>
-        <div class="bio">${ME.bio.map((p) => `<p>${p}</p>`).join("")}</div>
-        ${ME.updates && ME.updates.length ? `<div class="updates"><span>Updates</span><ul>${ME.updates.map((u) => `<li><b>${u.m}</b> ${u.t}${u.d ? `. ${u.d}` : ""}</li>`).join("")}</ul></div>` : ""}`;
-      const tiles = [{ id: "about", title: "About me", items: SECTIONS.filter((s) => s.about).map((s) => ({ t: s.title, id: s.id })) }, ...SECTIONS.filter((s) => !s.about)];
+        <div class="bio">${(ME.bios[BIO] || ME.bios.b).map((p) => `<p>${p}</p>`).join("")}</div>
+        ${ME.updates.length ? `<details class="updates" open><summary>Updates</summary><ul>${ME.updates.slice(0, 3).map(update).join("")}</ul>${ME.updates.length > 3 ? `<details class="earlier"><summary>Earlier</summary><ul>${ME.updates.slice(3).map(update).join("")}</ul></details>` : ""}</details>` : ""}`;
+      const tiles = withAbout(SECTIONS.filter((s) => !s.about), { id: "about", title: "About me", items: SECTIONS.filter((s) => s.about).map((s) => ({ t: s.title, id: s.id })) });
       $("#main").innerHTML = `<div class="index fade">${tiles.map((s) => `
         <section>
           <h2><a href="#${s.id}">${s.title}</a></h2>
@@ -755,10 +646,10 @@
       const onAbout = activeId === "about" || about.some((x) => x.id === activeId);
       $("#side").innerHTML = `
         <a class="name" href="#">${ME.name}<small>${ME.tagline}</small></a>
-        <ul class="nav">
+        <ul class="nav">${withAbout(SECTIONS.filter((x) => !x.about), { id: "about" }).map((x) => x.id === "about" ? `
           <li><a href="#about" class="${onAbout ? "on" : ""}">About me</a>
             ${onAbout ? `<ul>${about.map((x) => `<li><a href="#${x.id}">${x.title}</a></li>`).join("")}</ul>` : ""}
-          </li>${SECTIONS.filter((x) => !x.about).map((x) => `
+          </li>` : `
           <li><a href="#${x.id}" class="${x.id === activeId ? "on" : ""}">${x.title}</a>
             ${x.id === activeId && !x.wall ? `<ul>${x.items.map((it) => `<li>${it.t}</li>`).join("")}</ul>` : ""}
           </li>`).join("")}</ul>`;
@@ -768,7 +659,7 @@
       document.body.classList.add("in-section");
       document.title = `About me — ${ME.name}`;
       renderSide(focusId || "about");
-      $("#main").innerHTML = `<div class="view fade"><h1>About me</h1><p class="intro">The rest of me, a section at a time.</p><div class="about-parts">${SECTIONS.filter((x) => x.about).map((x) => `
+      $("#main").innerHTML = `<div class="view fade"><h1>About me</h1>${BIO === "c" ? `<div class="bio" style="max-width:52ch;margin:12px 0 20px">${ME.now}</div>` : ""}<p class="intro">The rest of me, a section at a time.</p><div class="about-parts">${SECTIONS.filter((x) => x.about).map((x) => `
         <details class="about-part" id="part-${x.id}"${x.id === focusId ? " open" : ""}><summary><h2>${x.title}</h2><p class="intro">${x.intro}</p></summary><div class="inner">${sectionBody(x)}</div></details>`).join("")}</div></div>`;
       if (focusId) { const el = document.getElementById(`part-${focusId}`); if (el) setTimeout(() => el.scrollIntoView({ block: "start" }), 0); }
     }
