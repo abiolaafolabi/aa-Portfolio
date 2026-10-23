@@ -110,9 +110,12 @@
     /* Project view */
     .project {
       position: fixed; inset: 0; z-index: 35; background: var(--bg); overflow-y: auto;
-      opacity: 0; transform: translateY(24px); pointer-events: none; transition: opacity .35s ease, transform .5s cubic-bezier(.3,.7,.2,1);
+      visibility: hidden; pointer-events: none;
     }
-    .proj-open .project { opacity: 1; transform: none; pointer-events: auto; }
+    .proj-open .project { visibility: visible; pointer-events: auto; }
+    .project > * { opacity: 0; transform: translateY(16px); transition: opacity .4s ease, transform .5s cubic-bezier(.3,.7,.2,1); }
+    .proj-open .project > * { opacity: 1; transform: none; }
+    .project .bar { transform: none; }
     .hero { padding: calc(var(--pad) + 48px) var(--pad) 0; }
     .hero .cover { aspect-ratio: 16 / 8.5; }
     .project .head { padding: 64px var(--pad) 48px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--pad); }
@@ -124,16 +127,18 @@
     .shots .cover { aspect-ratio: 16 / 9; }
     .shots .cover.wide { grid-column: 1 / -1; }
     .meta b { font-weight: inherit; }
+    .body .credits { color: var(--muted); font-size: 13px; margin-top: 24px; min-height: 1.4em; }
     .intro em { font-style: normal; }
     .item.is-hidden { opacity: .35; }
-    .logos-label { margin-top: 120px; }
-    .logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px var(--pad); padding: 0 var(--pad); }
+    .logos-label { margin-top: 140px; font-size: 14px; color: var(--muted); }
+    .logos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px 12px; padding: 0 var(--pad); }
     .logo-tile figure { margin: 0; }
     .logo-tile .lt { aspect-ratio: 1; background: #f3f3f1; border-radius: 4px; display: grid; place-items: center; overflow: hidden; }
     .logo-tile .lt img { width: 46%; height: 46%; object-fit: contain; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
     .logo-tile:hover .lt img { transform: scale(1.06); }
-    .logo-tile figcaption { margin-top: 10px; font-size: 14px; min-height: 1.5em; }
-    @media (max-width: 720px) { .logos { grid-template-columns: 1fr 1fr; gap: 20px 12px; } .logos-label { margin-top: 80px; } }
+    .logo-tile .lt img { width: 52%; height: 52%; }
+    .logo-tile figcaption { margin-top: 6px; font-size: 12px; color: var(--muted); min-height: 1.4em; }
+    @media (max-width: 720px) { .logos { grid-template-columns: repeat(3, 1fr); gap: 12px 8px; } .logos-label { margin-top: 90px; } }
     .shots .cover.img { aspect-ratio: auto; background: transparent; }
     .shots { align-items: start; }
     .shots .cover.img img, .shots .cover.img video { height: auto; }
@@ -337,7 +342,7 @@
           <div><span>Type</span><b data-edit="type">${w.type}</b></div><div><span>Year</span><b data-edit="year">${w.year}</b></div>
         </div>
         <div class="${cls}">${imgs.length ? imgs.slice(0, split).map(pic).join("") : `${art(w).replace('class="cover"', 'class="cover wide"')}<div class="cover plain">Image</div><div class="cover plain">Image</div>`}</div>
-        <div class="body"><div></div><div>${w.body.map((p, k) => `<p data-edit="body.${k}">${p}</p>`).join("")}</div></div>
+        <div class="body"><div></div><div>${w.body.map((p, k) => `<p data-edit="body.${k}">${p}</p>`).join("")}${(w.credits || EDITING) ? `<p class="credits" data-edit="credits">${w.credits || ""}</p>` : ""}</div></div>
         <div class="${cls}">${imgs.length ? imgs.slice(split).map((e, i) => pic(e, i + split)).join("") : `<div class="cover plain wide">Image</div>`}</div>
         ${process}
         <a class="next" href="#${next.id}" style="margin-top:64px"><span>Next project</span><b>${next.title} →</b></a>`;

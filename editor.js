@@ -7,6 +7,8 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const local = ["localhost", "127.0.0.1"].includes(location.hostname);
   let dirty = false;
+  let version = null;
+  fetch("/api/version").then((r) => r.json()).then((d) => { version = d.version; }).catch(() => {});
 
   /* ---------- styles ---------- */
   const css = document.createElement("style");
@@ -49,7 +51,9 @@
   window.addEventListener("beforeunload", (e) => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
 
   async function api(path, body, type = "application/json") {
-    const r = await fetch(path, { method: "POST", headers: { "Content-Type": type }, body });
+    const headers = { "Content-Type": type };
+    if (path === "/api/save" && version) headers["X-Base-Version"] = version;
+    const r = await fetch(path, { method: "POST", headers, body });
     const data = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(data.error || data.log || `Request failed (${r.status})`);
     return data;
@@ -256,7 +260,7 @@
   async function save() {
     if (!local) return status("Edit mode only saves on your Mac");
     status("Saving…");
-    try { await api("/api/save", JSON.stringify(C)); dirty = false; status("Saved"); }
+    try { const r = await api("/api/save", JSON.stringify(C)); if (r.version) version = r.version; dirty = false; status("Saved"); }
     catch (e) { status("Couldn't save: " + e.message); throw e; }
   }
   bar.addEventListener("click", async (e) => {

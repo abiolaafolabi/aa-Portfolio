@@ -46,15 +46,26 @@ class Handler(SimpleHTTPRequestHandler):
     def body(self):
         return self.rfile.read(int(self.headers.get("Content-Length", 0)))
 
+    def version(self):
+        return str(os.path.getmtime(os.path.join(ROOT, "content.js")))
+
+    def do_GET(self):
+        if urlparse(self.path).path == "/api/version":
+            return self.reply(200, {"version": self.version()})
+        return super().do_GET()
+
     def do_POST(self):
         url = urlparse(self.path)
         try:
             if url.path == "/api/save":
+                base = self.headers.get("X-Base-Version")
+                if base and base != self.version():
+                    return self.reply(409, {"error": "The content changed since this page was opened. Reload to get the latest."})
                 content = json.loads(self.body())
                 with open(os.path.join(ROOT, "content.js"), "w") as f:
                     f.write("/* Site content. Edited by hand or by edit mode (python3 edit_server.py, then add ?edit to the page URL). */\n")
                     f.write("window.CONTENT = " + json.dumps(content, indent=2, ensure_ascii=False) + ";\n")
-                return self.reply(200, {"ok": True})
+                return self.reply(200, {"ok": True, "version": self.version()})
 
             if url.path == "/api/upload":
                 q = parse_qs(url.query)

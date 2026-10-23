@@ -1,6 +1,6 @@
 /* Site content. Edited by hand or by edit mode (python3 edit_server.py, then add ?edit to the page URL). */
 window.CONTENT = {
-  "intro": "is a designer and strategist building visual identity systems for purpose driven businesses.",
+  "intro": "is a designer and strategist building visual identities for purpose driven startups.",
   "me": {
     "email": "abiolamd2004@gmail.com",
     "bio": [
@@ -190,13 +190,14 @@ window.CONTENT = {
         }
       ],
       "role": "Co-organiser & designer",
-      "client": "Mothership × Phenomenal Worlds",
-      "team": "In partnership with Phenomenal Worlds",
+      "client": "Mothership",
+      "team": "In partnership with TROS London",
       "summary": "An event platform helping people imagine new visions of the future for the African diaspora.",
       "body": [
-        "Our first event was an immersive Afrofuturist dinner, A Taste of the Future, in February 2026, run in partnership with Phenomenal Worlds. It sold out, with around 34 tickets at about £30 each.",
+        "Our first event was an immersive Afrofuturist dinner, A Taste of the Future, in February 2026, run in partnership with TROS London. It sold out, with around 34 tickets at about £30 each.",
         "I designed the brand and everything around the night: the identity, posters, menus and social. For our second event, an Afrofuturist literature panel talk, I designed the call-out for panellists, the posters, and the partnership proposal we pitched to Morley College, where the talk was held."
-      ]
+      ],
+      "credits": "Event photography: TROS London."
     },
     {
       "id": "wave",

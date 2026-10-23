@@ -157,3 +157,4 @@ vite.config.ts.timestamp-*
 # Phone preview builds
 .artifact/
 .artifact-build.py
+_covers.html
