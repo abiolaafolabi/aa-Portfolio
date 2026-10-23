@@ -141,6 +141,7 @@
           markDirty(); rerender();
         }]);
       }
+      if (it && typeof it === "object" && kind === "item") buttons.push([it.hidden ? "Show" : "Hide", () => { it.hidden = !it.hidden; if (!it.hidden) delete it.hidden; markDirty(); rerender(); }]);
       buttons.push(["✕", (b) => confirmBtn(b, () => { list.splice(i, 1); markDirty(); rerender(); })]);
       const box = document.createElement("div");
       box.className = "ed-tools"; box.contentEditable = "false";

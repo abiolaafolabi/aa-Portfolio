@@ -347,7 +347,11 @@
         return;
       }
       if (!document.body.classList.contains("proj-open")) gridY = window.scrollY;
-      const w = WORK[i], next = WORK[(i + 1) % WORK.length];
+      const w = WORK[i];
+      // "Next project" skips hidden ones (unless you're editing)
+      let n = (i + 1) % WORK.length;
+      while (WORK[n].hidden && !EDITING && n !== i) n = (n + 1) % WORK.length;
+      const next = WORK[n];
       const imgs = w.images || [];
       const split = w.pairs ? 2 : 3;
       const pic = (e, i) => {

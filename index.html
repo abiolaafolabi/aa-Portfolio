@@ -133,6 +133,7 @@
     .items .t { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
     .items .t a { border-bottom: 1px solid var(--line); transition: border-color .15s; }
     .items .t a:hover { border-color: var(--text); }
+    .items li.is-hidden, .timeline li.is-hidden { opacity: .35; }
     .items .ext { margin-left: 3px; color: var(--muted); font-size: 11px; }
     .items .m { color: var(--faint); font-size: 1em; }
     .items .d { color: var(--muted); margin-top: 2px; }
@@ -264,6 +265,8 @@
     // Optional text: shown when filled in, or as an empty slot in edit mode
     const opt = (val, path, cls, ph, tag = "div") => val || EDITING ? `<${tag} class="${cls}"${E(path)} data-ph="${ph}">${val || ""}</${tag}>` : "";
     const sp = (s) => `sections.${SECTIONS.indexOf(s)}`;
+    // Items you've hidden in edit mode stay out of the live page (k keeps each item's real position for editing)
+    const shown = (items) => items.map((it, k) => [it, k]).filter(([it]) => !it.hidden || EDITING);
     // About me parts; an empty "On my mind lately" only shows in edit mode
     const aboutParts = () => SECTIONS.filter((x) => x.about && (x.items.length || EDITING || !x.lately));
 
@@ -298,7 +301,7 @@
         <section>
           <h2><a href="#${s.id}">${s.title}</a></h2>
           ${ME.homeLists ? `<ul>${s.items.length
-            ? s.items.slice(0, s.id === "about" ? 12 : 4).map((it) => `<li><a href="${it.url && s.id === "work" ? it.url : `#${it.id || s.id}`}"${it.img ? ` data-peek="${it.img}"` : ""}>${it.t}</a></li>`).join("")
+            ? shown(s.items).map(([it]) => it).slice(0, s.id === "about" ? 12 : 4).map((it) => `<li><a href="${it.url && s.id === "work" ? it.url : `#${it.id || s.id}`}"${it.img ? ` data-peek="${it.img}"` : ""}>${it.t}</a></li>`).join("")
             : `<li><a href="#${s.id}">${s.ask ? "Ask a question" : "Coming soon"}</a></li>`}</ul>` : ""}
         </section>`).join("")}</div>`;
     }
@@ -313,7 +316,7 @@
             ${onAbout ? `<ul>${about.map((x) => `<li><a href="#${x.id}">${x.title}</a></li>`).join("")}</ul>` : ""}
           </li>` : `
           <li><a href="#${x.id}" class="${x.id === activeId ? "on" : ""}">${x.title}</a>
-            ${x.id === activeId && !x.wall ? `<ul>${x.items.map((it) => `<li>${it.t}</li>`).join("")}</ul>` : ""}
+            ${x.id === activeId && !x.wall ? `<ul>${shown(x.items).map(([it]) => `<li>${it.t}</li>`).join("")}</ul>` : ""}
           </li>`).join("")}</ul>`;
     }
 
@@ -344,10 +347,10 @@
           <div${E(`${p}.items.${k}.t`)}>${it.t}</div>${opt(it.d, `${p}.items.${k}.d`, "d", "Description")}</div>`).join("")}</div>
           ${s.items.some((it) => it.credit) ? `<details class="credits"><summary>Photo credits</summary><ul>${s.items.filter((it) => it.credit).map((it) => `<li>${it.t}: <a href="${it.creditUrl}" target="_blank" rel="noopener">${it.credit}</a></li>`).join("")}</ul></details>` : ""}`;
       } else if (s.timeline) {
-        body = `<ol class="timeline"${Lst(`${p}.items`, "item")}>${s.items.map((it, k) => `<li${I(`${p}.items.${k}`)}><div${E(`${p}.items.${k}.t`)}>${it.t}</div>${opt(it.d, `${p}.items.${k}.d`, "d", "Description")}</li>`).join("")}</ol>`;
+        body = `<ol class="timeline"${Lst(`${p}.items`, "item")}>${shown(s.items).map(([it, k]) => `<li${I(`${p}.items.${k}`)}${it.hidden ? ' class="is-hidden"' : ""}><div${E(`${p}.items.${k}.t`)}>${it.t}</div>${opt(it.d, `${p}.items.${k}.d`, "d", "Description")}</li>`).join("")}</ol>`;
       } else {
-        body = `<ul class="items"${Lst(`${p}.items`, s.lately ? "lately" : "item")}>${s.items.map((it, k) => `
-          <li${I(`${p}.items.${k}`)}${it.img ? ` data-peek="${it.img}"${it.url || EDITING ? "" : ` data-zoom="${it.img}"`}` : ""}><div class="t">${link(it, `<span${E(`${p}.items.${k}.t`)}>${it.t}</span>`)}${opt(it.m, `${p}.items.${k}.m`, "m", "Meta", "span")}${opt(it.tag, `${p}.items.${k}.tag`, "tag", "Tag", "span")}</div>
+        body = `<ul class="items"${Lst(`${p}.items`, s.lately ? "lately" : "item")}>${shown(s.items).map(([it, k]) => `
+          <li${I(`${p}.items.${k}`)}${it.hidden ? ' class="is-hidden"' : ""}${it.img ? ` data-peek="${it.img}"${it.url || EDITING ? "" : ` data-zoom="${it.img}"`}` : ""}><div class="t">${link(it, `<span${E(`${p}.items.${k}.t`)}>${it.t}</span>`)}${opt(it.m, `${p}.items.${k}.m`, "m", "Meta", "span")}${opt(it.tag, `${p}.items.${k}.tag`, "tag", "Tag", "span")}</div>
           ${opt(it.d, `${p}.items.${k}.d`, "d", "Description")}</li>`).join("")}</ul>
           ${s.cta && (live(s.cta.url) || EDITING) ? `<p style="margin-top:36px"><a href="${s.cta.url}" style="border-bottom:1px solid var(--text)"${E(`${p}.cta.label`)}>${s.cta.label}</a></p>` : ""}`;
       }
