@@ -328,10 +328,21 @@ window.HUB = {
       "wall": true,
       "items": [
         {
+          "t": "Leonardo da Vinci",
+          "credit": "Attributed to Francesco Melzi, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo_(colour_correction).png"
+        },
+        {
           "t": "Steve Jobs",
           "img": "work/hub/people/steve-jobs.jpg",
           "credit": "Matthew Yohe, CC BY-SA 3.0",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010_(cropped_4).jpg"
+        },
+        {
+          "t": "Benjamin Franklin",
+          "img": "work/hub/people/benjamin-franklin.jpg",
+          "credit": "Joseph-Siffred Duplessis, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg"
         },
         {
           "t": "Jony Ive",
@@ -346,40 +357,16 @@ window.HUB = {
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Designer-Dieter_Rams.jpg"
         },
         {
-          "t": "Virgil Abloh",
-          "img": "work/hub/people/virgil-abloh.jpg",
-          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Virgil_Abloh_Paris_Fashion_Week_Autumn_Winter_2019_(cropped).jpg"
-        },
-        {
-          "t": "Leonardo da Vinci",
-          "img": "work/hub/people/leonardo-da-vinci.jpg",
-          "credit": "Attributed to Francesco Melzi, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo_(colour_correction).png"
-        },
-        {
-          "t": "Nikola Tesla",
-          "img": "work/hub/people/nikola-tesla.jpg",
-          "credit": "Napoleon Sarony, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg"
-        },
-        {
-          "t": "Benjamin Franklin",
-          "img": "work/hub/people/benjamin-franklin.jpg",
-          "credit": "Joseph-Siffred Duplessis, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg"
-        },
-        {
           "t": "Julius Caesar",
           "img": "work/hub/people/julius-caesar.jpg",
           "credit": "Ángel M. Felicísimo from Mérida, España, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Retrato_de_Julio_C%C3%A9sar_(26724093101)_(cropped).jpg"
         },
         {
-          "t": "Napoleon Bonaparte",
-          "img": "work/hub/people/napoleon.jpg",
-          "credit": "Jacques-Louis David, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg"
+          "t": "Virgil Abloh",
+          "img": "work/hub/people/virgil-abloh.jpg",
+          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Virgil_Abloh_Paris_Fashion_Week_Autumn_Winter_2019_(cropped).jpg"
         },
         {
           "t": "Michael Jackson",
@@ -388,24 +375,15 @@ window.HUB = {
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1983_(3x4_cropped)_(contrast).jpg"
         },
         {
+          "t": "Napoleon Bonaparte",
+          "img": "work/hub/people/napoleon.jpg",
+          "credit": "Jacques-Louis David, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg"
+        },
+        {
           "t": "Cristiano Ronaldo",
-          "img": "work/hub/people/cristiano-ronaldo.jpg",
           "credit": "Bryan Berlin, CC BY-SA 4.0",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_(cropped).jpg"
-        },
-        {
-          "t": "Alex Hormozi",
-          "img": ""
-        },
-        {
-          "t": "Ronnie Coleman",
-          "img": "work/hub/people/ronnie-coleman.jpg",
-          "credit": "Haribhagirath, CC BY-SA 4.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Ronnie_Coleman_Invited_Guest.jpg"
-        },
-        {
-          "t": "Serge Nubret",
-          "img": ""
         }
       ],
       "about": true
@@ -429,11 +407,11 @@ window.HUB = {
         },
         {
           "t": "Philosophy",
-          "d": "Studying it, practising it, and thinking about ideas."
+          "d": "Practicing it more than studying it, but I love collecting and thinking about ideas."
         },
         {
           "t": "Debating",
-          "d": "I love getting closer to the truth through dialogue."
+          "d": "Its a joy it get closer to the truth through dialogue."
         },
         {
           "t": "Memes",
@@ -441,15 +419,15 @@ window.HUB = {
         },
         {
           "t": "Dancing",
-          "d": "If I hear any type of music, or even no music, fifty-fifty chance you'll see me busting a move. My particular flavour: the 2016 Ayo & Teo era."
+          "d": "50-50 chance you'll see me busting a move, music or not. My particular flavour: the 2016 Ayo & Teo era."
         },
         {
           "t": "Chess",
-          "d": "I love playing."
+          "d": "Not that good yet, but I enjoy playing casually."
         },
         {
           "t": "Football & rugby",
-          "d": "Love playing both. More of a rugby guy. I don't really watch either on TV, which is a bit embarrassing."
+          "d": "Love playing both. More historically a rugby guy. Don't really watch either, which is a bit embarrassing."
         }
       ],
       "about": true
@@ -457,10 +435,10 @@ window.HUB = {
     {
       "id": "cookies",
       "title": "Cookies & Milk Ranked",
-      "intro": "I love a good cookies and milk, so here's my unsolicited review. Ranked by taste and dipability, tested in hot chocolate and oat milk.",
+      "intro": "I love a good cookie and milk, so here's my unsolicited review. Ranked by taste and dipability, tested in hot chocolate and oat milk.",
       "items": [
         {
-          "t": "Morrisons Finest",
+          "t": "Tesco's Finest",
           "m": "#1",
           "d": "Impressive, and they've improved. Soakability is genuinely excellent."
         },
@@ -470,19 +448,24 @@ window.HUB = {
           "d": "Properly designed: large and chewy. Dipability slightly below Morrisons Finest."
         },
         {
-          "t": "Lidl",
-          "m": "#3",
-          "d": "Large and chewy, but harder to dip."
-        },
-        {
           "t": "Morrisons",
           "m": "#4",
           "d": "Delicious, splendid. The chewiness makes it harder to dip, and it doesn't soak as much."
         },
         {
+          "t": "Lidl",
+          "m": "#3",
+          "d": "Large and chewy, but harder to dip."
+        },
+        {
           "t": "Chocolate digestives",
           "m": "Basics",
           "d": "Surprisingly good for dipping while still tasty. Very soakable."
+        },
+        {
+          "t": "Oreos, custard creams",
+          "m": "Basics",
+          "d": "The basics."
         },
         {
           "t": "Maryland",
@@ -495,24 +478,19 @@ window.HUB = {
           "d": "Rough on the tongue."
         },
         {
-          "t": "Oreos, custard creams",
-          "m": "Basics",
-          "d": "The basics."
-        },
-        {
           "t": "Oat milk: Oatly",
           "m": "#1",
           "d": "The best."
         },
         {
-          "t": "Oat milk: the one I can't remember the name of",
+          "t": "Oat milk: Califa Farms",
           "m": "#2",
           "d": "Close second."
         },
         {
           "t": "Oat milk: Minor Figures",
           "m": "#3",
-          "d": "Subpar, but decent. I haven't tried many."
+          "d": "A bit thin, but good for dipping"
         }
       ],
       "about": true
