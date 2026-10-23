@@ -20,7 +20,7 @@
     .ed-btn:hover { background: #3a3a3a; }
     .ed-btn.primary { background: #fff; color: #111; }
     .ed-btn.warn { background: #c62828; }
-    .ed-tools { position: absolute; top: 8px; right: 8px; z-index: 20; display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; opacity: 0; transition: opacity .15s; }
+    .ed-tools { aspect-ratio: auto !important; overflow: visible !important; position: absolute; top: 8px; right: 8px; z-index: 20; display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; opacity: 0; transition: opacity .15s; }
     .ed-hover:hover > .ed-tools, .ed-tools:focus-within { opacity: 1; }
     .ed-tools button, .ed-tools label { font: 12px/1 Inter, system-ui, sans-serif; border: 0; cursor: pointer; border-radius: 6px; padding: 6px 8px; background: rgba(17,17,17,.85); color: #fff; }
     .ed-tools input[type=color] { width: 0; height: 0; opacity: 0; position: absolute; }
@@ -230,11 +230,16 @@
     w.process = w.process || [];
     $$("[data-proc]", proj).forEach((fig) => {
       const k = +fig.dataset.proc;
-      tools(fig, [
+      const swap = async () => { const [f] = await pick(MEDIA); if (!f) return; [w.process[k].src] = await upload([f], w.id); rerender(); };
+      tools(fig, w.process[k].src ? [
         ["←", () => { move(w.process, k, k - 1); markDirty(); rerender(); }],
         ["→", () => { move(w.process, k, k + 1); markDirty(); rerender(); }],
-        ["Replace", async () => { const [f] = await pick(MEDIA); if (!f) return; [w.process[k].src] = await upload([f], w.id); rerender(); }],
-        ["Remove", (b) => confirmBtn(b, () => { w.process.splice(k, 1); markDirty(); rerender(); })]
+        ["Replace", swap],
+        // Leaves a "to add" slot (hidden on the live site) so you remember to fill it
+        ["Remove", (b) => confirmBtn(b, () => { w.process[k].src = ""; markDirty(); rerender(); })]
+      ] : [
+        ["Add image", swap],
+        ["Delete slot", (b) => confirmBtn(b, () => { w.process.splice(k, 1); markDirty(); rerender(); })]
       ]);
       draggable(fig, "process", k, (from, to) => { move(w.process, from, to); markDirty(); rerender(); });
     });

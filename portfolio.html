@@ -159,11 +159,12 @@
     .process-head { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; margin-bottom: clamp(20px, 2.4vw, 36px); }
     .process-head span:last-child { color: var(--muted); }
     .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 24px); }
-    .process figure div { aspect-ratio: 1; background: #fff; border-radius: 4px; display: grid; place-items: center; overflow: hidden; }
+    .process figure > div:first-child { aspect-ratio: 1; background: #fff; border-radius: 4px; display: grid; place-items: center; overflow: hidden; }
     .process figure img { max-width: 86%; max-height: 86%; object-fit: contain; display: block; }
     .process figure img[src$=".svg"], .process figure img[src*="icon-"] { max-width: 56%; }
     .process figure img[src*="stacked"] { max-width: 70%; }
     .process figure img[src*="logo-full"] { max-width: 80%; }
+    .process figure .todo { border: 1.5px dashed #c8c8c8; background: transparent; color: #999; font-size: 13px; }
     .process figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; }
     .art img.mark { width: 42%; filter: brightness(0) invert(1); animation: float 7s ease-in-out infinite; }
     @keyframes float { 50% { transform: translateY(-6%); } }
@@ -357,9 +358,11 @@
         if (/\.(mp4|webm|mov)$/i.test(x.src)) return `<div class="cover img${wide ? " wide" : ""}"${tag}><video src="${x.src}" autoplay muted loop playsinline></video></div>`;
         return `<div class="cover img${wide ? " wide" : ""}"${tag}><img src="${x.src}" alt="${w.title}" loading="lazy" /></div>`;
       };
-      const process = (w.process || []).length ? `
+      // A process image with no src is a "to add" reminder: shown only in edit mode
+      const procShown = (w.process || []).filter((x) => x.src || EDITING).length;
+      const process = procShown ? `
         <section class="process"><div class="process-head"><span>Process</span><span>${w.processNote || ""}</span></div>
-          <div class="process-grid"${w.process.length === 4 ? ' style="grid-template-columns:1fr 1fr"' : ""}>${w.process.map((x, k) => `<figure data-proc="${k}"><div><img src="${x.src}" alt="" loading="lazy" /></div><figcaption data-edit="process.${k}.cap">${x.cap || ""}</figcaption></figure>`).join("")}</div>
+          <div class="process-grid"${procShown === 4 ? ' style="grid-template-columns:1fr 1fr"' : ""}>${w.process.map((x, k) => !x.src && !EDITING ? "" : `<figure data-proc="${k}">${x.src ? `<div><img src="${x.src}" alt="" loading="lazy" /></div>` : `<div class="todo">To add</div>`}<figcaption data-edit="process.${k}.cap">${x.cap || ""}</figcaption></figure>`).join("")}</div>
         </section>` : "";
       const cls = w.pairs ? "shots pairs" : "shots";
       // Take the panel out of rendering while its contents swap, so the browser
