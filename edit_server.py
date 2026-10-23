@@ -30,6 +30,13 @@ FILES = {
 }
 
 
+# Only this Mac's own edit pages may use the server. Other websites open in the browser
+# can't send it commands (Origin check), and a lookalike hostname can't reach it (Host check).
+ALLOWED_HOSTS = {f"localhost:{PORT}", f"127.0.0.1:{PORT}"}
+ALLOWED_ORIGINS = {f"http://{h}" for h in ALLOWED_HOSTS}
+ALLOWED_TYPES = {"application/json", "application/octet-stream"}
+
+
 def slug(text, fallback="file"):
     text = re.sub(r"[^a-z0-9.-]+", "-", text.lower()).strip("-.")
     return text or fallback
@@ -57,7 +64,18 @@ class Handler(SimpleHTTPRequestHandler):
     def version(self, key="content"):
         return str(os.path.getmtime(os.path.join(ROOT, FILES[key][0])))
 
+    def trusted_host(self):
+        return self.headers.get("Host", "") in ALLOWED_HOSTS
+
+    def trusted_write(self):
+        origin = self.headers.get("Origin")
+        kind = (self.headers.get("Content-Type") or "").split(";")[0].strip().lower()
+        # JSON / binary bodies can't be sent cross-site without the browser asking first, which we never allow
+        return self.trusted_host() and (origin is None or origin in ALLOWED_ORIGINS) and kind in ALLOWED_TYPES
+
     def do_GET(self):
+        if not self.trusted_host():
+            return self.reply(403, {"error": "forbidden"})
         url = urlparse(self.path)
         if url.path == "/api/version":
             key = parse_qs(url.query).get("file", ["content"])[0]
@@ -65,6 +83,8 @@ class Handler(SimpleHTTPRequestHandler):
         return super().do_GET()
 
     def do_POST(self):
+        if not self.trusted_write():
+            return self.reply(403, {"error": "Only the edit pages on this Mac can save or publish."})
         url = urlparse(self.path)
         try:
             if url.path == "/api/save":
