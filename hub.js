@@ -95,14 +95,14 @@ window.HUB = {
           "t": "ANIXVRS",
           "tag": "Since 2020",
           "d": "Where cultural heritage meets streetwear. A fashion brand I designed and run.",
-          "url": "portfolio.html#anixvrs",
+          "url": "https://www.instagram.com/anixvrs/",
           "img": "work/anixvrs/lookbook.jpg"
         },
         {
           "t": "Mothership",
           "m": "Feb 2026",
           "d": "Imagining new visions of the future for the African diaspora. Sold out, run in partnership with TROS London.",
-          "url": "portfolio.html#mothership",
+          "url": "https://www.instagram.com/mothershipheadquarters/",
           "tag": "Event",
           "img": "work/mothership/cover.jpg"
         }
@@ -341,8 +341,9 @@ window.HUB = {
       "items": [
         {
           "t": "Leonardo da Vinci",
-          "credit": "Attributed to Francesco Melzi, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo_(colour_correction).png"
+          "credit": "Self-portrait, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg",
+          "img": "work/hub/people/leonardo-da-vinci.jpg"
         },
         {
           "t": "Steve Jobs",
@@ -394,8 +395,9 @@ window.HUB = {
         },
         {
           "t": "Cristiano Ronaldo",
-          "credit": "Bryan Berlin, CC BY-SA 4.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_(cropped).jpg"
+          "credit": "Анна Нэсси, CC BY-SA 3.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_2018.jpg",
+          "img": "work/hub/people/cristiano-ronaldo.jpg"
         }
       ],
       "about": true

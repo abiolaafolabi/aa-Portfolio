@@ -323,9 +323,15 @@
     // Project view (hash routing: portfolio.html#annexpress)
     const proj = $("#project");
     let gridY = 0;
+    // Came straight to a project from the hub? Then "back" means the hub, until they browse the portfolio.
+    let fromHub = (() => {
+      try { const r = new URL(document.referrer); return r.host === location.host && !/portfolio/.test(r.pathname) && !!location.hash.slice(1); }
+      catch { return false; }
+    })();
     function openProject(id) {
       const i = WORK.findIndex((w) => w.id === id);
       if (i < 0) {
+        fromHub = false;
         const wasOpen = document.body.classList.contains("proj-open");
         document.body.classList.remove("proj-open", "lock");
         proj.innerHTML = "";
@@ -353,7 +359,7 @@
       // drops tiles painted for the previous project instead of reusing them.
       proj.style.display = "none";
       proj.innerHTML = `
-        <div class="bar" style="position:absolute"><a class="pill" href="#">← All work</a><a class="pill" href="index.html">Home</a></div>
+        <div class="bar" style="position:absolute">${fromHub ? `<a class="pill" href="index.html">← Home</a><a class="pill" href="#">All work</a>` : `<a class="pill" href="#">← All work</a><span></span>`}</div>
         <div class="hero" data-hero>${art(w)}</div>
         <div class="head"><h1 data-edit="title">${w.title}</h1><div><p class="sum" data-edit="summary">${w.summary}</p>${w.live && w.live.url ? `<a class="live" href="${w.live.url}" target="_blank" rel="noopener">${w.live.label || "See it live"} ↗</a>` : ""}</div></div>
         <div class="meta">
@@ -379,7 +385,7 @@
     }
     renderIntro(); renderGrid(); renderLogos(); renderInfo();
     window.SITE = { renderIntro, renderGrid, renderLogos, renderInfo, openProject, route, art };
-    window.addEventListener("hashchange", route);
+    window.addEventListener("hashchange", () => { fromHub = false; route(); });
     document.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
       if (document.body.classList.contains("info-open")) setInfo(false);

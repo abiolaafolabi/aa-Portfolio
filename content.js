@@ -135,7 +135,11 @@ window.CONTENT = {
         "<span class=\"lbl\">Problem</span>Traditional African heritage is hard to express in modern streetwear.",
         "<span class=\"lbl\">Solution</span>I built a brand that translates cultural heritage and patterns into modern streetwear",
         "<span class=\"lbl\">Outcome</span>A few hundred thousand views, a mailing list of around 400 people, our first sales, and invitations to four fashion shows."
-      ]
+      ],
+      "live": {
+        "label": "On Instagram",
+        "url": "https://www.instagram.com/anixvrs/"
+      }
     },
     {
       "id": "mothership",
@@ -194,7 +198,11 @@ window.CONTENT = {
         "Our first event was an immersive Afrofuturist dinner, A Taste of the Future, in February 2026, run in partnership with TROS London. It sold out, with around 34 tickets at about £30 each.",
         "I designed the brand and everything around the night: the identity, posters, menus and social. For our second event, an Afrofuturist literature panel talk, I designed the call-out for panellists, the posters, and the partnership proposal we pitched to Morley College, where the talk was held."
       ],
-      "credits": "Event photography: TROS London."
+      "credits": "Event photography: TROS London.",
+      "live": {
+        "label": "On Instagram",
+        "url": "https://www.instagram.com/mothershipheadquarters/"
+      }
     },
     {
       "id": "wave",
@@ -254,11 +262,7 @@ window.CONTENT = {
         "A compass for life. Wave gives you back the one thing that gets lost during chaos: perspective. When you see emotional transitions as normal, temporary and useful, you bounce back faster.",
         "You slide a wave to where you are emotionally, log how you feel in seconds, and see whether you're in a phase of chaos or order, with guidance on how to respond to each. The mission is simple: to make sure everyone can say, “No matter what, I’ll be okay.”",
         "I'm designing and building it with a behavioural scientist, grounded in a model of the ups and downs we all move through. Wave is in private testing now. <a href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" style=\"border-bottom:1px solid currentColor\">Join the waitlist →</a>"
-      ],
-      "live": {
-        "label": "Try the onboarding",
-        "url": "https://abiolaafolabi.github.io/Wave-Onboarding/"
-      }
+      ]
     },
     {
       "id": "aeliza",
