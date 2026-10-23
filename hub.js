@@ -116,7 +116,12 @@ window.HUB = {
       "title": "On my mind lately",
       "intro": "What I keep thinking about, month by month. Ask me about any of them.",
       "lately": true,
-      "items": [],
+      "items": [
+        {
+          "m": "Oct 2026",
+          "t": "Systems Thinking"
+        }
+      ],
       "about": true
     },
     {
