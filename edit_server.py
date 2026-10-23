@@ -1,7 +1,8 @@
 """Local preview + edit server for the portfolio.
 
 Run from this folder:  python3 edit_server.py
-Then open:             http://localhost:4321/portfolio.html?edit
+Then open:             http://localhost:4321/portfolio.html?edit  (portfolio)
+                       http://localhost:4321/index.html?edit      (hub)
 
 Only listens on this Mac (127.0.0.1). The public GitHub site can't save anything.
 """
@@ -20,6 +21,13 @@ try:
     Image.MAX_IMAGE_PIXELS = None  # large exports are fine; they get shrunk below
 except ImportError:  # images are saved as-is without Pillow
     Image = None
+
+
+# Each editable page saves its content to its own file
+FILES = {
+    "content": ("content.js", "CONTENT", "Site content. Edited by hand or by edit mode (python3 edit_server.py, then add ?edit to the page URL)."),
+    "hub": ("hub.js", "HUB", "Hub content (index.html). Edited by hand or by edit mode (python3 edit_server.py, then index.html?edit)."),
+}
 
 
 def slug(text, fallback="file"):
@@ -46,26 +54,32 @@ class Handler(SimpleHTTPRequestHandler):
     def body(self):
         return self.rfile.read(int(self.headers.get("Content-Length", 0)))
 
-    def version(self):
-        return str(os.path.getmtime(os.path.join(ROOT, "content.js")))
+    def version(self, key="content"):
+        return str(os.path.getmtime(os.path.join(ROOT, FILES[key][0])))
 
     def do_GET(self):
-        if urlparse(self.path).path == "/api/version":
-            return self.reply(200, {"version": self.version()})
+        url = urlparse(self.path)
+        if url.path == "/api/version":
+            key = parse_qs(url.query).get("file", ["content"])[0]
+            return self.reply(200, {"version": self.version(key if key in FILES else "content")})
         return super().do_GET()
 
     def do_POST(self):
         url = urlparse(self.path)
         try:
             if url.path == "/api/save":
+                key = parse_qs(url.query).get("file", ["content"])[0]
+                if key not in FILES:
+                    return self.reply(400, {"error": "unknown file"})
+                name, var, note = FILES[key]
                 base = self.headers.get("X-Base-Version")
-                if base and base != self.version():
+                if base and base != self.version(key):
                     return self.reply(409, {"error": "The content changed since this page was opened. Reload to get the latest."})
                 content = json.loads(self.body())
-                with open(os.path.join(ROOT, "content.js"), "w") as f:
-                    f.write("/* Site content. Edited by hand or by edit mode (python3 edit_server.py, then add ?edit to the page URL). */\n")
-                    f.write("window.CONTENT = " + json.dumps(content, indent=2, ensure_ascii=False) + ";\n")
-                return self.reply(200, {"ok": True, "version": self.version()})
+                with open(os.path.join(ROOT, name), "w") as f:
+                    f.write(f"/* {note} */\n")
+                    f.write(f"window.{var} = " + json.dumps(content, indent=2, ensure_ascii=False) + ";\n")
+                return self.reply(200, {"ok": True, "version": self.version(key)})
 
             if url.path == "/api/upload":
                 q = parse_qs(url.query)
