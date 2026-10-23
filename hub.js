@@ -129,24 +129,14 @@ window.HUB = {
           "d": "First principles, systems thinking, and getting to the core of things."
         },
         {
-          "t": "What makes a good life"
-        },
-        {
           "t": "What makes something valuable"
         },
         {
           "t": "What it means to love someone"
         },
         {
-          "t": "What's true, and what it means to be right"
-        },
-        {
-          "t": "Wicked problems",
-          "d": "How do you solve a problem with no clear definition and no clean answer?"
-        },
-        {
           "t": "Simulation & simulacra",
-          "d": "Copies, reality, and what's real."
+          "d": "What it means to be real, and what the difference is."
         },
         {
           "t": "Jungian psychology",
@@ -182,16 +172,20 @@ window.HUB = {
           "d": "Secondary school. I still love a good debate."
         },
         {
-          "t": "Playground entrepreneur",
-          "d": "Sold cookies and Kool-Aid in the school playground, until someone snitched."
-        },
-        {
           "t": "Custom shoes",
           "d": "Painted and customised shoes."
         },
         {
+          "t": "Playground entrepreneur",
+          "d": "Sold cookies and Kool-Aid in the school playground, until someone snitched."
+        },
+        {
           "t": "Contemporary dance",
           "d": "Took it for GCSE."
+        },
+        {
+          "t": "Saracens Academy",
+          "d": "Joined the Saracens rugby academy."
         },
         {
           "t": "Student films",
@@ -315,12 +309,12 @@ window.HUB = {
           "d": "I've been playing the alto sax for a couple of months. I played Amazing Grace at my baptism after three weeks of practice."
         },
         {
-          "t": "Training",
+          "t": "Physical training",
           "d": "I've trained since I was 11, starting with push-ups. My best is 130 in a row."
         },
         {
           "t": "Reading",
-          "d": "See the bookshelf."
+          "d": "<a href=\"#books\" style=\"border-bottom:1px solid var(--line)\">See the bookshelf →</a>"
         },
         {
           "t": "Philosophy",
@@ -328,7 +322,7 @@ window.HUB = {
         },
         {
           "t": "Debating",
-          "d": "Ideas get better when they're argued with."
+          "d": "I love getting closer to the truth through dialogue."
         },
         {
           "t": "Memes",
@@ -351,7 +345,7 @@ window.HUB = {
     },
     {
       "id": "cookies",
-      "title": "Cookies & Milk Review",
+      "title": "Cookies & Milk Ranked",
       "intro": "I love a good cookies and milk, so here's my unsolicited review. Ranked by taste and dipability, tested in hot chocolate and oat milk.",
       "items": [
         {
