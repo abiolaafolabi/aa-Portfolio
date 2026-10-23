@@ -26,7 +26,13 @@ window.HUB = {
         "t": "Launched this site"
       }
     ],
-    "answers": [],
+    "answers": [
+      {
+        "q": "First",
+        "a": "Nice haha",
+        "m": "Oct 2026"
+      }
+    ],
     "email": "abiolamd2004@gmail.com",
     "links": [
       {

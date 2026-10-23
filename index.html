@@ -144,38 +144,41 @@
     .wall div:hover .face { filter: none; }
     .wall .d { color: var(--muted); font-size: 1em; line-height: 1.5; }
 
-    /* Bookshelf: spines on a shelf; click one to pull it out and see the cover */
-    .shelf-wrap { overflow-x: auto; margin: 4px 0 8px; padding-top: 18px; scrollbar-width: thin; }
-    .shelf { display: flex; align-items: flex-end; gap: 3px; width: max-content; padding: 0 2px; border-bottom: 1px solid #d9d9d9;
-      box-shadow: 0 10px 14px -12px rgba(0,0,0,.25); }
-    .book { position: relative; height: var(--h); width: var(--w); flex: none; padding: 0; border: 0; background: none; cursor: pointer;
-      transition: width .45s cubic-bezier(.3,.7,.2,1), transform .25s ease; }
-    .book:hover, .book:focus-visible { transform: translateY(-10px); outline: none; }
-    .book.open { width: calc(var(--h) * var(--ar)); transform: none; cursor: default; }
-    .spine, .book .cover { position: absolute; inset: 0; border-radius: 2px 2px 1px 1px; overflow: hidden; transition: opacity .3s; }
-    .spine { background: var(--bg); color: var(--fg); display: flex; flex-direction: column; align-items: center; justify-content: space-between;
-      padding: 12px 0 10px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
-    .spine::before { content: ""; position: absolute; inset: 0; pointer-events: none;
-      background: linear-gradient(90deg, rgba(0,0,0,.22), rgba(255,255,255,.18) 14%, rgba(255,255,255,0) 32%, rgba(0,0,0,0) 72%, rgba(0,0,0,.16)); }
-    .spine::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 9px; background: var(--ac, transparent); }
-    .spine .st, .spine .sa { writing-mode: vertical-rl; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-height: 72%; }
+    /* Bookshelf: realistic spines on a shelf; hover one and it turns to show its cover */
+    .shelf-wrap { position: relative; overflow-x: auto; overflow-y: hidden; margin: 4px 0 6px; padding-top: 16px; scrollbar-width: thin; }
+    .shelf { position: relative; display: flex; align-items: flex-end; width: max-content; min-width: 100%; padding: 0 2px; }
+    .shelf::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: #d4d4d4; }
+    .book { position: relative; height: var(--h); width: var(--w); flex: none; cursor: pointer; outline: none;
+      filter: drop-shadow(2px 0 1.5px rgba(0,0,0,.22)); transition: transform .25s ease; }
+    .book:hover, .book:focus-visible, .book.on { transform: translateY(-8px); }
+    .spine { position: absolute; inset: 0; overflow: hidden; border-radius: 1.5px 1.5px 0 0; color: var(--fg);
+      background-color: var(--bg); background-image: var(--grain); background-size: 120px; background-blend-mode: multiply;
+      display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 14px 0 12px;
+      box-shadow: inset 0 2px 0 rgba(0,0,0,.07), inset 0 -2px 0 rgba(0,0,0,.08); }
+    /* Rounded spine: dark at the hinges, a soft highlight just off the left edge */
+    .spine::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background: linear-gradient(90deg, rgba(0,0,0,.34) 0%, rgba(0,0,0,.08) 7%, rgba(255,255,255,.26) 17%, rgba(255,255,255,.07) 32%,
+        rgba(255,255,255,0) 52%, rgba(0,0,0,.06) 80%, rgba(0,0,0,.32) 100%); }
+    .spine::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; background: var(--ac, transparent); }
+    .spine .st, .spine .sa { position: relative; writing-mode: vertical-rl; white-space: nowrap; overflow: hidden; max-height: 70%;
+      text-shadow: 0 1px 0 rgba(255,255,255,.12), 0 -1px 0 rgba(0,0,0,.12); }
     .spine .st { font-size: 13px; font-weight: 600; letter-spacing: .01em; }
-    .spine .sa { font-size: 9px; opacity: .8; max-height: 30%; }
-    .spine[data-font="serif"] .st { font: 500 14px/1 Georgia, "Times New Roman", serif; letter-spacing: .04em; }
+    .spine .sa { font-size: 9px; letter-spacing: .04em; text-transform: uppercase; opacity: .8; max-height: 28%; }
+    .spine[data-font="serif"] .st { font: 500 14px/1 Georgia, "Times New Roman", serif; letter-spacing: .05em; }
     .spine[data-font="cond"] .st { font: 600 15px/1 Oswald, "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: .02em; }
-    .book .cover { opacity: 0; box-shadow: 0 12px 24px -12px rgba(0,0,0,.45); }
-    .book .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .book.open .cover { opacity: 1; }
-    .book.open .spine { opacity: 0; }
-    .book-info { flex: none; width: 0; height: 240px; overflow: hidden; opacity: 0; transition: width .45s cubic-bezier(.3,.7,.2,1), opacity .3s; align-self: flex-end; }
-    .book-info.open { width: 230px; opacity: 1; }
-    .book-info > div { width: 230px; height: 100%; padding: 4px 22px 14px; display: flex; flex-direction: column; }
-    .book-info h3 { font-size: 1em; font-weight: 500; text-transform: uppercase; letter-spacing: .02em; }
-    .book-info .by { color: var(--muted); }
-    .book-info .note { color: #444; margin-top: 10px; overflow-y: auto; }
-    .book-info dl { margin-top: auto; display: grid; grid-template-columns: auto 1fr; gap: 0 12px; padding-top: 8px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
-    .book-info dd { color: var(--text); text-align: right; }
-    .shelf-hint { font-size: 11px; color: var(--faint); }
+    .spine .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    /* The cover that turns out toward you, floating over the shelf */
+    .pop { position: absolute; bottom: 8px; z-index: 5; pointer-events: none; perspective: 900px; }
+    .pop img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 1px 3px 3px 1px; transform-origin: 0 50%;
+      box-shadow: 0 18px 30px -14px rgba(0,0,0,.55), inset 0 0 0 1px rgba(0,0,0,.06); opacity: 0; transform: rotateY(-75deg); }
+    .pop.on img { animation: turn .38s cubic-bezier(.2,.75,.25,1) forwards; }
+    .pop::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s .15s;
+      background: linear-gradient(90deg, rgba(0,0,0,.18), rgba(255,255,255,.12) 4%, rgba(255,255,255,0) 9%); }
+    .pop.on::after { opacity: 1; }
+    @keyframes turn { to { opacity: 1; transform: none; } }
+    .book-cap { min-height: 3.4em; max-width: 52ch; color: var(--muted); }
+    .book-cap b { font-weight: 500; color: var(--text); }
+    .book-cap .note { color: #444; margin-top: 4px; }
 
     /* Role model cards: tilt toward the cursor with a sheen */
     .wall { gap: 32px 20px; }
@@ -292,9 +295,9 @@
       $("#main").innerHTML = `<div class="index fade">${tiles.map((s) => `
         <section>
           <h2><a href="#${s.id}">${s.title}</a></h2>
-          <ul>${s.items.length
+          ${ME.homeLists ? `<ul>${s.items.length
             ? s.items.slice(0, s.id === "about" ? 12 : 4).map((it) => `<li><a href="${it.url && s.id === "work" ? it.url : `#${it.id || s.id}`}"${it.img ? ` data-peek="${it.img}"` : ""}>${it.t}</a></li>`).join("")
-            : `<li><a href="#${s.id}">${s.ask ? "Ask a question" : "Coming soon"}</a></li>`}</ul>
+            : `<li><a href="#${s.id}">${s.ask ? "Ask a question" : "Coming soon"}</a></li>`}</ul>` : ""}
         </section>`).join("")}</div>`;
     }
 
@@ -328,13 +331,10 @@
       let body;
       if (s.shelf && !EDITING) {
         body = `<div class="shelf-wrap"><div class="shelf">${s.items.map((b, k) => { const sp = b.spine || {}; return `
-          <button class="book" data-book="${k}" aria-label="${b.t}" style="--h:${sp.h || 220}px;--w:${Math.round(18 + (b.pages || 250) * 0.1)}px;--ar:${b.ar || 0.66};--bg:${sp.bg || "#eee"};--fg:${sp.fg || "#111"};--ac:${sp.ac || "transparent"}">
-            <span class="spine" data-font="${sp.font || "sans"}"><span class="st">${sp.label || b.t}</span><span class="sa">${(b.m || "").split(/ & | and /)[0].split(" ").pop()}</span></span>
-            ${b.img ? `<span class="cover"><img src="${b.img}" alt="" loading="lazy" /></span>` : ""}
-          </button>
-          <div class="book-info" data-info="${k}"><div><h3>${b.t}</h3><div class="by">${b.m || ""}</div>${b.d ? `<p class="note">${b.d}</p>` : ""}
-            <dl>${b.year ? `<dt>Published</dt><dd>${b.year}</dd>` : ""}${b.pages ? `<dt>Pages</dt><dd>${b.pages}</dd>` : ""}</dl></div></div>`; }).join("")}</div></div>
-          <p class="shelf-hint">Click a book to pull it off the shelf.</p>`;
+          <div class="book" tabindex="0" data-book="${k}" aria-label="${b.t}${b.m ? `, ${b.m}` : ""}" style="--h:${sp.h || 220}px;--w:${Math.round(12 + (b.pages || 250) * 0.075)}px;--bg:${sp.bg || "#eee"};--fg:${sp.fg || "#111"};--ac:${sp.ac || "transparent"}">
+            <span class="spine" data-font="${sp.font || "sans"}">${sp.photo ? `<img class="photo" src="${sp.photo}" alt="" />` : `<span class="st">${sp.label || b.t}</span><span class="sa">${(b.m || "").split(/ & | and /)[0].split(" ").pop()}</span>`}</span>
+          </div>`; }).join("")}<div class="pop"><img alt="" /></div></div></div>
+          <p class="book-cap" data-hint="${matchMedia("(hover: hover)").matches ? "Hover a book to take it off the shelf." : "Tap a book to take it off the shelf."}"></p>`;
       } else if (s.wall) {
         body = `<div class="wall"${Lst(`${p}.items`, "person")}>${s.items.map((it, k) => `
           <div class="rm"${I(`${p}.items.${k}`)}><div class="rm-card">${it.img ? `<img src="${it.img}" alt="${it.t}" loading="lazy" />` : initials(it.t)}</div>
@@ -377,20 +377,38 @@
     zoom.onclick = () => zoom.classList.remove("on");
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") zoom.classList.remove("on"); });
 
-    // Bookshelf: one book open at a time
-    document.addEventListener("click", (e) => {
-      const b = e.target.closest(".book");
-      if (!b) return;
-      const shelf = b.closest(".shelf"), was = b.classList.contains("open");
-      shelf.querySelectorAll(".open").forEach((x) => x.classList.remove("open"));
-      if (was) return;
-      b.classList.add("open");
-      shelf.querySelector(`[data-info="${b.dataset.book}"]`).classList.add("open");
-      setTimeout(() => b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" }), 120);
-    });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") document.querySelectorAll(".shelf .open").forEach((x) => x.classList.remove("open")); });
-    // Covers set each book's open width from their real shape
-    document.addEventListener("load", (e) => { const img = e.target; const b = img.closest && img.closest(".book"); if (b && img.naturalWidth) b.style.setProperty("--ar", (img.naturalWidth / img.naturalHeight).toFixed(3)); }, true);
+    // Bookshelf: hovering (or tapping) a spine turns that book to show its cover
+    const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .55 0 0 0 0 .55 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")`;
+    document.documentElement.style.setProperty("--grain", GRAIN);
+    const coverRatio = {};
+    function showBook(el) {
+      const shelf = el.closest(".shelf"), pop = shelf.querySelector(".pop"), img = pop.firstElementChild;
+      const s = SECTIONS.find((x) => x.shelf), b = s.items[+el.dataset.book];
+      const cap = shelf.closest(".inner, .view").querySelector(".book-cap");
+      shelf.querySelectorAll(".book.on").forEach((x) => x !== el && x.classList.remove("on"));
+      el.classList.add("on");
+      const h = el.offsetHeight, w = Math.round(h * (coverRatio[b.img] || 0.66));
+      const left = Math.max(0, Math.min(el.offsetLeft + el.offsetWidth / 2 - w / 2, shelf.scrollWidth - w));
+      Object.assign(pop.style, { left: left + "px", width: w + "px", height: h + "px" });
+      if (img.getAttribute("src") !== b.img) { img.src = b.img; pop.classList.remove("on"); void pop.offsetWidth; }
+      pop.classList.add("on");
+      cap.innerHTML = `<b>${b.t}</b>${b.m ? `, ${b.m}` : ""}${b.year ? ` · ${b.year}` : ""}${b.pages ? ` · ${b.pages} pages` : ""}${b.d ? `<div class="note">${b.d}</div>` : ""}`;
+    }
+    function hideBooks(shelf) {
+      shelf.querySelectorAll(".book.on").forEach((x) => x.classList.remove("on"));
+      const pop = shelf.querySelector(".pop"); pop.classList.remove("on"); pop.firstElementChild.removeAttribute("src");
+      const cap = shelf.closest(".inner, .view").querySelector(".book-cap"); cap.textContent = cap.dataset.hint;
+    }
+    document.addEventListener("pointerover", (e) => { const b = e.target.closest && e.target.closest(".book"); if (b && e.pointerType === "mouse") showBook(b); });
+    document.addEventListener("pointerout", (e) => { const sh = e.target.closest && e.target.closest(".shelf"); if (sh && e.pointerType === "mouse" && !sh.contains(e.relatedTarget)) hideBooks(sh); });
+    document.addEventListener("click", (e) => { const b = e.target.closest(".book"); if (!b) return; b.classList.contains("on") && matchMedia("(hover: none)").matches ? hideBooks(b.closest(".shelf")) : showBook(b); });
+    document.addEventListener("focusin", (e) => { if (e.target.classList && e.target.classList.contains("book")) showBook(e.target); });
+    // Preload covers so they turn out instantly, and learn each one's shape
+    function primeShelf() {
+      const s = SECTIONS.find((x) => x.shelf); if (!s) return;
+      s.items.forEach((b) => { if (!b.img || coverRatio[b.img]) return; const i = new Image(); i.onload = () => { coverRatio[b.img] = i.naturalWidth / i.naturalHeight; }; i.src = b.img; });
+      document.querySelectorAll(".book-cap").forEach((c) => { c.textContent = c.dataset.hint; });
+    }
 
     // Role model cards tilt toward the cursor
     const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -414,6 +432,7 @@
       else if (s) renderSection(s);
       else renderHome();
       renderFoot();
+      primeShelf();
       if (window.HUB_EDITOR) window.HUB_EDITOR.decorate();
     }
     window.addEventListener("hashchange", () => { window.scrollTo(0, 0); route(); });
