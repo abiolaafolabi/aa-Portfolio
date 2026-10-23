@@ -6,7 +6,7 @@ window.CONTENT = {
     "bio": [
       "Abiola Afolabi is a multidisciplinary designer and strategist building brands that think and feel.",
       "I work across fashion, identity, products and events, using strategy to get to the core of a problem before designing.",
-      "BA Graphic Design, University of Gloucestershire. Open to work."
+      "BA Graphic Design, University of Gloucestershire."
     ],
     "services": [
       "Brand strategy",
@@ -18,9 +18,7 @@ window.CONTENT = {
       "Air Company",
       "Phenomenal Worlds",
       "The&Partnership",
-      "Oakwood",
-      "Brief Cases",
-      "Dalziel & Pow"
+      "Oakwood"
     ],
     "links": [
       {
@@ -35,7 +33,8 @@ window.CONTENT = {
         "label": "TikTok",
         "url": "#"
       }
-    ]
+    ],
+    "openToWork": true
   },
   "work": [
     {

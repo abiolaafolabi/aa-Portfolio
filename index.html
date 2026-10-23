@@ -39,6 +39,18 @@
     .bio a:hover { border-color: var(--text); }
     .bio a.go { border: 0; color: var(--muted); }
     .bio a.go:hover { color: var(--text); }
+    .chip { display: inline-flex; align-items: center; gap: 6px; vertical-align: -3px; padding: 1px 9px 1px 4px; margin: 0 1px;
+      border: 1px solid var(--line) !important; border-radius: 999px; background: #fafafa; color: var(--text); line-height: 1.5; transition: background .15s, border-color .15s; }
+    .chip:hover { background: #f0f0f0; border-color: #d8d8d8 !important; }
+    .chip img { width: 16px; height: 16px; object-fit: contain; }
+    #peek { position: fixed; z-index: 60; width: 260px; pointer-events: none; opacity: 0; transform: translate(16px, 16px) scale(.96); transition: opacity .18s, transform .18s; }
+    #peek.on { opacity: 1; transform: translate(16px, 16px) scale(1); }
+    #peek img { width: 100%; display: block; border-radius: 6px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.35); }
+    #zoom { position: fixed; inset: 0; z-index: 70; background: rgba(255,255,255,.96); display: none; place-items: center; padding: 5vh 5vw; cursor: zoom-out; }
+    #zoom.on { display: grid; }
+    #zoom img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 4px; }
+    .items li[data-zoom] .t { cursor: zoom-in; }
+    @media (hover: none) { #peek { display: none; } }
     .updates { margin-top: 24px; font-size: 13px; color: var(--muted); }
     .updates > span { display: block; font-size: 12px; margin-bottom: 4px; }
     .updates ul { list-style: none; }
@@ -139,6 +151,8 @@
       <main id="main"></main>
     </div>
     <footer id="foot"></footer>
+    <div id="peek"><img alt="" /></div>
+    <div id="zoom"><img alt="" /></div>
   </div>
 
   <script>
@@ -152,9 +166,9 @@
       tagline: "Designer & builder",
       bio: [
         "Hi, I'm Abiola, a trained graphic designer, curious about all things.",
-        "I'm currently building <a href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\">Wave</a>, an app for noticing how you're doing and finding better ways to respond in the moment.",
+        "I'm currently building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\" />Wave</a>, an app for noticing how you're doing and finding better ways to respond in the moment.",
         "I design brands and campaigns. <a class=\"go\" href=\"portfolio.html\">See my work →</a>",
-        "I run <a href=\"portfolio.html#anixvrs\">ANIXVRS</a>, a streetwear brand preserving cultural heritage.",
+        "And I run <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\" />ANIXVRS</a>, a streetwear brand preserving cultural heritage, and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\" />Mothership</a>, events imagining the future of the African diaspora.",
         "You can reach me by <a href=\"mailto:abiolamd2004@gmail.com\">email</a> or on <a href=\"https://www.instagram.com/abiolafolabi/\" target=\"_blank\" rel=\"noopener\">Instagram</a>."
       ],
       updates: [{"t":"Launched this site","m":"Oct 2026","d":"A home for my work, what I'm building, and everything else I'm into."}],
@@ -169,8 +183,8 @@
     const SECTIONS = [
       {
         "id": "work",
-        "title": "Work",
-        "intro": "Fashion, brand, product and event design. The full portfolio lives on its own page.",
+        "title": "Portfolio",
+        "intro": "Brand, product, fashion and event design. The full portfolio lives on its own page.",
         "cta": {
           "label": "Open the portfolio →",
           "url": "portfolio.html"
@@ -179,32 +193,38 @@
           {
             "t": "ANIXVRS",
             "m": "Fashion brand, 2020",
-            "url": "portfolio.html#anixvrs"
+            "url": "portfolio.html#anixvrs",
+            "img": "work/anixvrs/cover.jpg"
           },
           {
             "t": "Phenomenal Worlds",
             "m": "Brand identity, 2026",
-            "url": "portfolio.html#phenomenal-worlds"
+            "url": "portfolio.html#phenomenal-worlds",
+            "img": "work/phenomenal-worlds/kit-of-parts.jpg"
           },
           {
             "t": "Aeliza",
             "m": "Fashion design, 2025",
-            "url": "portfolio.html#aeliza"
+            "url": "portfolio.html#aeliza",
+            "img": "work/aeliza/lookbook-1.jpg"
           },
           {
             "t": "Air Company",
             "m": "Tech packs, 2026",
-            "url": "portfolio.html#air-company"
+            "url": "portfolio.html#air-company",
+            "img": "work/air-company/glove.jpg"
           },
           {
             "t": "Wave",
             "m": "Mental health tool, 2025",
-            "url": "portfolio.html#wave"
+            "url": "portfolio.html#wave",
+            "img": "work/wave/screens.jpg"
           },
           {
             "t": "Mothership",
             "m": "Event, 2026",
-            "url": "portfolio.html#mothership"
+            "url": "portfolio.html#mothership",
+            "img": "work/mothership/cover.jpg"
           }
         ]
       },
@@ -216,24 +236,23 @@
           {
             "t": "Wave",
             "tag": "Building",
-            "d": "A mental health tool that helps people keep perspective through life's ups and downs, and respond in healthy ways. Built with a behavioural scientist."
+            "d": "A mental health tool that helps people keep perspective through life's ups and downs, and respond in healthy ways. Built with a behavioural scientist.",
+            "img": "work/wave/screens.jpg"
           },
           {
             "t": "ANIXVRS",
             "tag": "Since 2020",
             "d": "Where cultural heritage meets streetwear. A fashion brand I designed and run.",
-            "url": "portfolio.html#anixvrs"
-          },
-          {
-            "t": "Chase Run Club",
-            "d": "A men's support group disguised as a run club. Men open up more during side-by-side activities, so ambitious young men learn to process in motion and chase out of love, not avoidance. Run towards, not away."
+            "url": "portfolio.html#anixvrs",
+            "img": "work/anixvrs/lookbook.jpg"
           },
           {
             "t": "Mothership",
             "m": "Feb 2026",
             "d": "Imagining new visions of the future for the African diaspora. Sold out, run in partnership with TROS London.",
             "url": "portfolio.html#mothership",
-            "tag": "Event"
+            "tag": "Event",
+            "img": "work/mothership/cover.jpg"
           }
         ]
       },
@@ -250,8 +269,20 @@
       {
         "id": "side-quests",
         "title": "Side quests",
-        "intro": "Other things I've done along the way.",
+        "intro": "Other things I've done along the way, in order.",
         "items": [
+          {
+            "t": "Ballet",
+            "d": "Briefly, when I was very young."
+          },
+          {
+            "t": "First great artwork",
+            "d": "A drawing of Ronaldo doing a bicycle kick. I've loved drawing since I was a kid."
+          },
+          {
+            "t": "Debate club",
+            "d": "Secondary school. I still love a good debate."
+          },
           {
             "t": "Playground entrepreneur",
             "d": "Sold cookies and Kool-Aid in the school playground, until someone snitched."
@@ -261,24 +292,12 @@
             "d": "Painted and customised shoes."
           },
           {
-            "t": "Debate club",
-            "d": "Secondary school. I still love a good debate."
-          },
-          {
             "t": "Contemporary dance",
             "d": "Took it for GCSE."
           },
           {
-            "t": "Ballet",
-            "d": "Briefly, when I was very young."
-          },
-          {
             "t": "Student films",
             "d": "Acted in three. A budding acting career."
-          },
-          {
-            "t": "First great artwork",
-            "d": "A drawing of Ronaldo doing a bicycle kick. I've loved drawing since I was a kid."
           }
         ]
       },
@@ -726,7 +745,7 @@
         <section>
           <h2><a href="#${s.id}">${s.title}</a></h2>
           <ul>${s.items.length
-            ? s.items.slice(0, s.id === "about" ? 9 : 4).map((it) => `<li><a href="#${it.id || s.id}">${it.t}</a></li>`).join("")
+            ? s.items.slice(0, s.id === "about" ? 9 : 4).map((it) => `<li><a href="${it.url && s.id === "work" ? it.url : `#${it.id || s.id}`}"${it.img ? ` data-peek="${it.img}"` : ""}>${it.t}</a></li>`).join("")
             : `<li><a href="#${s.id}">${s.ask ? "Ask a question" : "Coming soon"}</a></li>`}</ul>
         </section>`).join("")}</div>`;
     }
@@ -767,7 +786,7 @@
           ${s.items.length ? `<ul class="qa">${s.items.map((it) => `<li><div class="q">${it.t}</div><div class="a">${it.d}</div><div class="m">${it.m}</div></li>`).join("")}</ul>` : `<p class="intro">No answers yet. Be the first to ask.</p>`}`;
       } else {
         body = `<ul class="items">${s.items.map((it) => `
-          <li><div class="t">${link(it, it.t)}${it.m ? `<span class="m">${it.m}</span>` : ""}${it.tag ? `<span class="tag">${it.tag}</span>` : ""}</div>
+          <li${it.img ? ` data-peek="${it.img}"${it.url ? "" : ` data-zoom="${it.img}"`}` : ""}><div class="t">${link(it, it.t)}${it.m ? `<span class="m">${it.m}</span>` : ""}${it.tag ? `<span class="tag">${it.tag}</span>` : ""}</div>
           ${it.d ? `<div class="d">${it.d}</div>` : ""}</li>`).join("")}</ul>
           ${s.cta && live(s.cta.url) ? `<p style="margin-top:36px"><a href="${s.cta.url}" style="border-bottom:1px solid var(--text)">${s.cta.label}</a></p>` : ""}`;
       }
@@ -780,6 +799,25 @@
       renderSide(s.id);
       $("#main").innerHTML = `<div class="view fade"><h1>${s.title}</h1><p class="intro">${s.intro}</p>${sectionBody(s)}</div>`;
     }
+
+    // Hover previews and click-to-enlarge
+    const peek = $("#peek"), zoom = $("#zoom");
+    document.addEventListener("mouseover", (e) => {
+      const el = e.target.closest("[data-peek]");
+      if (!el) return peek.classList.remove("on");
+      peek.firstElementChild.src = el.dataset.peek; peek.classList.add("on");
+    });
+    document.addEventListener("mousemove", (e) => {
+      const w = 276, h = 220;
+      peek.style.left = Math.min(e.clientX, innerWidth - w) + "px";
+      peek.style.top = Math.min(e.clientY, innerHeight - h) + "px";
+    });
+    document.addEventListener("click", (e) => {
+      const z = e.target.closest("[data-zoom]");
+      if (z && !e.target.closest("a")) { zoom.firstElementChild.src = z.dataset.zoom; zoom.classList.add("on"); peek.classList.remove("on"); }
+    });
+    zoom.onclick = () => zoom.classList.remove("on");
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") zoom.classList.remove("on"); });
 
     function route() {
       const id = location.hash.slice(1);

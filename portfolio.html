@@ -104,6 +104,9 @@
     .info h4 { font-weight: 400; color: var(--muted); font-size: 14px; margin: 48px 0 12px; }
     .info ul { list-style: none; font-size: 15px; }
     .info li { padding: 5px 0; }
+    .info .otw { display: inline-flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--text); }
+    .info .otw i { width: 8px; height: 8px; border-radius: 50%; background: #22a35a; }
+    .info .otw:hover { color: var(--muted); }
     .info li a { border-bottom: 1px solid var(--line); }
     .info li a:hover { border-color: var(--text); }
 
@@ -302,6 +305,7 @@
     function renderInfo() {
     $("#infoBody").innerHTML = `
       ${ME.bio.map((p) => `<p>${p}</p>`).join("")}
+      ${ME.openToWork ? `<p><a class="otw" href="mailto:${ME.email}?subject=${encodeURIComponent("Working together")}"><i></i>Open to work. Get in touch →</a></p>` : ""}
       <h4>Services</h4><ul>${ME.services.map((s) => `<li>${s}</li>`).join("")}</ul>
       <h4>Clients</h4><ul>${ME.clients.map((s) => `<li>${s}</li>`).join("")}</ul>
       <h4>Contact</h4><ul><li><a href="mailto:${ME.email}">${ME.email}</a></li>${ME.links.filter((l) => l.url && l.url !== "#").map((l) => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join("")}</ul>
@@ -314,9 +318,16 @@
 
     // Project view (hash routing: portfolio.html#annexpress)
     const proj = $("#project");
+    let gridY = 0;
     function openProject(id) {
       const i = WORK.findIndex((w) => w.id === id);
-      if (i < 0) { document.body.classList.remove("proj-open", "lock"); return; }
+      if (i < 0) {
+        const wasOpen = document.body.classList.contains("proj-open");
+        document.body.classList.remove("proj-open", "lock");
+        if (wasOpen) window.scrollTo({ top: gridY, behavior: "instant" });
+        return;
+      }
+      if (!document.body.classList.contains("proj-open")) gridY = window.scrollY;
       const w = WORK[i], next = WORK[(i + 1) % WORK.length];
       const imgs = w.images || [];
       const split = w.pairs ? 2 : 3;
