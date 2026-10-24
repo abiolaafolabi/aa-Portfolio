@@ -108,7 +108,7 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/tagsldpi.jpg",
+          "src": "work/anixvrs/tag-size-fromatted-2.png",
           "wide": true
         },
         {
