@@ -113,19 +113,19 @@ window.CONTENT = {
         },
         {
           "src": "work/anixvrs/lookbook.jpg",
-          "wide": false
+          "wide": true
         },
         {
           "src": "work/anixvrs/cover.jpg",
-          "wide": false
+          "wide": true
         },
         {
           "src": "work/anixvrs/artboard-26ldpi.jpg",
-          "wide": true
+          "wide": false
         },
         {
           "src": "work/anixvrs/artboard-25ldpi.jpg",
-          "wide": true
+          "wide": false
         },
         {
           "src": "work/anixvrs/tagsldpi.jpg",
@@ -133,10 +133,6 @@ window.CONTENT = {
         },
         {
           "src": "work/anixvrs/garmetsldpi.jpg",
-          "wide": true
-        },
-        {
-          "src": "work/anixvrs/garmentsldpi.jpg",
           "wide": true
         }
       ],
