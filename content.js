@@ -96,14 +96,6 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/logoldpi.jpg",
-          "wide": true
-        },
-        {
-          "src": "work/anixvrs/posters.jpg",
-          "wide": true
-        },
-        {
           "src": "work/anixvrs/typographyldpi.jpg",
           "wide": true
         },
@@ -112,20 +104,8 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/lookbook.jpg",
-          "wide": true
-        },
-        {
           "src": "work/anixvrs/cover.jpg",
           "wide": true
-        },
-        {
-          "src": "work/anixvrs/artboard-26ldpi.jpg",
-          "wide": false
-        },
-        {
-          "src": "work/anixvrs/artboard-25ldpi.jpg",
-          "wide": false
         },
         {
           "src": "work/anixvrs/tagsldpi.jpg",
