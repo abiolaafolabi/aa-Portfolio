@@ -92,7 +92,7 @@ window.CONTENT = {
       "fg": "#ffffff",
       "images": [
         {
-          "src": "work/anixvrs/abiola-portfolio-v174.jpg",
+          "src": "work/anixvrs/anixvrs-logo-dev-3.2ldpi.jpg",
           "wide": true
         },
         {
