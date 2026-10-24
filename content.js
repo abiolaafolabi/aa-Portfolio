@@ -100,7 +100,7 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/artboard-8-300x-100.jpg",
+          "src": "work/anixvrs/anixvrs-techpack-b-bgldpi.jpg",
           "wide": true
         },
         {
