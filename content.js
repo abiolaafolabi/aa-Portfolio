@@ -91,9 +91,20 @@ window.CONTENT = {
       "c": "#000000",
       "fg": "#ffffff",
       "images": [
-        "work/anixvrs/abiola-portfolio-v174.jpg",
+        {
+          "src": "work/anixvrs/abiola-portfolio-v174.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/anixvrs/logoldpi.jpg",
+          "wide": true
+        },
         {
           "src": "work/anixvrs/posters.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/anixvrs/typographyldpi.jpg",
           "wide": true
         },
         {
@@ -102,10 +113,30 @@ window.CONTENT = {
         },
         {
           "src": "work/anixvrs/lookbook.jpg",
-          "wide": true
+          "wide": false
         },
         {
           "src": "work/anixvrs/cover.jpg",
+          "wide": false
+        },
+        {
+          "src": "work/anixvrs/artboard-26ldpi.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/anixvrs/artboard-25ldpi.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/anixvrs/tagsldpi.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/anixvrs/garmetsldpi.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/anixvrs/garmentsldpi.jpg",
           "wide": true
         }
       ],
