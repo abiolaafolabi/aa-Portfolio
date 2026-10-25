@@ -224,12 +224,21 @@
     @media (prefers-reduced-motion: reduce) { .fade { animation: none; } }
     @media (max-width: 1080px) { .index { grid-template-columns: repeat(3, 180px); } }
     @media (max-width: 820px) {
-      .layout { grid-template-columns: 1fr; gap: 48px; }
+      .layout { grid-template-columns: 1fr; gap: 36px; }
       .side { position: static; }
       .index { grid-template-columns: repeat(2, 1fr); gap: 40px 0; }
       .in-section .nav ul { display: none; }
       .in-section .nav { display: flex; flex-wrap: wrap; gap: 2px 14px; }
       .in-section .bio, .in-section .links { display: none; }
+      /* Phones: bigger type, like Sangeetha's mobile layout */
+      body { font-size: 15px; line-height: 1.65; }
+      .name { font-size: 17px; }
+      .index h2 { font-size: 17px; }
+      .index { gap: 44px 0; }
+      .updates summary, .shelf-hint, .book-cap, .credits { font-size: 13px; }
+      .items .m, .tag, .book-info dl { font-size: 13px; }
+      footer { font-size: 13px; margin-top: 72px; }
+      .foot-ask input, .foot-ask button { font-size: 16px; } /* 16px stops iPhone zooming in on tap */
     }
   </style>
 </head>
