@@ -45,7 +45,7 @@ window.HUB = {
       },
       {
         "label": "Substack",
-        "url": "#"
+        "url": "https://open.substack.com/pub/aquila359782"
       }
     ]
   },
@@ -120,7 +120,7 @@ window.HUB = {
       "intro": "Essays and thoughts. Coming soon.",
       "cta": {
         "label": "Read me on Substack →",
-        "url": "#"
+        "url": "https://open.substack.com/pub/aquila359782"
       },
       "items": []
     },
