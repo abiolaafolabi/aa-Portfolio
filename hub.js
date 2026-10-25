@@ -2,20 +2,20 @@
 window.HUB = {
   "me": {
     "name": "Abiola Afolabi",
-    "tagline": "Designer & builder",
+    "tagline": "",
     "bioPick": "b",
     "bios": {
       "a": [
-        "I'm a designer. I work on strategy, visual identity, fashion and product design. I come up with ideas and make them real. <a class=\"go\" href=\"portfolio.html\">See my work →</a>",
+        "I'm a designer. I work on strategy, visual identity, fashion and product design. I come up with ideas and make them real.",
         "I studied graphic design. I'm Nigerian and based in London."
       ],
       "b": [
-        "Hi my name is Abiola. I work in design strategy, visual identity, fashion and product design. <a class=\"go\" href=\"portfolio.html\">See my work →</a>",
+        "Hi my name is Abiola. I work in design strategy, visual identity, fashion and product design.",
         "I also regularly come up with ideas that become live projects. I'm building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app for tracking and responding to your moods in the moment. I run <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a streetwear brand preserving African cultural heritage, and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, events imagining the future of the African diaspora.",
         "Nigerian, based in London."
       ],
       "c": [
-        "I'm a designer. I work in strategy, visual identity, fashion and product design. I also come up with ideas and make them real. <a class=\"go\" href=\"portfolio.html\">See my work →</a>",
+        "I'm a designer. I work in strategy, visual identity, fashion and product design. I also come up with ideas and make them real.",
         "I studied graphic design. I'm Nigerian and based in London."
       ]
     },
@@ -44,7 +44,7 @@ window.HUB = {
         "url": "#"
       },
       {
-        "label": "TikTok",
+        "label": "Substack",
         "url": "#"
       }
     ]
@@ -76,6 +76,48 @@ window.HUB = {
           "m": "Tech packs, 2025",
           "url": "portfolio.html#air-company",
           "img": "work/air-company/glove.jpg"
+        }
+      ],
+      "gallery": [
+        {
+          "img": "work/aeliza/lookbook-1.jpg",
+          "url": "portfolio.html#aeliza",
+          "t": "Aeliza"
+        },
+        {
+          "img": "work/air-company/glove.jpg",
+          "url": "portfolio.html#air-company",
+          "t": "Air Company"
+        },
+        {
+          "img": "work/phenomenal-worlds/posts.jpg",
+          "url": "portfolio.html#phenomenal-worlds",
+          "t": "Phenomenal Worlds"
+        },
+        {
+          "img": "work/aeliza/lookbook-3.jpg",
+          "url": "portfolio.html#aeliza",
+          "t": "Aeliza"
+        },
+        {
+          "img": "work/air-company/tee.jpg",
+          "url": "portfolio.html#air-company",
+          "t": "Air Company"
+        },
+        {
+          "img": "work/phenomenal-worlds/campaign.jpg",
+          "url": "portfolio.html#phenomenal-worlds",
+          "t": "Phenomenal Worlds"
+        },
+        {
+          "img": "work/aeliza/flat-1.jpg",
+          "url": "portfolio.html#aeliza",
+          "t": "Aeliza"
+        },
+        {
+          "img": "work/air-company/cap-photo.jpg",
+          "url": "portfolio.html#air-company",
+          "t": "Air Company"
         }
       ]
     },
