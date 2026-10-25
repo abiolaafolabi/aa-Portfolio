@@ -11,8 +11,8 @@ window.HUB = {
       ],
       "b": [
         "Hi my name is Abiola. I work in design strategy, visual identity, fashion and product design.",
-        "I also regularly come up with ideas that become live projects. I'm building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app for tracking and responding to your moods in the moment. I run <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a streetwear brand preserving African cultural heritage, and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, events imagining the future of the African diaspora.",
-        "Nigerian, based in London."
+        "I also regularly come up with ideas that become live projects. I'm building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app for tracking and responding to your moods in the moment. I run <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a streetwear brand preserving African cultural heritage, and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, events imagining the future of the African diaspora. Nigerian, based in London.",
+        ""
       ],
       "c": [
         "I'm a designer. I work in strategy, visual identity, fashion and product design. I also come up with ideas and make them real.",
@@ -26,13 +26,7 @@ window.HUB = {
         "t": "Launched this site"
       }
     ],
-    "answers": [
-      {
-        "q": "First",
-        "a": "Nice haha",
-        "m": "Oct 2026"
-      }
-    ],
+    "answers": [],
     "email": "abiolamd2004@gmail.com",
     "links": [
       {
@@ -53,7 +47,7 @@ window.HUB = {
     {
       "id": "work",
       "title": "Portfolio",
-      "intro": "Brand, product, fashion and event design for clients.",
+      "intro": "Design work for clients.",
       "cta": {
         "label": "Open the portfolio →",
         "url": "portfolio.html"
@@ -148,7 +142,7 @@ window.HUB = {
         },
         {
           "t": "The mind",
-          "d": "Psychology, and how it shapes what we build and how we live."
+          "d": "Psychology, and how it shapes how we behave."
         },
         {
           "t": "Philosophy",
@@ -156,7 +150,7 @@ window.HUB = {
         },
         {
           "t": "Simulation & simulacra",
-          "d": "What it means to be real, and what the difference is."
+          "d": "What it means for something to be real, and what the difference is."
         },
         {
           "t": "Jungian psychology",
@@ -167,8 +161,8 @@ window.HUB = {
           "d": "Ancient history, African history, history in general."
         },
         {
-          "t": "Technology, business & startups",
-          "d": "And economics."
+          "t": "The art of scale & leverage",
+          "d": "Technology, business & startups"
         }
       ],
       "about": true
@@ -193,7 +187,7 @@ window.HUB = {
         },
         {
           "t": "Custom shoes",
-          "d": "Painted and customised shoes."
+          "d": "Painted and sold customised shoes."
         },
         {
           "t": "Playground entrepreneur",
@@ -216,7 +210,7 @@ window.HUB = {
     },
     {
       "id": "books",
-      "title": "Books",
+      "title": "Top Books",
       "intro": "Books I love and come back to.",
       "items": [
         {
@@ -305,10 +299,28 @@ window.HUB = {
           "img": "work/hub/people/leonardo-da-vinci.jpg"
         },
         {
+          "t": "Michael Jackson",
+          "img": "work/hub/people/michael-jackson.jpg",
+          "credit": "Matthew Rolston; Distributed by Epic Records, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1983_(3x4_cropped)_(contrast).jpg"
+        },
+        {
           "t": "Steve Jobs",
           "img": "work/hub/people/steve-jobs.jpg",
           "credit": "Matthew Yohe, CC BY-SA 3.0",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010_(cropped_4).jpg"
+        },
+        {
+          "t": "Virgil Abloh",
+          "img": "work/hub/people/virgil-abloh.jpg",
+          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Virgil_Abloh_Paris_Fashion_Week_Autumn_Winter_2019_(cropped).jpg"
+        },
+        {
+          "t": "Dieter Rams",
+          "img": "work/hub/people/dieter-rams.jpg",
+          "credit": "Vitsœ, CC BY-SA 3.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Designer-Dieter_Rams.jpg"
         },
         {
           "t": "Benjamin Franklin",
@@ -323,40 +335,8 @@ window.HUB = {
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Jonathan_Ive_(OTRS).jpg"
         },
         {
-          "t": "Dieter Rams",
-          "img": "work/hub/people/dieter-rams.jpg",
-          "credit": "Vitsœ, CC BY-SA 3.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Designer-Dieter_Rams.jpg"
-        },
-        {
-          "t": "Julius Caesar",
-          "img": "work/hub/people/julius-caesar.jpg",
-          "credit": "Ángel M. Felicísimo from Mérida, España, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Retrato_de_Julio_C%C3%A9sar_(26724093101)_(cropped).jpg"
-        },
-        {
-          "t": "Virgil Abloh",
-          "img": "work/hub/people/virgil-abloh.jpg",
-          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Virgil_Abloh_Paris_Fashion_Week_Autumn_Winter_2019_(cropped).jpg"
-        },
-        {
-          "t": "Michael Jackson",
-          "img": "work/hub/people/michael-jackson.jpg",
-          "credit": "Matthew Rolston; Distributed by Epic Records, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1983_(3x4_cropped)_(contrast).jpg"
-        },
-        {
-          "t": "Napoleon Bonaparte",
-          "img": "work/hub/people/napoleon.jpg",
-          "credit": "Jacques-Louis David, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg"
-        },
-        {
-          "t": "Cristiano Ronaldo",
-          "credit": "Анна Нэсси, CC BY-SA 3.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_2018.jpg",
-          "img": "work/hub/people/cristiano-ronaldo.jpg"
+          "t": "Marcus Aurelius",
+          "img": ""
         }
       ],
       "about": true
@@ -372,7 +352,7 @@ window.HUB = {
         },
         {
           "t": "Physical training",
-          "d": "I've trained since I was 11, starting with push-ups. My best is 130 in a row."
+          "d": "I started training 10 years ago to get better at rugby, 30 push ups a day to my best of 130 in a row."
         },
         {
           "t": "Reading",
@@ -396,7 +376,8 @@ window.HUB = {
         },
         {
           "t": "Chess",
-          "d": "Not that good yet, but I enjoy playing casually. Challenge me to a game."
+          "d": "Not that good yet, but I enjoy playing casually. Challenge me to a game.",
+          "url": "https://www.chess.com/member/abiola_a"
         },
         {
           "t": "Football & rugby",
