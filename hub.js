@@ -155,12 +155,6 @@ window.HUB = {
           "d": "First principles, systems thinking, and getting to the core of things."
         },
         {
-          "t": "What makes something valuable"
-        },
-        {
-          "t": "What it means to love someone"
-        },
-        {
           "t": "Simulation & simulacra",
           "d": "What it means to be real, and what the difference is."
         },
@@ -252,19 +246,6 @@ window.HUB = {
           },
           "pages": 344,
           "year": 2012
-        },
-        {
-          "t": "Alchemy",
-          "m": "Rory Sutherland",
-          "img": "work/hub/books/alchemy.jpg",
-          "spine": {
-            "bg": "#f0ea4a",
-            "fg": "#111111",
-            "font": "cond",
-            "h": 222
-          },
-          "pages": 384,
-          "year": 2019
         },
         {
           "t": "Same as Ever",
@@ -411,11 +392,11 @@ window.HUB = {
         },
         {
           "t": "Dancing",
-          "d": "50-50 chance you'll see me busting a move, music or not. My particular flavour: the 2016 Ayo & Teo era."
+          "d": "Musical or not, there's a fifty-fifty chance you'll see me busting a move. The 2016 Ayo & Teo era was a big influence."
         },
         {
           "t": "Chess",
-          "d": "Not that good yet, but I enjoy playing casually."
+          "d": "Not that good yet, but I enjoy playing casually. Challenge me to a game."
         },
         {
           "t": "Football & rugby",

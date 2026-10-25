@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Abiola Afolabi</title>
   <meta name="description" content="Abiola Afolabi — what I'm building, what I've made, and the things I love." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,19 +82,20 @@
     .timeline li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 1px solid var(--muted); }
     .timeline li:last-child::before { background: var(--text); border-color: var(--text); }
     .timeline .d { color: var(--muted); margin-top: 2px; }
-    .foot-ask { flex: 1 1 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
-    .foot-ask form { display: flex; flex-direction: column; gap: 8px; }
-    .qa-feed { list-style: none; max-width: 460px; max-height: 240px; overflow-y: auto; margin-top: 10px; padding-right: 8px; }
+    .foot-ask { flex: 1 1 100%; display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .foot-ask form { display: flex; flex-direction: column; gap: 6px; }
+    .qa-feed { list-style: none; max-width: 420px; max-height: 240px; overflow-y: auto; margin-top: 10px; padding-right: 8px; }
     .qa-feed li + li { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
-    .qa-feed .q { color: var(--text); font-weight: 500; }
-    .qa-feed .a { color: #444; margin-top: 2px; }
+    .qa-feed .q { color: var(--text); }
+    .qa-feed .a { color: #555; margin-top: 2px; }
     .qa-feed .m, .qa-empty { color: var(--faint); margin-top: 2px; }
-    .foot-ask label { color: var(--text); font-size: 1em; }
-    .foot-ask form div { display: flex; gap: 8px; max-width: 460px; }
-    .foot-ask input { flex: 1; min-width: 0; font: inherit; font-size: 1em; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; outline: none; background: var(--bg); color: var(--text); }
+    .foot-ask label { color: var(--muted); font-size: 1em; }
+    .foot-ask form div { display: flex; gap: 10px; max-width: 360px; align-items: center; }
+    .foot-ask input { flex: 1; min-width: 0; font: inherit; font-size: 1em; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 4px 0; outline: none; background: none; color: var(--text); }
+    .foot-ask input::placeholder { color: var(--faint); }
     .foot-ask input:focus { border-color: var(--muted); }
-    .foot-ask button { font: inherit; font-size: 1em; border: 1px solid var(--line); border-radius: 6px; padding: 0 12px; background: none; color: var(--text); cursor: pointer; }
-    .foot-ask button:hover { border-color: var(--muted); }
+    .foot-ask button { font: inherit; font-size: 1em; border: 0; padding: 4px 0; background: none; color: var(--muted); cursor: pointer; }
+    .foot-ask button:hover { color: var(--text); }
     .now { margin-top: 24px; color: #444; }
     .now span { display: block; font-size: 11px; color: var(--muted); }
     .prev { margin-top: 14px; color: var(--muted); }
@@ -220,11 +221,11 @@
 
     /* Role model cards: tilt toward the cursor with a sheen */
     .wall { gap: 32px 20px; }
-    .rm-card { aspect-ratio: 4 / 5; border-radius: 8px; overflow: hidden; position: relative; background: #f1f1f1; margin-bottom: 10px;
+    .rm-card { aspect-ratio: 4 / 5; border-radius: 8px; overflow: hidden; isolation: isolate; -webkit-tap-highlight-color: transparent; position: relative; background: #f1f1f1; margin-bottom: 10px;
       transform: perspective(700px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(var(--s, 1)); transition: transform .35s ease, box-shadow .35s ease;
       box-shadow: 0 6px 16px -10px rgba(0,0,0,.35); display: grid; place-items: center; color: var(--faint); font-size: 18px; }
-    .rm-card img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; filter: grayscale(1); transition: filter .4s; }
-    .rm-card::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .35s; mix-blend-mode: soft-light;
+    .rm-card img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; filter: grayscale(1); transition: filter .4s; border-radius: inherit; }
+    .rm-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .35s; mix-blend-mode: soft-light;
       background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.85), rgba(255,255,255,0) 55%),
                   linear-gradient(115deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.35) 48%, rgba(255,255,255,0) 62%); }
     .rm:hover .rm-card { --s: 1.03; transition: transform .08s linear, box-shadow .35s ease; box-shadow: 0 18px 34px -16px rgba(0,0,0,.45); }
@@ -254,7 +255,7 @@
     @keyframes fade { from { opacity: 0; transform: translateY(4px); } }
 
     /* ---------- Footer ---------- */
-    footer { margin-top: 96px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; font-size: 10.5px; color: var(--muted); }
+    footer { margin-top: 128px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; font-size: 10.5px; color: var(--muted); }
     footer a { color: var(--text); }
 
     @media (prefers-reduced-motion: reduce) { .fade { animation: none; } }
@@ -272,9 +273,7 @@
       .index { gap: 44px 0; }
       .updates summary, .shelf-hint, .book-cap, .credits { font-size: 13px; }
       .items .m, .tag, .book-info dl { font-size: 13px; }
-      footer { font-size: 13px; margin-top: 72px; }
-      .foot-ask input { font-size: 16px; padding: 5px 10px; } /* 16px stops iPhone zooming in on tap */
-      .foot-ask button { font-size: 14px; }
+      footer { font-size: 12px; margin-top: 96px; }
       .foot-ask form div { max-width: none; }
     }
   </style>
@@ -330,7 +329,7 @@
       const qa = ME.answers.map((x, k) => `<li${I(`me.answers.${k}`)}><div class="q"${E(`me.answers.${k}.q`)}>${x.q}</div><div class="a"${E(`me.answers.${k}.a`)}>${x.a}</div>${opt(x.m, `me.answers.${k}.m`, "m", "Date")}</li>`).join("");
       $("#foot").innerHTML = `
         <div class="foot-ask"><form id="askForm"><label for="askInput">Ask me anything</label>
-          <div><input id="askInput" placeholder="Your question" required /><button>Send</button></div></form>
+          <div><input id="askInput" placeholder="Your question" required /><button>Send →</button></div></form>
           ${ME.answers.length || EDITING ? `<ul class="qa-feed"${Lst("me.answers", "answer")}>${qa}</ul>` : `<p class="qa-empty">Answered questions show up here.</p>`}</div>
         <div>For inquiries, contact <a href="mailto:${ME.email}">${ME.email}</a><br />All views here are my own.</div>
         <div>© ${new Date().getFullYear()} ${ME.name}</div>`;
@@ -361,7 +360,7 @@
         <div class="name"><span${E("me.name")}>${ME.name}</span>${ME.tagline || EDITING ? `<small${E("me.tagline")} data-ph="Tagline">${ME.tagline || ""}</small>` : ""}</div>
         <div class="bio"${Lst(`me.bios.${bio}`, "paragraph")}>${ME.bios[bio].map((p, k) => `<p${I(`me.bios.${bio}.${k}`)}${E(`me.bios.${bio}.${k}`)}>${p}</p>`).join("")}</div>
         ${socials()}
-        ${ME.updates.length || EDITING ? `<details class="updates" open><summary>Updates</summary><ul${Lst("me.updates", "update")}>${(EDITING ? ups : ups.slice(0, 3)).join("")}</ul>${ME.updates.length > 3 && !EDITING ? `<details class="earlier"><summary>Earlier</summary><ul>${ups.slice(3).join("")}</ul></details>` : ""}</details>` : ""}`;
+        ${ME.updates.length || EDITING ? `<details class="updates"${EDITING ? " open" : ""}><summary>Updates</summary><ul${Lst("me.updates", "update")}>${(EDITING ? ups : ups.slice(0, 3)).join("")}</ul>${ME.updates.length > 3 && !EDITING ? `<details class="earlier"><summary>Earlier</summary><ul>${ups.slice(3).join("")}</ul></details>` : ""}</details>` : ""}`;
       const tiles = withAbout(SECTIONS.filter((s) => !s.about), { id: "about", title: "About me", items: aboutParts().map((s) => ({ t: s.title, id: s.id })) });
       $("#main").innerHTML = `<div class="index fade">${tiles.map((s) => `
         <section>
@@ -409,7 +408,7 @@
       const p = sp(s);
       let body;
       if (s.rich && !EDITING) {
-        body = shown(s.items).map(([it]) => { const w = projOf(it), m = media(w).slice(0, 8); return `
+        body = shown(s.items).map(([it]) => { const w = projOf(it), m = media(w).slice(0, 5); return `
           <article class="snap">
             <div class="snap-head"><a href="${itemHash(s, it)}">${it.t}</a>${it.m ? `<span class="m">${it.m}</span>` : ""}${it.tag ? `<span class="tag">${it.tag}</span>` : ""}</div>
             <p class="d">${it.d || (w && w.summary) || ""}</p>
@@ -450,7 +449,7 @@
       document.body.classList.add("in-section");
       document.title = `${it.t} — ${ME.name}`;
       renderSide(s.id, it);
-      const w = projOf(it), m = media(w);
+      const w = projOf(it), m = media(w).slice(0, 5);
       $("#main").innerHTML = `<div class="view fade"><h1 class="crumb"><a href="#${s.id}">${s.title}</a><i>/</i><span>${it.t}</span></h1>
         <p class="intro">${it.d || (w && w.summary) || ""}</p>
         <p class="snap-links" style="margin:-20px 0 28px">${itemLinks(it, w)}</p>
