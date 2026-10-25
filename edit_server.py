@@ -122,8 +122,8 @@ class Handler(SimpleHTTPRequestHandler):
                 if Image and ext in {".jpg", ".jpeg", ".png", ".webp"}:
                     try:
                         im = ImageOps.exif_transpose(Image.open(path))
-                        if max(im.size) > 1800:
-                            im.thumbnail((1800, 1800))
+                        if max(im.size) > 2400:
+                            im.thumbnail((2400, 2400))
                             if ext in {".jpg", ".jpeg"}:
                                 im.convert("RGB").save(path, quality=85, optimize=True)
                             else:
