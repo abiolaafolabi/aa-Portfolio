@@ -41,7 +41,7 @@ window.HUB = {
       },
       {
         "label": "LinkedIn",
-        "url": "#"
+        "url": "https://www.linkedin.com/in/abiola-afolabi-412368200/"
       },
       {
         "label": "Substack",
