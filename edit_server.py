@@ -10,6 +10,8 @@ import json
 import os
 import re
 import subprocess
+import time
+import urllib.request
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
@@ -35,6 +37,18 @@ FILES = {
 ALLOWED_HOSTS = {f"localhost:{PORT}", f"127.0.0.1:{PORT}"}
 ALLOWED_ORIGINS = {f"http://{h}" for h in ALLOWED_HOSTS}
 ALLOWED_TYPES = {"application/json", "application/octet-stream"}
+
+
+def git(*args):
+    return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True,
+                          env={**os.environ, "GIT_TERMINAL_PROMPT": "0"})
+
+
+def site_url():
+    try:
+        return "https://" + open(os.path.join(ROOT, "CNAME")).read().strip()
+    except OSError:
+        return None
 
 
 def slug(text, fallback="file"):
@@ -77,6 +91,24 @@ class Handler(SimpleHTTPRequestHandler):
         if not self.trusted_host():
             return self.reply(403, {"error": "forbidden"})
         url = urlparse(self.path)
+        if url.path == "/api/status":
+            # Anything saved here that the live site doesn't have yet?
+            dirty = bool(git("status", "--porcelain").stdout.strip())
+            ahead = git("rev-list", "--count", "@{u}..HEAD").stdout.strip()
+            return self.reply(200, {"unpublished": dirty or (ahead not in ("", "0")), "site": site_url()})
+        if url.path == "/api/live":
+            # Is each published file now being served by the live site?
+            files = [f for f in parse_qs(url.query).get("files", [""])[0].split(",") if f]
+            base, done = site_url(), 0
+            for f in files:
+                try:
+                    want = subprocess.run(["git", "show", f"HEAD:{f}"], cwd=ROOT, capture_output=True).stdout
+                    req = urllib.request.Request(f"{base}/{f}?v={time.time()}", headers={"Cache-Control": "no-cache"})
+                    if urllib.request.urlopen(req, timeout=10).read() == want:
+                        done += 1
+                except Exception:
+                    pass
+            return self.reply(200, {"live": done == len(files), "done": done, "total": len(files)})
         if url.path == "/api/version":
             key = parse_qs(url.query).get("file", ["content"])[0]
             return self.reply(200, {"version": self.version(key if key in FILES else "content")})
@@ -133,14 +165,15 @@ class Handler(SimpleHTTPRequestHandler):
                 return self.reply(200, {"path": rel})
 
             if url.path == "/api/publish":
-                def git(*args):
-                    return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True,
-                                          env={**os.environ, "GIT_TERMINAL_PROMPT": "0"})
+                before = git("rev-parse", "@{u}").stdout.strip()
                 git("add", "-A")
                 commit = git("commit", "-m", "Update from edit mode")
                 push = git("push", "origin", "HEAD")
                 ok = push.returncode == 0
-                return self.reply(200 if ok else 500, {"ok": ok, "log": (commit.stdout + push.stdout + push.stderr)[-2000:]})
+                # Which files this publish actually sent (empty = the site already had everything)
+                sent = git("diff", "--name-only", before, "HEAD").stdout.split() if ok and before else []
+                return self.reply(200 if ok else 500, {"ok": ok, "files": sent, "site": site_url(),
+                                                       "log": (commit.stdout + push.stdout + push.stderr)[-2000:]})
 
             return self.reply(404, {"error": "unknown endpoint"})
         except Exception as e:  # report the problem to the page instead of crashing

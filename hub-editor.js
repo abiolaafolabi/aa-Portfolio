@@ -44,7 +44,8 @@
     <button class="ed-btn" data-a="exit">Exit</button>`;
   document.body.appendChild(bar);
   const status = (t) => { $(".st", bar).textContent = t; };
-  const markDirty = () => { dirty = true; status("Unsaved changes"); };
+  let P = null; // Save / Publish button states, from edit-publish.js
+  const markDirty = () => { dirty = true; status("Unsaved changes"); if (P) P.changed(); };
   if (!local) status("Edit mode only saves on your Mac");
   window.addEventListener("beforeunload", (e) => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
 
@@ -183,7 +184,7 @@
     if (!local) return status("Edit mode only saves on your Mac");
     document.activeElement?.blur?.(); // keep the text being typed
     status("Saving…");
-    try { const r = await api("/api/save?file=hub", JSON.stringify(H)); if (r.version) version = r.version; dirty = false; status("Saved"); }
+    try { const r = await api("/api/save?file=hub", JSON.stringify(H)); if (r.version) version = r.version; dirty = false; status("Saved"); if (P) P.paint(); }
     catch (e) { status("Couldn't save: " + e.message); throw e; }
   }
   bar.addEventListener("click", async (e) => {
@@ -195,10 +196,6 @@
       H.me.bioPick = next; b.textContent = `Bio ${next.toUpperCase()}`;
       markDirty(); window.HUB_SITE.setBio(next);
     }
-    if (a === "publish") confirmBtn(b, async () => {
-      try { await save(); status("Publishing…"); const r = await api("/api/publish", "{}"); status(r.ok ? "Published. Live in about a minute." : "Publish failed"); }
-      catch (err) { status("Publish failed: " + err.message.slice(0, 80)); }
-    });
     if (a === "exit") {
       const go = () => { dirty = false; location.href = location.pathname + location.hash; };
       if (dirty) return confirmBtn(b, go);
@@ -206,6 +203,10 @@
     }
   });
   document.addEventListener("keydown", (e) => { if ((e.metaKey || e.ctrlKey) && e.key === "s") { e.preventDefault(); save(); } });
+  const pub = document.createElement("script");
+  pub.src = "edit-publish.js";
+  pub.onload = () => { P = window.wirePublish({ bar, status, save, api, isDirty: () => dirty }); };
+  document.head.appendChild(pub);
 
   decorate();
 })();
