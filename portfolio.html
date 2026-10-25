@@ -328,13 +328,14 @@
     // hubBack is the exact hub page they came from (e.g. its Clients section), so Home drops them back there.
     let hubBack = "index.html";
     let fromHub = (() => {
-      try {
-        const r = new URL(document.referrer);
-        if (r.host !== location.host || /portfolio/.test(r.pathname) || !location.hash.slice(1)) return false;
-        let section = ""; try { section = sessionStorage.getItem("hubSection") || ""; } catch {}
-        hubBack = r.pathname + r.search + section; // browsers drop the #section from the referrer, so the hub notes it
-        return true;
-      } catch { return false; }
+      if (!location.hash.slice(1)) return false;
+      let section = null; try { section = sessionStorage.getItem("hubSection"); } catch {}
+      let r = null; try { r = new URL(document.referrer); } catch {}
+      // Came from the hub: the referrer says so, or (when a browser hides it) the hub left a note in this tab
+      const viaHub = r ? r.host === location.host && !/portfolio/.test(r.pathname) : section !== null;
+      if (!viaHub) return false;
+      hubBack = (r ? r.pathname : "index.html") + (section || ""); // browsers drop the #section from the referrer, so the hub notes it
+      return true;
     })();
     function openProject(id) {
       const i = WORK.findIndex((w) => w.id === id);

@@ -52,8 +52,8 @@ window.HUB = {
   "sections": [
     {
       "id": "work",
-      "title": "Clients",
-      "intro": "Brand, product, fashion and event design. The full portfolio lives on its own page.",
+      "title": "Portfolio",
+      "intro": "Brand, product, fashion and event design for clients.",
       "cta": {
         "label": "Open the portfolio →",
         "url": "portfolio.html"
@@ -78,48 +78,7 @@ window.HUB = {
           "img": "work/air-company/glove.jpg"
         }
       ],
-      "gallery": [
-        {
-          "img": "work/aeliza/lookbook-1.jpg",
-          "url": "portfolio.html#aeliza",
-          "t": "Aeliza"
-        },
-        {
-          "img": "work/air-company/glove.jpg",
-          "url": "portfolio.html#air-company",
-          "t": "Air Company"
-        },
-        {
-          "img": "work/phenomenal-worlds/posts.jpg",
-          "url": "portfolio.html#phenomenal-worlds",
-          "t": "Phenomenal Worlds"
-        },
-        {
-          "img": "work/aeliza/lookbook-3.jpg",
-          "url": "portfolio.html#aeliza",
-          "t": "Aeliza"
-        },
-        {
-          "img": "work/air-company/tee.jpg",
-          "url": "portfolio.html#air-company",
-          "t": "Air Company"
-        },
-        {
-          "img": "work/phenomenal-worlds/campaign.jpg",
-          "url": "portfolio.html#phenomenal-worlds",
-          "t": "Phenomenal Worlds"
-        },
-        {
-          "img": "work/aeliza/flat-1.jpg",
-          "url": "portfolio.html#aeliza",
-          "t": "Aeliza"
-        },
-        {
-          "img": "work/air-company/cap-photo.jpg",
-          "url": "portfolio.html#air-company",
-          "t": "Air Company"
-        }
-      ]
+      "rich": true
     },
     {
       "id": "projects",
@@ -131,14 +90,17 @@ window.HUB = {
           "tag": "Building",
           "d": "A mental health tool that helps people keep perspective through life's ups and downs, and respond in healthy ways. Built with a behavioural scientist.",
           "img": "work/wave/screens.jpg",
-          "url": "portfolio.html#wave"
+          "url": "portfolio.html#wave",
+          "live": "https://abiolaafolabi.github.io/Wave-Onboarding/",
+          "liveLabel": "Join the waitlist"
         },
         {
           "t": "ANIXVRS",
           "tag": "Since 2020",
           "d": "Where cultural heritage meets streetwear. A fashion brand I designed and run.",
           "url": "portfolio.html#anixvrs",
-          "img": "work/anixvrs/lookbook.jpg"
+          "img": "work/anixvrs/lookbook.jpg",
+          "live": "https://www.instagram.com/anixvrs/"
         },
         {
           "t": "Mothership",
@@ -146,9 +108,11 @@ window.HUB = {
           "d": "Imagining new visions of the future for the African diaspora. Sold out, run in partnership with TROS London.",
           "url": "portfolio.html#mothership",
           "tag": "Event",
-          "img": "work/mothership/cover.jpg"
+          "img": "work/mothership/cover.jpg",
+          "live": "https://www.instagram.com/mothershipheadquarters/"
         }
-      ]
+      ],
+      "rich": true
     },
     {
       "id": "writing",
