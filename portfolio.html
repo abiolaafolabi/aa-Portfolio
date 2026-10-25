@@ -282,7 +282,7 @@
 
     // Intro
     function renderIntro() {
-      $("#intro").innerHTML = `<span>Abiola Afolabi</span> <em data-edit-global="intro">${window.CONTENT.intro}</em>`;
+      $("#intro").innerHTML = `<em data-edit-global="intro">${window.CONTENT.intro}</em>`;
     }
 
     // Grid
@@ -308,7 +308,7 @@
     // Info panel
     function renderInfo() {
     $("#infoBody").innerHTML = `
-      <p>Abiola Afolabi ${window.CONTENT.intro}</p>
+      <p>${window.CONTENT.intro}</p>
       ${ME.bio.map((p) => `<p>${p}</p>`).join("")}
       ${ME.openToWork ? `<p><a class="otw" href="mailto:${ME.email}?subject=${encodeURIComponent("Working together")}"><i></i>Open to work. Get in touch →</a></p>` : ""}
       <h4>Services</h4><ul>${ME.services.map((s) => `<li>${s}</li>`).join("")}</ul>

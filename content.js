@@ -1,6 +1,6 @@
 /* Site content. Edited by hand or by edit mode (python3 edit_server.py, then add ?edit to the page URL). */
 window.CONTENT = {
-  "intro": "is a multidisciplinary designer and strategist building visual identities for purpose-driven startups.",
+  "intro": "Hi, I'm a multidisciplinary designer and strategist, building identities for purpose-driven startups.",
   "me": {
     "email": "abiolamd2004@gmail.com",
     "bio": [
