@@ -48,7 +48,9 @@ window.CONTENT = {
         "work/phenomenal-worlds/kit-of-parts.jpg",
         "work/phenomenal-worlds/one-page.jpg",
         "work/phenomenal-worlds/social.jpg",
-        "work/phenomenal-worlds/campaign.jpg",
+        {
+          "src": "work/phenomenal-worlds/pw-post-slide.png"
+        },
         "work/phenomenal-worlds/posts.jpg",
         "work/phenomenal-worlds/colour.jpg"
       ],
