@@ -127,24 +127,7 @@ window.CONTENT = {
           "wide": true
         }
       ],
-      "process": [
-        {
-          "src": "work/anixvrs/wordmark-black.png",
-          "cap": "The wordmark"
-        },
-        {
-          "src": "work/anixvrs/icon-black.png",
-          "cap": "The icon"
-        },
-        {
-          "src": "work/anixvrs/construction.jpg",
-          "cap": "Logo construction"
-        },
-        {
-          "src": "work/anixvrs/garment.jpg",
-          "cap": "Art of Ori puffer, garment development"
-        }
-      ],
+      "process": [],
       "role": "Founder & creative director",
       "client": "Self-initiated",
       "team": "Solo, with suppliers",
@@ -183,18 +166,6 @@ window.CONTENT = {
         "work/mothership/menus.jpg"
       ],
       "process": [
-        {
-          "src": "work/mothership/mark.svg",
-          "cap": "Final mark"
-        },
-        {
-          "src": "work/mothership/stacked.svg",
-          "cap": "Stacked lockup"
-        },
-        {
-          "src": "work/mothership/p-logo.jpg",
-          "cap": "Earlier direction"
-        },
         {
           "src": "work/mothership/p-marks.jpg",
           "cap": "Mark explorations"
@@ -245,12 +216,7 @@ window.CONTENT = {
           "wide": false
         }
       ],
-      "process": [
-        {
-          "src": "work/wave/mark.svg",
-          "cap": "Final mark"
-        }
-      ],
+      "process": [],
       "role": "Founder, designer & builder",
       "client": "Self-initiated",
       "team": "With a behavioural scientist",
@@ -298,10 +264,6 @@ window.CONTENT = {
         {
           "src": "work/aeliza/p-6.jpg",
           "cap": "CS4 sketchbook - Jack Harper"
-        },
-        {
-          "src": "work/aeliza/p-5.jpg",
-          "cap": "CS4 sketchbook - Jack Harper"
         }
       ],
       "role": "Fashion brand intern",
@@ -332,32 +294,7 @@ window.CONTENT = {
         "work/air-company/cap-photo.jpg",
         "work/air-company/rack.mp4"
       ],
-      "process": [
-        {
-          "src": "",
-          "cap": "Tee tech pack"
-        },
-        {
-          "src": "",
-          "cap": "Socks"
-        },
-        {
-          "src": "",
-          "cap": "Quarter-zip"
-        },
-        {
-          "src": "",
-          "cap": "Cap"
-        },
-        {
-          "src": "",
-          "cap": "Polo"
-        },
-        {
-          "src": "",
-          "cap": "Woven label"
-        }
-      ],
+      "process": [],
       "role": "Technical designer",
       "client": "Air Company, with Jack Harper",
       "team": "With Jack Harper",
