@@ -233,10 +233,9 @@ window.CONTENT = {
       "fg": "#ffffff",
       "images": [
         {
-          "src": "work/wave/screenshot-2026-02-10-at-21.14.30.png",
-          "wide": false
+          "src": "work/wave/free-realistic-iphone-16-pro-in-hand-mockup2.png",
+          "wide": true
         },
-        "work/wave/screenshot-2026-02-10-at-21.14.36.png",
         {
           "src": "work/wave/artboard-37.png",
           "wide": true
@@ -244,10 +243,6 @@ window.CONTENT = {
         {
           "src": "work/wave/post-1.jpg",
           "wide": false
-        },
-        {
-          "src": "work/wave/free-realistic-iphone-16-pro-in-hand-mockup2.png",
-          "wide": true
         }
       ],
       "process": [
