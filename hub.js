@@ -916,6 +916,10 @@ window.HUB = {
           "t": "Jesus Christ",
           "img": "",
           "d": "Savior of the world"
+        },
+        {
+          "t": "Virgil Ablo",
+          "img": ""
         }
       ],
       "about": true
