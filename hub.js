@@ -99,7 +99,7 @@ window.HUB = {
         {
           "t": "Mothership",
           "m": "Feb 2026",
-          "d": "Imagining new visions of the future for the African diaspora. Sold out, run in partnership with TROS London.",
+          "d": "Imagining new visions of the future for the African diaspora. Sold out, run in partnership with TROS London & Lanzarote Works.",
           "url": "portfolio.html#mothership",
           "tag": "Event",
           "img": "work/mothership/cover.jpg",
@@ -134,19 +134,19 @@ window.HUB = {
     {
       "id": "talk",
       "title": "Talk to me about",
-      "intro": "Things I could talk about for hours, and the ideas I'm turning over right now. Good ways to start a conversation.",
+      "intro": "Things I could talk about for hours. Good ways to start a conversation.",
       "items": [
         {
           "t": "Futurism",
-          "d": "Imagination, and what things could be."
+          "d": "Imagination and what the future could look like."
         },
         {
-          "t": "The mind",
-          "d": "Psychology, and how it shapes how we behave."
+          "t": "Psychology",
+          "d": "Self actualisation and how the mind shapes our behaviour"
         },
         {
           "t": "Philosophy",
-          "d": "First principles, systems thinking, and getting to the core of things."
+          "d": "Dealing with suffering and defining intangible truths"
         },
         {
           "t": "Simulation & simulacra",
@@ -154,15 +154,31 @@ window.HUB = {
         },
         {
           "t": "Jungian psychology",
-          "d": "The persona, anima and animus, and all that jazz."
+          "d": "Archetypes, the unconscious, signs & symbols and all that jazz."
         },
         {
           "t": "History",
-          "d": "Ancient history, African history, history in general."
+          "d": "Ancient greco roman and African wars and politics and developments"
         },
         {
           "t": "The art of scale & leverage",
-          "d": "Technology, business & startups"
+          "d": "Technology, business & startups,"
+        },
+        {
+          "t": "Thinking & Decision making",
+          "d": "Mental models, first principles, systems thinking, bias etc"
+        },
+        {
+          "t": "Anthropology",
+          "d": "The how and why of people and culture"
+        },
+        {
+          "t": "Birds",
+          "d": "I love birds, a favourite of mine is the peregrine falcon"
+        },
+        {
+          "t": "Evolutionary biology",
+          "d": "Ancient humans and why we are the way we are today"
         }
       ],
       "about": true
@@ -179,7 +195,7 @@ window.HUB = {
         },
         {
           "t": "First great artwork",
-          "d": "A drawing of Ronaldo doing a bicycle kick. I've loved drawing since I was a kid."
+          "d": "A drawing of Ronaldo doing a bicycle kick."
         },
         {
           "t": "Debate club",
@@ -195,23 +211,27 @@ window.HUB = {
         },
         {
           "t": "Contemporary dance",
-          "d": "Took it for GCSE."
+          "d": "Took it for GCSE and got an 8"
         },
         {
           "t": "Saracens Academy",
           "d": "Joined the Saracens rugby academy."
         },
         {
-          "t": "Student films",
-          "d": "Acted in three. A budding acting career."
+          "t": "Budding acting career",
+          "d": "Acted in three three student films"
+        },
+        {
+          "t": "Sax",
+          "d": "Learnt to play the sax for my baptism"
         }
       ],
       "about": true
     },
     {
       "id": "books",
-      "title": "Top Books",
-      "intro": "Books I love and come back to.",
+      "title": "Book shelf",
+      "intro": "Books I've read and what they taught me",
       "items": [
         {
           "t": "The 7 Habits of Highly Effective People",
@@ -298,7 +318,7 @@ window.HUB = {
           },
           "pages": 528,
           "year": 2020,
-          "d": "An enjoyable return to the world of The Hunger Games. It’s fascinating to see how Snow developed into the character we know, and the story ends on a melancholy note."
+          "d": "A Hunger Games prequel. It’s fascinating to see how Snow developed into the character we know. Endearing characters, melancholy note."
         },
         {
           "t": "The Creative Act",
@@ -312,7 +332,7 @@ window.HUB = {
           },
           "pages": 432,
           "year": 2023,
-          "d": "Creativity isn’t an exclusive ability reserved for a particular kind of person. Everyone has the capacity to be creative, although I’m still exploring the book’s wider ideas."
+          "d": "Ideas are like frequencies you can tune into if you're sensitive enough. This sensitivity also explains why certain creatives struggle so much in personal life despite creative success"
         },
         {
           "t": "The Tipping Point",
@@ -327,7 +347,7 @@ window.HUB = {
           },
           "pages": 288,
           "year": 2000,
-          "d": "Trends can spread through social networks until they reach a tipping point. Certain people, particularly those who connect different social circles, can play an important role in helping ideas travel from a niche audience to a much larger one."
+          "d": "Trends spread through social networks like viruses until they reach a tipping point. Certain people, especially those who connect different social circles, play a key role in helping these ideas move from a niche audience to a much larger one."
         },
         {
           "t": "The Alchemist",
@@ -400,7 +420,7 @@ window.HUB = {
           },
           "pages": 329,
           "year": 2011,
-          "d": "A good strategy has a clear structure: diagnose the problem, establish a guiding policy, and take coherent actions. The strategic kernel is a useful framework for approaching problems across different fields."
+          "d": "A good strategy has a clear 3-part structure: diagnose the problem, establish a guiding policy, and take coherent action. This is called the strategic kernel and is a useful framework for approaching problems across different fields."
         },
         {
           "t": "How to Get Rich",
@@ -428,7 +448,8 @@ window.HUB = {
             "label": "Hustle Harder"
           },
           "pages": 304,
-          "year": 2020
+          "year": 2020,
+          "d": "Low-key mid, but I took away the idea of being fearless and thinking business minded"
         },
         {
           "t": "Can't Hurt Me",
@@ -602,7 +623,7 @@ window.HUB = {
           },
           "pages": 270,
           "year": 1960,
-          "d": "Your subconscious operates like a goal-seeking mechanism, continually adjusting your behaviour towards the self-image and goals you hold. If you identify as someone who isn’t worthy of success, you may unconsciously act in ways that reinforce that identity. To change your behaviour sustainably, you need to examine your underlying self-image and consciously establish a new target."
+          "d": "Your subconscious operates like a goal-seeking mechanism, and it adjusts your behaviour towards the self-image/goals you have. To change your behaviour sustainably, you need to examine your underlying self-image and consciously establish a new target."
         },
         {
           "t": "The Obstacle Is the Way",
@@ -633,7 +654,7 @@ window.HUB = {
           },
           "pages": 154,
           "year": 1946,
-          "d": "Purpose plays a fundamental role in perseverance. Having a reason to endure can help you withstand circumstances that would otherwise seem unbearable. Frankl explores this through his experiences in Nazi concentration camps and his work in psychology."
+          "d": "Purpose plays a fundamental role in perseverance and well-being. Frankl explores this through his experiences in Nazi concentration camps and his later work in logotherapy."
         },
         {
           "t": "The Courage to Be Disliked",
@@ -649,7 +670,7 @@ window.HUB = {
           },
           "pages": 288,
           "year": 2013,
-          "d": "Your past experiences don’t automatically dictate your present actions. You have more agency than you might think, and changing your life requires the courage to act differently rather than treating your current identity as permanent."
+          "d": "I learned that past experiences have no bearing on your present actions unless you allow them to. There's always the opportunity to respond differently based on our present goals and values. Changing your life then requires the courage to act differently from what you're used to or comfortable with."
         },
         {
           "t": "Building a StoryBrand",
@@ -664,7 +685,7 @@ window.HUB = {
           },
           "pages": 240,
           "year": 2017,
-          "d": "Effective brand communication makes sense to people by using the structure of a story. A brand needs to communicate clearly, connect with what its audience wants, and explain how it helps them get there."
+          "d": "Communication dies when it costs too much to process, and it doesn't speak to a survival or thriving need. Effective brand communication is made easy to process by using a story structure and clearly communicating how the brand helps its audience achieve their surval/triving needs"
         },
         {
           "t": "The Pocket Universal Principles of Design",
@@ -680,7 +701,7 @@ window.HUB = {
           },
           "pages": 320,
           "year": 2015,
-          "d": "Design principles help you understand how people interact with the world. What interests me most is that good design isn’t simply about what something allows a person to do; it’s also about how its design influences what they feel comfortable doing."
+          "d": "Design principles help you understand how people interact with the world. I particularly liked the affordance, 80/20 and progressive disclosure chapters"
         },
         {
           "t": "Surrounded by Idiots",
@@ -723,7 +744,7 @@ window.HUB = {
           },
           "pages": 567,
           "year": 2008,
-          "d": "A wonderfully strange premise: everyone aged 15 and over suddenly disappears, leaving children trapped under a giant dome, with some developing extraordinary powers. A fun, gripping series I’d recommend, particularly to teenagers, although it moves into darker subject matter."
+          "d": "A wonderfully strange premise: everyone aged 15 and over suddenly disappears, leaving children trapped under a giant dome, with some developing extraordinary powers. A fun, gripping series I’d recommend, although it moves into darker subject matter."
         },
         {
           "t": "How to Win Friends and Influence People",
@@ -780,7 +801,8 @@ window.HUB = {
             "label": "Naval Ravikant"
           },
           "pages": 242,
-          "year": 2020
+          "year": 2020,
+          "d": "Productize your self"
         },
         {
           "t": "Afrofuturism: A History of Black Futures",
@@ -808,7 +830,8 @@ window.HUB = {
             "h": 206
           },
           "pages": 178,
-          "year": 2006
+          "year": 2006,
+          "d": "<br>"
         }
       ],
       "about": true,
@@ -823,7 +846,7 @@ window.HUB = {
         {
           "t": "Jesus Christ",
           "img": "work/hub/people/jesus-christ.jpg",
-          "d": "Love and a full life",
+          "d": "Love & a full life",
           "credit": "Unknown artist, Saint Catherine's Monastery, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Spas_vsederzhitel_sinay.jpg"
         },
@@ -907,7 +930,7 @@ window.HUB = {
         {
           "t": "Sun Ra",
           "img": "work/hub/people/sun-ra.jpg",
-          "d": "Afrofuturist pioneer",
+          "d": "Afrofuturism",
           "credit": "Impulse! Records, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Sun_Ra_(1973_publicity_photo_-_Impulse_ABC_Dunhill).jpg"
         },
@@ -921,7 +944,7 @@ window.HUB = {
         {
           "t": "Josef Müller Brockmann",
           "img": "work/hub/people/josef-m-ller-brockmann.jpg",
-          "d": "Swiss design pioneer",
+          "d": "Swiss design",
           "credit": "Rochester Institute of Technology, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Josef_M%C3%BCller-Brockmann,_RIT_NandE_Vol19Num5_1987_Nov5_(cropped).jpg",
           "pos": "30% 25%"
@@ -941,24 +964,24 @@ window.HUB = {
       "intro": "What I do when I'm not working.",
       "items": [
         {
-          "t": "Saxophone",
-          "d": "I've been playing the alto sax for a couple of months. I played Amazing Grace at my baptism after three weeks of practice."
-        },
-        {
-          "t": "Physical training",
-          "d": "I started training 10 years ago to get better at rugby, 30 push ups a day to my best of 130 in a row."
-        },
-        {
           "t": "Reading",
           "d": "<a href=\"#books\" style=\"border-bottom:1px solid var(--line)\">See the bookshelf →</a>"
         },
         {
+          "t": "Saxophone",
+          "d": "I occasionally play the alto sax at my church."
+        },
+        {
+          "t": "Physical training",
+          "d": "Since age 11 I've practiced a mix calisthenics, bodybuilding and strength training."
+        },
+        {
           "t": "Philosophy",
-          "d": "Practicing it more than studying it, but I love collecting and thinking about ideas."
+          "d": "Practicing more than studying it, but I love collecting and thinking about ideas."
         },
         {
           "t": "Debating",
-          "d": "Its a joy it get closer to the truth through dialogue."
+          "d": "Get closer to the truth through dialogue."
         },
         {
           "t": "Memes",
@@ -970,12 +993,12 @@ window.HUB = {
         },
         {
           "t": "Chess",
-          "d": "Not that good yet, but I enjoy playing casually. Challenge me to a game.",
+          "d": "Not that good yet, but I enjoy playing casually. Challenge me to a game ♟️.",
           "url": "https://www.chess.com/member/abiola_a"
         },
         {
           "t": "Football & rugby",
-          "d": "Love playing both. More historically a rugby guy. Don't really watch either, which is a bit embarrassing."
+          "d": "Love playing both. but don't really watch either, which is a bit embarrassing."
         }
       ],
       "about": true
@@ -993,17 +1016,17 @@ window.HUB = {
         {
           "t": "M&S",
           "m": "#2",
-          "d": "Properly designed: large and chewy. Dipability slightly below Morrisons Finest."
-        },
-        {
-          "t": "Morrisons",
-          "m": "#4",
-          "d": "Delicious, splendid. The chewiness makes it harder to dip, and it doesn't soak as much."
+          "d": "Properly designed: large and chewy. Dipability slightly below Tesco's Finest."
         },
         {
           "t": "Lidl",
           "m": "#3",
-          "d": "Large and chewy, but harder to dip."
+          "d": "Large and chewy, but a lil harder to dip."
+        },
+        {
+          "t": "Morrisons",
+          "m": "#4",
+          "d": "Not bad. Close in quality to a Lidl one"
         },
         {
           "t": "Chocolate digestives",
@@ -1013,17 +1036,17 @@ window.HUB = {
         {
           "t": "Oreos, custard creams",
           "m": "Basics",
-          "d": "The basics."
+          "d": "The basics. Reliable"
         },
         {
           "t": "Maryland",
           "m": "Basics",
-          "d": "Surprisingly good at dipping, but tastes basic. Just crunchy."
+          "d": "Surprisingly good at dipping, but tastes basic. Just crunchy and sweet"
         },
         {
           "t": "Digestives",
           "m": "Basics",
-          "d": "Rough on the tongue."
+          "d": "Good for dipping, moorish but rough on the tongue."
         },
         {
           "t": "Oat milk: Oatly",
