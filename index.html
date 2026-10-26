@@ -185,16 +185,18 @@
     .wall .d { color: var(--muted); font-size: 1em; line-height: 1.5; }
 
     /* Bookshelf: realistic spines on a shelf; hover one and it turns to show its cover */
-    .shelf-wrap { position: relative; overflow-x: auto; overflow-y: hidden; margin: 4px 0 6px; padding-top: 16px; scrollbar-width: thin; }
+    .shelf-wrap { position: relative; overflow-x: auto; overflow-y: hidden; margin: 4px 0 6px; padding-top: 70px; scrollbar-width: thin; }
     .shelf { position: relative; display: flex; align-items: flex-end; width: max-content; min-width: 100%; padding: 0 2px; }
     .shelf::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: #d4d4d4; }
+    .shelf { --panel: 310px; }
     .book { position: relative; height: var(--h); width: var(--w); flex: none; cursor: pointer; outline: none; perspective: 900px;
-      filter: drop-shadow(2px 0 1.5px rgba(0,0,0,.22)); transition: width .4s cubic-bezier(.3,.7,.2,1), transform .25s ease; }
+      --cw: calc(var(--h) * var(--ar, .66)); transition: width .4s cubic-bezier(.3,.7,.2,1), transform .25s ease; }
+    .book.nocover { --cw: var(--w); }
     .book:hover:not(.on), .book:focus-visible:not(.on) { transform: translateY(-6px); }
-    .book.on { width: calc(var(--h) * var(--ar, .66)); margin: 0 6px; }
-    .book .spine { transition: opacity .2s; }
-    .book.on .spine { opacity: 0; }
-    .book .cv { position: absolute; inset: 0; border-radius: 1px 3px 3px 1px; overflow: hidden; transform-origin: 0 50%;
+    .book.on { width: calc(var(--cw) + var(--panel)); margin: 0 6px; cursor: default; }
+    .book .spine { transition: opacity .2s; width: var(--w); right: auto; filter: drop-shadow(2px 0 1.5px rgba(0,0,0,.22)); }
+    .book.on:not(.nocover) .spine { opacity: 0; }
+    .book .cv { position: absolute; top: 0; bottom: 0; left: 0; width: var(--cw); border-radius: 1px 3px 3px 1px; overflow: hidden; transform-origin: 0 50%;
       opacity: 0; transform: rotateY(-70deg); transition: opacity .2s, transform .4s cubic-bezier(.2,.75,.25,1);
       box-shadow: 0 16px 26px -14px rgba(0,0,0,.5), inset 0 0 0 1px rgba(0,0,0,.06); }
     .book .cv img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -216,9 +218,18 @@
     .spine[data-font="serif"] .st { font: 500 14px/1 Georgia, "Times New Roman", serif; letter-spacing: .05em; }
     .spine[data-font="cond"] .st { font: 600 15px/1 Oswald, "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: .02em; }
     .spine .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .book-cap { min-height: 8.5em; max-width: 52ch; color: var(--muted); } /* room for a review, so the page doesn't jump between books */
-    .book-cap b { font-weight: 500; color: var(--text); }
-    .book-cap .note { color: #444; margin-top: 4px; }
+    /* Details beside the opened book: title, author, review, then a small table */
+    .book .info { position: absolute; bottom: 0; min-height: 100%; max-height: calc(100% + 64px); left: var(--cw); /* grows upwards for longer reviews */ width: var(--panel); padding: 0 6px 0 22px; display: flex; flex-direction: column;
+      opacity: 0; visibility: hidden; transition: opacity .25s .12s; cursor: text; }
+    .book.on .info { opacity: 1; visibility: visible; }
+    .info .it { font-size: 15px; line-height: 1.25; font-weight: 400; color: var(--text); text-wrap: balance; }
+    .info .ia { color: var(--muted); margin-top: 3px; }
+    .info .ir { color: var(--muted); margin-top: 10px; overflow-y: auto; flex: 1; min-height: 0; text-wrap: pretty; scrollbar-width: none; }
+    .info dl { display: grid; grid-template-columns: auto 1fr; margin-top: 10px; font-size: 11px; }
+    .info dt, .info dd { padding: 5px 0; border-top: 1px solid var(--line); }
+    .info dt { color: var(--faint); text-transform: uppercase; letter-spacing: .06em; padding-right: 16px; }
+    .info dd { color: var(--text); }
+    .shelf-hint { color: var(--faint); margin-top: 8px; }
 
     /* Role model cards: tilt toward the cursor with a sheen */
     .wall { gap: 32px 20px; }
@@ -272,7 +283,10 @@
       .name { font-size: 15px; }
       .index h2 { font-size: 15px; }
       .index { gap: 44px 0; }
-      .updates summary, .shelf-hint, .book-cap, .credits { font-size: 13px; }
+      .updates summary, .shelf-hint, .credits { font-size: 13px; }
+      .shelf { --panel: 210px; }
+      .shelf .info { font-size: 12.5px; line-height: 1.5; }
+      .info .it { font-size: 14px; }
       .items .m, .tag, .book-info dl { font-size: 13px; }
       footer { font-size: 12px; margin-top: 96px; }
       .foot-ask form div { max-width: none; }
@@ -418,11 +432,13 @@
           </article>`; }).join("") + (s.cta && live(s.cta.url) ? `<p style="margin-top:44px"><a href="${s.cta.url}" style="border-bottom:1px solid var(--text)">${s.cta.label}</a></p>` : "");
       } else if (s.shelf && !EDITING) {
         body = `<div class="shelf-wrap"><div class="shelf">${s.items.map((b, k) => { const sp = b.spine || {}; return `
-          <div class="book" tabindex="0" data-book="${k}" aria-label="${b.t}${b.m ? `, ${b.m}` : ""}" style="--h:${sp.h || 220}px;--w:${Math.round(12 + (b.pages || 250) * 0.075)}px;--bg:${sp.bg || "#eee"};--fg:${sp.fg || "#111"};--ac:${sp.ac || "transparent"}">
+          <div class="book${b.img ? "" : " nocover"}" tabindex="0" data-book="${k}" aria-label="${b.t}${b.m ? `, ${b.m}` : ""}" style="--h:${sp.h || 220}px;--w:${Math.round(12 + (b.pages || 250) * 0.075)}px;--bg:${sp.bg || "#eee"};--fg:${sp.fg || "#111"};--ac:${sp.ac || "transparent"}">
             <span class="spine" data-font="${sp.font || "sans"}">${sp.photo ? `<img class="photo" src="${sp.photo}" alt="" />` : `<span class="st">${sp.label || b.t}</span><span class="sa">${sp.by || (b.m || "").split(/ & | and /)[0].split(" ").pop()}</span>`}</span>
             ${b.img ? `<span class="cv"><img src="${b.img}" alt="" /></span>` : ""}
+            <span class="info"><span class="it">${b.t}</span>${b.m ? `<span class="ia">${b.m}</span>` : ""}${b.d ? `<span class="ir">${b.d}</span>` : `<span class="ir"></span>`}
+              <dl>${b.year ? `<dt>Published</dt><dd>${b.year}</dd>` : ""}${b.pages ? `<dt>Pages</dt><dd>${b.pages}</dd>` : ""}</dl></span>
           </div>`; }).join("")}</div></div>
-          <p class="book-cap" data-hint="${matchMedia("(hover: hover)").matches ? "Hover a book to take it off the shelf." : "Tap a book to take it off the shelf."}"></p>`;
+          <p class="shelf-hint">${matchMedia("(hover: hover)").matches ? "Hover a book to take it off the shelf." : "Tap a book to take it off the shelf."}</p>`;
       } else if (s.wall) {
         body = `<div class="wall"${Lst(`${p}.items`, "person")}>${s.items.map((it, k) => `
           <div class="rm"${I(`${p}.items.${k}`)}><div class="rm-card">${it.img ? `<img src="${it.img}" alt="${it.t}" loading="lazy" />` : initials(it.t)}</div>
@@ -485,15 +501,12 @@
     // It widens from its left edge, so the cursor stays on it while the shelf shifts.
     function showBook(el) {
       const shelf = el.closest(".shelf"), b = SECTIONS.find((x) => x.shelf).items[+el.dataset.book];
-      const cap = shelf.closest(".inner, .view").querySelector(".book-cap");
       if (b.img && coverRatio[b.img]) el.style.setProperty("--ar", coverRatio[b.img].toFixed(3));
       shelf.querySelectorAll(".book.on").forEach((x) => x !== el && x.classList.remove("on"));
-      if (b.img) el.classList.add("on"); // no cover yet: just show its details
-      cap.innerHTML = `<b>${b.t}</b>${b.m ? `, ${b.m}` : ""}${b.year ? ` · ${b.year}` : ""}${b.pages ? ` · ${b.pages} pages` : ""}${b.d ? `<div class="note">${b.d}</div>` : ""}`;
+      el.classList.add("on"); // a book with no cover yet opens its details beside the spine
     }
     function hideBooks(shelf) {
       shelf.querySelectorAll(".book.on").forEach((x) => x.classList.remove("on"));
-      const cap = shelf.closest(".inner, .view").querySelector(".book-cap"); cap.textContent = cap.dataset.hint;
     }
     let bookTimer;
     document.addEventListener("pointerover", (e) => {
@@ -505,13 +518,19 @@
       const sh = e.target.closest && e.target.closest(".shelf");
       if (sh && e.pointerType === "mouse" && !sh.contains(e.relatedTarget)) { clearTimeout(bookTimer); hideBooks(sh); }
     });
-    document.addEventListener("click", (e) => { const b = e.target.closest(".book"); if (!b) return; b.classList.contains("on") && matchMedia("(hover: none)").matches ? hideBooks(b.closest(".shelf")) : showBook(b); });
+    document.addEventListener("click", (e) => {
+      const b = e.target.closest(".book"); if (!b) return;
+      const touch = matchMedia("(hover: none)").matches;
+      if (touch && b.classList.contains("on")) return hideBooks(b.closest(".shelf"));
+      showBook(b);
+      // On phones, slide the shelf so the opened book and its details are in view
+      if (touch) setTimeout(() => b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" }), 420);
+    });
     document.addEventListener("focusin", (e) => { if (e.target.classList && e.target.classList.contains("book")) showBook(e.target); });
     // Preload covers so they turn out instantly, and learn each one's shape
     function primeShelf() {
       const s = SECTIONS.find((x) => x.shelf); if (!s) return;
       s.items.forEach((b) => { if (!b.img || coverRatio[b.img]) return; const i = new Image(); i.onload = () => { coverRatio[b.img] = i.naturalWidth / i.naturalHeight; }; i.src = b.img; });
-      document.querySelectorAll(".book-cap").forEach((c) => { c.textContent = c.dataset.hint; });
     }
 
     // Role model cards tilt toward the cursor
