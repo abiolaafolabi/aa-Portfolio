@@ -751,6 +751,34 @@ window.HUB = {
           },
           "pages": 242,
           "year": 2020
+        },
+        {
+          "t": "Afrofuturism: A History of Black Futures",
+          "m": "Kevin M. Strait & Kinshasha Holman Conwill",
+          "spine": {
+            "bg": "#111111",
+            "fg": "#e9b44c",
+            "ac": "#e9b44c",
+            "font": "cond",
+            "h": 240,
+            "label": "Afrofuturism",
+            "by": "Smithsonian"
+          },
+          "pages": 224,
+          "year": 2023
+        },
+        {
+          "t": "Zag",
+          "m": "Marty Neumeier",
+          "img": "work/hub/books/zag.jpg",
+          "spine": {
+            "bg": "#ffffff",
+            "fg": "#111111",
+            "font": "cond",
+            "h": 206
+          },
+          "pages": 178,
+          "year": 2006
         }
       ],
       "about": true,

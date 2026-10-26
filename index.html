@@ -488,7 +488,7 @@
       const cap = shelf.closest(".inner, .view").querySelector(".book-cap");
       if (b.img && coverRatio[b.img]) el.style.setProperty("--ar", coverRatio[b.img].toFixed(3));
       shelf.querySelectorAll(".book.on").forEach((x) => x !== el && x.classList.remove("on"));
-      el.classList.add("on");
+      if (b.img) el.classList.add("on"); // no cover yet: just show its details
       cap.innerHTML = `<b>${b.t}</b>${b.m ? `, ${b.m}` : ""}${b.year ? ` · ${b.year}` : ""}${b.pages ? ` · ${b.pages} pages` : ""}${b.d ? `<div class="note">${b.d}</div>` : ""}`;
     }
     function hideBooks(shelf) {
