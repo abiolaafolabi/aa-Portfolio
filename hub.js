@@ -817,7 +817,7 @@ window.HUB = {
     {
       "id": "role-models",
       "title": "Inspirations",
-      "intro": "People I look up to.",
+      "intro": "A lineage of thinkers and builders I look up to.",
       "wall": true,
       "items": [
         {
@@ -825,21 +825,21 @@ window.HUB = {
           "credit": "Self-portrait, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg",
           "img": "work/hub/people/leonardo-da-vinci.jpg",
-          "d": "Interdisciplinary creative"
+          "d": "Interdisciplinary creativity"
         },
         {
           "t": "Steve Jobs",
           "img": "work/hub/people/steve-jobs.jpg",
           "credit": "Matthew Yohe, CC BY-SA 3.0",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010_(cropped_4).jpg",
-          "d": "Product visionary"
+          "d": "Product vision"
         },
         {
           "t": "Michael Jackson",
           "img": "work/hub/people/michael-jackson.jpg",
           "credit": "White House Photo Office, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1984_(enhanced).jpg",
-          "d": "High performer"
+          "d": "High performance"
         },
         {
           "t": "Dieter Rams",
@@ -865,14 +865,14 @@ window.HUB = {
         {
           "t": "Charles Darwin",
           "img": "work/hub/people/charles-darwin.jpg",
-          "d": "Evolutionary Biologist",
+          "d": "Evolutionary Biology",
           "credit": "Henry Maull and John Fox, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Charles_Darwin_seated_crop.jpg"
         },
         {
           "t": "W. E. B. Du Bois",
           "img": "work/hub/people/w-e-b-du-bois.jpg",
-          "d": "Cultural analyst",
+          "d": "Cultural analysis",
           "credit": "James E. Purdy, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:W.E.B._Du_Bois_by_James_E._Purdy,_1907_(3x4).jpg"
         },
@@ -886,28 +886,28 @@ window.HUB = {
         {
           "t": "Jean Giraud",
           "img": "work/hub/people/jean-giraud.jpg",
-          "d": "Visual world builder",
+          "d": "Visual world building",
           "credit": "Jarek Obważanek, WRAK.PL, CC BY-SA 4.0",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Moebius_Lodz_2008.jpg"
         },
         {
           "t": "Neri Oxman",
           "img": "work/hub/people/neri-oxman.jpg",
-          "d": "Interdisciplinary designer",
+          "d": "Interdisciplinary design",
           "credit": "Noah Kalina, CC BY-SA 4.0",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Neri_Oxman_by_Noah_Kalina_(cropped).jpg"
         },
         {
           "t": "Sun Ra",
           "img": "work/hub/people/sun-ra.jpg",
-          "d": "Afrofuturism Pioneer",
+          "d": "Afrofuturist pioneer",
           "credit": "Impulse! Records, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Sun_Ra_(1973_publicity_photo_-_Impulse_ABC_Dunhill).jpg"
         },
         {
           "t": "William Blake",
           "img": "work/hub/people/william-blake.jpg",
-          "d": "Visionary painter",
+          "d": "Visionary imagination",
           "credit": "Thomas Phillips, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:William_Blake_by_Thomas_Phillips.jpg"
         },
@@ -920,22 +920,6 @@ window.HUB = {
           "pos": "30% 25%"
         },
         {
-          "t": "Mike Mentzer",
-          "img": "",
-          "d": "Brains & brawn"
-        },
-        {
-          "t": "Flex Wheeler",
-          "img": "work/hub/people/flex-wheeler.jpg",
-          "d": "Epic physic",
-          "credit": "Paula R. Lively from Zanesville, United States, CC BY 2.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Flex_Kenny_Wheeler_interview_for_lifetime_achievement_award_(52756156088)_(cropped).jpg"
-        },
-        {
-          "t": "Biscuit Oliva",
-          "img": ""
-        },
-        {
           "t": "Jesus Christ",
           "img": "work/hub/people/jesus-christ.jpg",
           "d": "Savior of the world",
@@ -945,7 +929,8 @@ window.HUB = {
         {
           "t": "Virgil Abloh",
           "img": "work/hub/people/virgil-abloh.jpg",
-          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0"
+          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0",
+          "d": "Art & Streetwear"
         }
       ],
       "about": true
