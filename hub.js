@@ -891,7 +891,12 @@ window.HUB = {
         {
           "t": "William Blake",
           "img": "",
-          "d": "Visionary Imaginator"
+          "d": "Visionary painter"
+        },
+        {
+          "t": "Josef Müller Brockmann",
+          "img": "",
+          "d": "Swiss design pioneer"
         }
       ],
       "about": true
