@@ -882,6 +882,11 @@ window.HUB = {
           "t": "Neri Oxman",
           "img": "",
           "d": "Interdisciplinary designer"
+        },
+        {
+          "t": "Sun Ra",
+          "img": "",
+          "d": "Afrofuturism Pioneer"
         }
       ],
       "about": true
