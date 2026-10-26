@@ -44,6 +44,18 @@ def git(*args):
                           env={**os.environ, "GIT_TERMINAL_PROMPT": "0"})
 
 
+def stamp_versions():
+    """Give the content files a fresh ?v= on each publish, so browsers fetch the new copy
+    instead of reusing the one GitHub lets them keep for 10 minutes."""
+    v = str(int(time.time()))
+    for page in ("index.html", "portfolio.html"):
+        path = os.path.join(ROOT, page)
+        html = open(path).read()
+        new = re.sub(r'<script src="(content|hub)\.js(?:\?v=\d+)?"></script>', rf'<script src="\1.js?v={v}"></script>', html)
+        if new != html:
+            open(path, "w").write(new)
+
+
 def site_url():
     try:
         return "https://" + open(os.path.join(ROOT, "CNAME")).read().strip()
@@ -166,6 +178,8 @@ class Handler(SimpleHTTPRequestHandler):
 
             if url.path == "/api/publish":
                 before = git("rev-parse", "@{u}").stdout.strip()
+                if git("status", "--porcelain").stdout.strip():
+                    stamp_versions()  # only when there's something new to send
                 git("add", "-A")
                 commit = git("commit", "-m", "Update from edit mode")
                 push = git("push", "origin", "HEAD")
