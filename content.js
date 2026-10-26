@@ -49,7 +49,7 @@ window.CONTENT = {
         "work/phenomenal-worlds/one-page.jpg",
         "work/phenomenal-worlds/social.jpg",
         {
-          "src": "work/phenomenal-worlds/pw-post-slide.png"
+          "src": "work/phenomenal-worlds/pw-post-slide-2.png"
         },
         "work/phenomenal-worlds/posts.jpg",
         "work/phenomenal-worlds/colour.jpg"
