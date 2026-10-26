@@ -219,11 +219,11 @@ window.HUB = {
         },
         {
           "t": "Budding acting career",
-          "d": "Acted in three three student films"
+          "d": "Acted in three student films"
         },
         {
-          "t": "Sax",
-          "d": "Learnt to play the sax for my baptism"
+          "t": "Alto sax",
+          "d": "Learnt to play the alto sax for my baptism"
         }
       ],
       "about": true
@@ -231,7 +231,7 @@ window.HUB = {
     {
       "id": "books",
       "title": "Book shelf",
-      "intro": "Books I've read and what they taught me",
+      "intro": "Books I've read and what they've taught me",
       "items": [
         {
           "t": "The 7 Habits of Highly Effective People",
@@ -318,7 +318,7 @@ window.HUB = {
           },
           "pages": 528,
           "year": 2020,
-          "d": "A Hunger Games prequel. It’s fascinating to see how Snow developed into the character we know. Endearing characters, melancholy note."
+          "d": "A Hunger Games prequel. How Snow developed into the character we know. Endearing characters, melancholy note."
         },
         {
           "t": "The Creative Act",
@@ -332,7 +332,7 @@ window.HUB = {
           },
           "pages": 432,
           "year": 2023,
-          "d": "Ideas are like frequencies you can tune into if you're sensitive enough. This sensitivity also explains why certain creatives struggle so much in personal life despite creative success"
+          "d": "Ideas are like frequencies you tune into. Higher sensitivity makes the download easier, but this sensitivity also explains why certain creatives struggle in personal life despite creative success"
         },
         {
           "t": "The Tipping Point",
@@ -347,7 +347,7 @@ window.HUB = {
           },
           "pages": 288,
           "year": 2000,
-          "d": "Trends spread through social networks like viruses until they reach a tipping point. Certain people, especially those who connect different social circles, play a key role in helping these ideas move from a niche audience to a much larger one."
+          "d": "Trends spread through social networks like viruses until they reach a tipping point. Certain people, especially those who connect different social circles, play a key role in spreading these ideas from a niche audience to a much larger one."
         },
         {
           "t": "The Alchemist",
@@ -420,7 +420,7 @@ window.HUB = {
           },
           "pages": 329,
           "year": 2011,
-          "d": "A good strategy has a clear 3-part structure: diagnose the problem, establish a guiding policy, and take coherent action. This is called the strategic kernel and is a useful framework for approaching problems across different fields."
+          "d": "A good strategy has a 3-part structure: diagnose the problem, establish a guiding policy, and take coherent action. This is called the strategic kernel and is a useful framework for approaching problems across different fields."
         },
         {
           "t": "How to Get Rich",
@@ -623,7 +623,7 @@ window.HUB = {
           },
           "pages": 270,
           "year": 1960,
-          "d": "Your subconscious operates like a goal-seeking mechanism, and it adjusts your behaviour towards the self-image/goals you have. To change your behaviour sustainably, you need to examine your underlying self-image and consciously establish a new target."
+          "d": "Your subconscious operates like a goal-seeking mechanism; it adjusts your behaviour towards the self-image ad goals you have. To change your behaviour sustainably, you need to examine your underlying self-image and consciously establish a new target."
         },
         {
           "t": "The Obstacle Is the Way",
@@ -654,7 +654,7 @@ window.HUB = {
           },
           "pages": 154,
           "year": 1946,
-          "d": "Purpose plays a fundamental role in perseverance and well-being. Frankl explores this through his experiences in Nazi concentration camps and his later work in logotherapy."
+          "d": "Purpose plays a fundamental role in perseverance and well-being. Frankl explores this through his experiences in Nazi concentration camps and his work in logotherapy."
         },
         {
           "t": "The Courage to Be Disliked",
@@ -670,7 +670,7 @@ window.HUB = {
           },
           "pages": 288,
           "year": 2013,
-          "d": "I learned that past experiences have no bearing on your present actions unless you allow them to. There's always the opportunity to respond differently based on our present goals and values. Changing your life then requires the courage to act differently from what you're used to or comfortable with."
+          "d": "Past experiences have no bearing on your present actions unless you allow them to. You always retain the ability to respond differently based on your present goals and values. Changing your life then requires the courage to act differently from what you're used to or comfortable with."
         },
         {
           "t": "Building a StoryBrand",
@@ -685,7 +685,7 @@ window.HUB = {
           },
           "pages": 240,
           "year": 2017,
-          "d": "Communication dies when it costs too much to process, and it doesn't speak to a survival or thriving need. Effective brand communication is made easy to process by using a story structure and clearly communicating how the brand helps its audience achieve their surval/triving needs"
+          "d": "Communication dies when it costs too much to process and fails to highlight a survival or thriving need. Storybrands make communication easy to process by using a story structure and clearly communicate how the brand helps its audience achieve their surval/triving needs"
         },
         {
           "t": "The Pocket Universal Principles of Design",
@@ -701,7 +701,7 @@ window.HUB = {
           },
           "pages": 320,
           "year": 2015,
-          "d": "Design principles help you understand how people interact with the world. I particularly liked the affordance, 80/20 and progressive disclosure chapters"
+          "d": "Design principles help you understand how people interact with the world. I particularly enjoyed the affordance, 80/20 and progressive disclosure chapters"
         },
         {
           "t": "Surrounded by Idiots",
@@ -744,7 +744,7 @@ window.HUB = {
           },
           "pages": 567,
           "year": 2008,
-          "d": "A wonderfully strange premise: everyone aged 15 and over suddenly disappears, leaving children trapped under a giant dome, with some developing extraordinary powers. A fun, gripping series I’d recommend, although it moves into darker subject matter."
+          "d": "Everyone aged 15 and over suddenly disappears, leaving children trapped under a giant dome, with some developing extraordinary powers. A fun, gripping series I’d recommend, although it moves into darker subject matter."
         },
         {
           "t": "How to Win Friends and Influence People",
@@ -973,15 +973,15 @@ window.HUB = {
         },
         {
           "t": "Physical training",
-          "d": "Since age 11 I've practiced a mix calisthenics, bodybuilding and strength training."
+          "d": "Since age 11 I've practiced a mix of calisthenics, bodybuilding and strength training."
         },
         {
           "t": "Philosophy",
-          "d": "Practicing more than studying it, but I love collecting and thinking about ideas."
+          "d": "Practicing more than studying it, but I love collecting ideas to consider."
         },
         {
           "t": "Debating",
-          "d": "Get closer to the truth through dialogue."
+          "d": "Getting closer to the truth through dialogue."
         },
         {
           "t": "Memes",
@@ -993,12 +993,12 @@ window.HUB = {
         },
         {
           "t": "Chess",
-          "d": "Not that good yet, but I enjoy playing casually. Challenge me to a game ♟️.",
+          "d": "Not that good yet, but I enjoy playing casually. Challenge me to a game 😎.",
           "url": "https://www.chess.com/member/abiola_a"
         },
         {
           "t": "Football & rugby",
-          "d": "Love playing both. but don't really watch either, which is a bit embarrassing."
+          "d": "Love playing both. Don't really watch either, which is a bit embarrassing."
         }
       ],
       "about": true
@@ -1046,7 +1046,7 @@ window.HUB = {
         {
           "t": "Digestives",
           "m": "Basics",
-          "d": "Good for dipping, moorish but rough on the tongue."
+          "d": "Good for dipping, moorish but rough on the tongue and plain"
         },
         {
           "t": "Oat milk: Oatly",
