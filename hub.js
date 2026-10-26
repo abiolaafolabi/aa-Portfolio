@@ -837,8 +837,8 @@ window.HUB = {
         {
           "t": "Michael Jackson",
           "img": "work/hub/people/michael-jackson.jpg",
-          "credit": "Matthew Rolston; Distributed by Epic Records, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1983_(3x4_cropped)_(contrast).jpg",
+          "credit": "White House Photo Office, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1984_(enhanced).jpg",
           "d": "High performer"
         },
         {
@@ -850,53 +850,74 @@ window.HUB = {
         },
         {
           "t": "Carl Jung",
-          "img": "",
-          "d": "Symbols & Archetypes"
+          "img": "work/hub/people/carl-jung.jpg",
+          "d": "Symbols & Archetypes",
+          "credit": "Unknown photographer, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:ETH-BIB-Jung,_Carl_Gustav_(1875-1961)-Portrait-Portr_14163_(cropped).tif"
         },
         {
           "t": "Charlie Munger",
-          "img": "",
-          "d": "Mental models"
+          "img": "work/hub/people/charlie-munger.jpg",
+          "d": "Mental models",
+          "credit": "Nick, CC BY 2.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Charlie_Munger_(cropped).jpg"
         },
         {
           "t": "Charles Darwin",
-          "img": "",
-          "d": "Evolutionary Biologist"
+          "img": "work/hub/people/charles-darwin.jpg",
+          "d": "Evolutionary Biologist",
+          "credit": "Henry Maull and John Fox, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Charles_Darwin_seated_crop.jpg"
         },
         {
           "t": "W. E. B. Du Bois",
-          "img": "",
-          "d": "Cultural analyst"
+          "img": "work/hub/people/w-e-b-du-bois.jpg",
+          "d": "Cultural analyst",
+          "credit": "James E. Purdy, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:W.E.B._Du_Bois_by_James_E._Purdy,_1907_(3x4).jpg"
         },
         {
           "t": "Miyamoto Musashi",
-          "img": "",
-          "d": "Disciplined practice"
+          "img": "work/hub/people/miyamoto-musashi.jpg",
+          "d": "Disciplined practice",
+          "credit": "Self-portrait, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Miyamoto_Musashi_(detail).webp"
         },
         {
           "t": "Jean Giraud",
-          "img": "",
-          "d": "Visual world builder"
+          "img": "work/hub/people/jean-giraud.jpg",
+          "d": "Visual world builder",
+          "credit": "Jarek Obważanek, WRAK.PL, CC BY-SA 4.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Moebius_Lodz_2008.jpg"
         },
         {
           "t": "Neri Oxman",
-          "img": "",
-          "d": "Interdisciplinary designer"
+          "img": "work/hub/people/neri-oxman.jpg",
+          "d": "Interdisciplinary designer",
+          "credit": "Noah Kalina, CC BY-SA 4.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Neri_Oxman_by_Noah_Kalina_(cropped).jpg"
         },
         {
           "t": "Sun Ra",
-          "img": "",
-          "d": "Afrofuturism Pioneer"
+          "img": "work/hub/people/sun-ra.jpg",
+          "d": "Afrofuturism Pioneer",
+          "credit": "Impulse! Records, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Sun_Ra_(1973_publicity_photo_-_Impulse_ABC_Dunhill).jpg"
         },
         {
           "t": "William Blake",
-          "img": "",
-          "d": "Visionary painter"
+          "img": "work/hub/people/william-blake.jpg",
+          "d": "Visionary painter",
+          "credit": "Thomas Phillips, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:William_Blake_by_Thomas_Phillips.jpg"
         },
         {
           "t": "Josef Müller Brockmann",
-          "img": "",
-          "d": "Swiss design pioneer"
+          "img": "work/hub/people/josef-m-ller-brockmann.jpg",
+          "d": "Swiss design pioneer",
+          "credit": "Rochester Institute of Technology, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Josef_M%C3%BCller-Brockmann,_RIT_NandE_Vol19Num5_1987_Nov5_(cropped).jpg",
+          "pos": "30% 25%"
         },
         {
           "t": "Mike Mentzer",
@@ -905,8 +926,10 @@ window.HUB = {
         },
         {
           "t": "Flex Wheeler",
-          "img": "",
-          "d": "Epic physic"
+          "img": "work/hub/people/flex-wheeler.jpg",
+          "d": "Epic physic",
+          "credit": "Paula R. Lively from Zanesville, United States, CC BY 2.0",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Flex_Kenny_Wheeler_interview_for_lifetime_achievement_award_(52756156088)_(cropped).jpg"
         },
         {
           "t": "Biscuit Oliva",
@@ -914,12 +937,15 @@ window.HUB = {
         },
         {
           "t": "Jesus Christ",
-          "img": "",
-          "d": "Savior of the world"
+          "img": "work/hub/people/jesus-christ.jpg",
+          "d": "Savior of the world",
+          "credit": "Unknown artist, Saint Catherine's Monastery, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Spas_vsederzhitel_sinay.jpg"
         },
         {
-          "t": "Virgil Ablo",
-          "img": ""
+          "t": "Virgil Abloh",
+          "img": "work/hub/people/virgil-abloh.jpg",
+          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0"
         }
       ],
       "about": true

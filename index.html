@@ -441,7 +441,7 @@
           <p class="shelf-hint">${matchMedia("(hover: hover)").matches ? "Hover a book to take it off the shelf." : "Tap a book to take it off the shelf."}</p>`;
       } else if (s.wall) {
         body = `<div class="wall"${Lst(`${p}.items`, "person")}>${s.items.map((it, k) => `
-          <div class="rm"${I(`${p}.items.${k}`)}><div class="rm-card">${it.img ? `<img src="${it.img}" alt="${it.t}" loading="lazy" />` : initials(it.t)}</div>
+          <div class="rm"${I(`${p}.items.${k}`)}><div class="rm-card">${it.img ? `<img src="${it.img}" alt="${it.t}" loading="lazy"${it.pos ? ` style="object-position:${it.pos}"` : ""} />` : initials(it.t)}</div>
           <div${E(`${p}.items.${k}.t`)}>${it.t}</div>${opt(it.d, `${p}.items.${k}.d`, "d", "Description")}</div>`).join("")}</div>
           ${s.items.some((it) => it.credit) ? `<details class="credits"><summary>Photo credits</summary><ul>${s.items.filter((it) => it.credit).map((it) => `<li>${it.t}: <a href="${it.creditUrl}" target="_blank" rel="noopener">${it.credit}</a></li>`).join("")}</ul></details>` : ""}`;
       } else if (s.timeline) {
