@@ -142,39 +142,39 @@ window.HUB = {
         },
         {
           "t": "Psychology",
-          "d": "Self actualisation and how the mind shapes our behaviour"
+          "d": "Self actualisation and human behaviour"
         },
         {
           "t": "Philosophy",
-          "d": "Dealing with suffering and defining intangible truths"
+          "d": "Dealing with suffering"
         },
         {
           "t": "Simulation & simulacra",
-          "d": "What it means for something to be real, and what the difference is."
+          "d": "What makes something real or fake"
         },
         {
           "t": "Jungian psychology",
-          "d": "Archetypes, the unconscious, signs & symbols and all that jazz."
+          "d": "Archetypes, the unconscious and all that."
         },
         {
           "t": "History",
-          "d": "Ancient greco roman and African wars and politics and developments"
+          "d": "Wars, politics, culture and societal development"
         },
         {
-          "t": "The art of scale & leverage",
+          "t": "Scale & leverage",
           "d": "Technology, business & startups,"
         },
         {
           "t": "Thinking & Decision making",
-          "d": "Mental models, first principles, systems thinking, bias etc"
+          "d": "Mental models, first principles, systems thinking, probability etc"
         },
         {
           "t": "Anthropology",
-          "d": "The how and why of people and culture"
+          "d": "How and why people / culture are the way they are"
         },
         {
           "t": "Birds",
-          "d": "I love birds, a favourite of mine is the peregrine falcon"
+          "d": "A favourite of mine is the Peregrine falcon"
         },
         {
           "t": "Evolutionary biology",
