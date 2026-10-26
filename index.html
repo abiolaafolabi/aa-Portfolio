@@ -419,7 +419,7 @@
       } else if (s.shelf && !EDITING) {
         body = `<div class="shelf-wrap"><div class="shelf">${s.items.map((b, k) => { const sp = b.spine || {}; return `
           <div class="book" tabindex="0" data-book="${k}" aria-label="${b.t}${b.m ? `, ${b.m}` : ""}" style="--h:${sp.h || 220}px;--w:${Math.round(12 + (b.pages || 250) * 0.075)}px;--bg:${sp.bg || "#eee"};--fg:${sp.fg || "#111"};--ac:${sp.ac || "transparent"}">
-            <span class="spine" data-font="${sp.font || "sans"}">${sp.photo ? `<img class="photo" src="${sp.photo}" alt="" />` : `<span class="st">${sp.label || b.t}</span><span class="sa">${(b.m || "").split(/ & | and /)[0].split(" ").pop()}</span>`}</span>
+            <span class="spine" data-font="${sp.font || "sans"}">${sp.photo ? `<img class="photo" src="${sp.photo}" alt="" />` : `<span class="st">${sp.label || b.t}</span><span class="sa">${sp.by || (b.m || "").split(/ & | and /)[0].split(" ").pop()}</span>`}</span>
             ${b.img ? `<span class="cv"><img src="${b.img}" alt="" /></span>` : ""}
           </div>`; }).join("")}</div></div>
           <p class="book-cap" data-hint="${matchMedia("(hover: hover)").matches ? "Hover a book to take it off the shelf." : "Tap a book to take it off the shelf."}"></p>`;

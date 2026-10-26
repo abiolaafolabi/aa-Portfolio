@@ -598,6 +598,159 @@ window.HUB = {
           },
           "pages": 224,
           "year": 2013
+        },
+        {
+          "t": "Man's Search for Meaning",
+          "m": "Viktor E. Frankl",
+          "img": "work/hub/books/man-s-search-for-meaning.jpg",
+          "spine": {
+            "bg": "#3a3d40",
+            "fg": "#f2ede4",
+            "font": "serif",
+            "h": 198,
+            "label": "Man's Search"
+          },
+          "pages": 154,
+          "year": 1946
+        },
+        {
+          "t": "The Courage to Be Disliked",
+          "m": "Ichiro Kishimi & Fumitake Koga",
+          "img": "work/hub/books/the-courage-to-be-disliked.jpg",
+          "spine": {
+            "bg": "#ffffff",
+            "fg": "#c62026",
+            "ac": "#1b1b1b",
+            "font": "cond",
+            "h": 216,
+            "label": "The Courage"
+          },
+          "pages": 288,
+          "year": 2013
+        },
+        {
+          "t": "Building a StoryBrand",
+          "m": "Donald Miller",
+          "img": "work/hub/books/building-a-storybrand.jpg",
+          "spine": {
+            "bg": "#ffffff",
+            "fg": "#c8202f",
+            "font": "sans",
+            "h": 226,
+            "label": "StoryBrand"
+          },
+          "pages": 240,
+          "year": 2017
+        },
+        {
+          "t": "The Pocket Universal Principles of Design",
+          "m": "William Lidwell, Kritina Holden & Jill Butler",
+          "img": "work/hub/books/universal-principles-of-design.jpg",
+          "spine": {
+            "bg": "#3d8fd6",
+            "fg": "#ffffff",
+            "font": "sans",
+            "h": 230,
+            "label": "Principles of Design",
+            "by": "Lidwell"
+          },
+          "pages": 320,
+          "year": 2015
+        },
+        {
+          "t": "Surrounded by Idiots",
+          "m": "Thomas Erikson",
+          "img": "work/hub/books/surrounded-by-idiots.jpg",
+          "spine": {
+            "bg": "#f7efe2",
+            "fg": "#1b1b1b",
+            "ac": "#e4572e",
+            "font": "sans",
+            "h": 228
+          },
+          "pages": 304,
+          "year": 2014
+        },
+        {
+          "t": "Parable of the Sower",
+          "m": "Octavia E. Butler",
+          "img": "work/hub/books/parable-of-the-sower.jpg",
+          "spine": {
+            "bg": "#f4e3d3",
+            "fg": "#d6262f",
+            "font": "serif",
+            "h": 234
+          },
+          "pages": 320,
+          "year": 1993
+        },
+        {
+          "t": "Gone",
+          "m": "Michael Grant",
+          "img": "work/hub/books/gone.jpg",
+          "spine": {
+            "bg": "#2b2b2b",
+            "fg": "#c8f04a",
+            "font": "cond",
+            "h": 232
+          },
+          "pages": 567,
+          "year": 2008
+        },
+        {
+          "t": "How to Win Friends and Influence People",
+          "m": "Dale Carnegie",
+          "img": "work/hub/books/how-to-win-friends-and-influence-people.jpg",
+          "spine": {
+            "bg": "#ffffff",
+            "fg": "#1d6f9a",
+            "font": "serif",
+            "h": 222,
+            "label": "How to Win Friends"
+          },
+          "pages": 320,
+          "year": 1936
+        },
+        {
+          "t": "Steal Like an Artist",
+          "m": "Austin Kleon",
+          "img": "work/hub/books/steal-like-an-artist.jpg",
+          "spine": {
+            "bg": "#111111",
+            "fg": "#ffffff",
+            "font": "cond",
+            "h": 224
+          },
+          "pages": 160,
+          "year": 2012
+        },
+        {
+          "t": "Poor Charlie's Almanack",
+          "m": "Charles T. Munger",
+          "img": "work/hub/books/poor-charlie-s-almanack.jpg",
+          "spine": {
+            "bg": "#1f3a2a",
+            "fg": "#e7d9a8",
+            "font": "serif",
+            "h": 238,
+            "label": "Poor Charlie's"
+          },
+          "pages": 512,
+          "year": 2005
+        },
+        {
+          "t": "The Almanack of Naval Ravikant",
+          "m": "Eric Jorgenson",
+          "img": "work/hub/books/the-almanack-of-naval-ravikant.jpg",
+          "spine": {
+            "bg": "#f7f6f2",
+            "fg": "#222222",
+            "font": "sans",
+            "h": 216,
+            "label": "Naval Ravikant"
+          },
+          "pages": 242,
+          "year": 2020
         }
       ],
       "about": true,
