@@ -887,6 +887,11 @@ window.HUB = {
           "t": "Sun Ra",
           "img": "",
           "d": "Afrofuturism Pioneer"
+        },
+        {
+          "t": "William Blake",
+          "img": "",
+          "d": "Visionary Imaginator"
         }
       ],
       "about": true
