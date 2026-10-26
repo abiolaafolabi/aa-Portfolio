@@ -897,6 +897,25 @@ window.HUB = {
           "t": "Josef Müller Brockmann",
           "img": "",
           "d": "Swiss design pioneer"
+        },
+        {
+          "t": "Mike Mentzer",
+          "img": "",
+          "d": "Brains & brawn"
+        },
+        {
+          "t": "Flex Wheeler",
+          "img": "",
+          "d": "Epic physic"
+        },
+        {
+          "t": "Biscuit Oliva",
+          "img": ""
+        },
+        {
+          "t": "Jesus Christ",
+          "img": "",
+          "d": "Savior of the world"
         }
       ],
       "about": true
