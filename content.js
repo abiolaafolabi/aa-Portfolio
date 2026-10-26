@@ -238,7 +238,7 @@ window.CONTENT = {
         },
         "work/wave/screenshot-2026-02-10-at-21.14.36.png",
         {
-          "src": "work/wave/wave-brand-id-4-300x-100.jpg",
+          "src": "work/wave/artboard-37.png",
           "wide": true
         },
         {
