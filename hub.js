@@ -821,6 +821,13 @@ window.HUB = {
       "wall": true,
       "items": [
         {
+          "t": "Jesus Christ",
+          "img": "work/hub/people/jesus-christ.jpg",
+          "d": "Love and a full life",
+          "credit": "Unknown artist, Saint Catherine's Monastery, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Spas_vsederzhitel_sinay.jpg"
+        },
+        {
           "t": "Leonardo da Vinci",
           "credit": "Self-portrait, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg",
@@ -918,13 +925,6 @@ window.HUB = {
           "credit": "Rochester Institute of Technology, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Josef_M%C3%BCller-Brockmann,_RIT_NandE_Vol19Num5_1987_Nov5_(cropped).jpg",
           "pos": "30% 25%"
-        },
-        {
-          "t": "Jesus Christ",
-          "img": "work/hub/people/jesus-christ.jpg",
-          "d": "Savior of the world",
-          "credit": "Unknown artist, Saint Catherine's Monastery, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Spas_vsederzhitel_sinay.jpg"
         },
         {
           "t": "Virgil Abloh",
