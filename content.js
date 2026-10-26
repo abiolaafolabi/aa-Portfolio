@@ -45,30 +45,39 @@ window.CONTENT = {
       "c": "#000000",
       "fg": "#ffffff",
       "images": [
-        "work/phenomenal-worlds/kit-of-parts.jpg",
-        "work/phenomenal-worlds/one-page.jpg",
-        "work/phenomenal-worlds/social.jpg",
+        "work/phenomenal-worlds/frame-436-copy.jpg",
         {
-          "src": "work/phenomenal-worlds/pw-post-slide-2.png"
+          "src": "work/phenomenal-worlds/pw-post-slide-2.png",
+          "wide": true
         },
-        "work/phenomenal-worlds/posts.jpg",
-        "work/phenomenal-worlds/colour.jpg"
+        {
+          "src": "work/phenomenal-worlds/combinations-2.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/phenomenal-worlds/kit-of-parts.jpg",
+          "wide": true
+        },
+        {
+          "src": "work/phenomenal-worlds/pw-dev-page-300x-100.jpg",
+          "wide": true
+        }
       ],
       "process": [
         {
-          "src": "work/phenomenal-worlds/logo-full.svg",
+          "src": "work/phenomenal-worlds/frame-158-copy.jpg",
           "cap": "Full logo"
         },
         {
-          "src": "work/phenomenal-worlds/logo.jpg",
-          "cap": "Clear space"
-        },
-        {
-          "src": "work/phenomenal-worlds/mark.svg",
+          "src": "work/phenomenal-worlds/frame-248-copy.jpg",
           "cap": "The mark: an assembly of phenomena"
         },
         {
-          "src": "work/phenomenal-worlds/combinations.jpg",
+          "src": "work/phenomenal-worlds/frame-217-copy.jpg",
+          "cap": "Clear space"
+        },
+        {
+          "src": "work/phenomenal-worlds/frame-300-copy.jpg",
           "cap": "Colour combinations"
         }
       ],
