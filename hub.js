@@ -281,6 +281,323 @@ window.HUB = {
           },
           "pages": 291,
           "year": 1998
+        },
+        {
+          "t": "The Ballad of Songbirds and Snakes",
+          "m": "Suzanne Collins",
+          "img": "work/hub/books/the-ballad-of-songbirds-and-snakes.jpg",
+          "spine": {
+            "bg": "#0f2a1c",
+            "fg": "#e8b53a",
+            "font": "cond",
+            "h": 236,
+            "label": "Songbirds & Snakes"
+          },
+          "pages": 528,
+          "year": 2020
+        },
+        {
+          "t": "The Creative Act",
+          "m": "Rick Rubin",
+          "img": "work/hub/books/the-creative-act.jpg",
+          "spine": {
+            "bg": "#e9e7e1",
+            "fg": "#222222",
+            "font": "sans",
+            "h": 232
+          },
+          "pages": 432,
+          "year": 2023
+        },
+        {
+          "t": "The Tipping Point",
+          "m": "Malcolm Gladwell",
+          "img": "work/hub/books/the-tipping-point.jpg",
+          "spine": {
+            "bg": "#f1ecd8",
+            "fg": "#2b2b2b",
+            "ac": "#b3262a",
+            "font": "serif",
+            "h": 214
+          },
+          "pages": 288,
+          "year": 2000
+        },
+        {
+          "t": "The Alchemist",
+          "m": "Paulo Coelho",
+          "img": "work/hub/books/the-alchemist.jpg",
+          "spine": {
+            "bg": "#ece4d6",
+            "fg": "#6b5a44",
+            "font": "serif",
+            "h": 206
+          },
+          "pages": 197,
+          "year": 1988
+        },
+        {
+          "t": "The Great Mental Models",
+          "m": "Shane Parrish",
+          "img": "work/hub/books/the-great-mental-models.jpg",
+          "spine": {
+            "bg": "#c8302f",
+            "fg": "#f3e9e0",
+            "font": "sans",
+            "h": 226,
+            "label": "Mental Models"
+          },
+          "pages": 190,
+          "year": 2020
+        },
+        {
+          "t": "The Game of Life and How to Play It",
+          "m": "Florence Scovel Shinn",
+          "img": "work/hub/books/the-game-of-life-and-how-to-play-it.jpg",
+          "spine": {
+            "bg": "#1d2647",
+            "fg": "#d6b45c",
+            "font": "serif",
+            "h": 198,
+            "label": "The Game of Life"
+          },
+          "pages": 96,
+          "year": 1925
+        },
+        {
+          "t": "The E-Myth Revisited",
+          "m": "Michael E. Gerber",
+          "img": "work/hub/books/the-e-myth-revisited.jpg",
+          "spine": {
+            "bg": "#ffffff",
+            "fg": "#2c5ea8",
+            "ac": "#2c5ea8",
+            "font": "serif",
+            "h": 216,
+            "label": "The E-Myth"
+          },
+          "pages": 268,
+          "year": 1995
+        },
+        {
+          "t": "Good Strategy, Bad Strategy",
+          "m": "Richard Rumelt",
+          "img": "work/hub/books/good-strategy-bad-strategy.jpg",
+          "spine": {
+            "bg": "#111111",
+            "fg": "#ffffff",
+            "font": "cond",
+            "h": 232,
+            "label": "Good Strategy"
+          },
+          "pages": 329,
+          "year": 2011
+        },
+        {
+          "t": "How to Get Rich",
+          "m": "Felix Dennis",
+          "img": "work/hub/books/how-to-get-rich.jpg",
+          "spine": {
+            "bg": "#fbfbfb",
+            "fg": "#c8202f",
+            "font": "cond",
+            "h": 220
+          },
+          "pages": 304,
+          "year": 2006
+        },
+        {
+          "t": "Hustle Harder, Hustle Smarter",
+          "m": "Curtis \"50 Cent\" Jackson",
+          "img": "work/hub/books/hustle-harder-hustle-smarter.jpg",
+          "spine": {
+            "bg": "#3a3e44",
+            "fg": "#e7e2d8",
+            "font": "sans",
+            "h": 228,
+            "label": "Hustle Harder"
+          },
+          "pages": 304,
+          "year": 2020
+        },
+        {
+          "t": "Can't Hurt Me",
+          "m": "David Goggins",
+          "img": "work/hub/books/can-t-hurt-me.jpg",
+          "spine": {
+            "bg": "#191919",
+            "fg": "#c9a24a",
+            "font": "cond",
+            "h": 230
+          },
+          "pages": 364,
+          "year": 2018
+        },
+        {
+          "t": "The Alter Ego Effect",
+          "m": "Todd Herman",
+          "img": "work/hub/books/the-alter-ego-effect.jpg",
+          "spine": {
+            "bg": "#f6d10a",
+            "fg": "#111111",
+            "font": "cond",
+            "h": 222,
+            "label": "Alter Ego Effect"
+          },
+          "pages": 256,
+          "year": 2019
+        },
+        {
+          "t": "Essentialism",
+          "m": "Greg McKeown",
+          "img": "work/hub/books/essentialism.jpg",
+          "spine": {
+            "bg": "#fbfbf8",
+            "fg": "#d0245e",
+            "font": "sans",
+            "h": 212
+          },
+          "pages": 266,
+          "year": 2014
+        },
+        {
+          "t": "The Way of the Superior Man",
+          "m": "David Deida",
+          "img": "work/hub/books/the-way-of-the-superior-man.jpg",
+          "spine": {
+            "bg": "#b4521f",
+            "fg": "#f4e6c8",
+            "font": "serif",
+            "h": 208,
+            "label": "Superior Man"
+          },
+          "pages": 221,
+          "year": 1997
+        },
+        {
+          "t": "Thinking in Systems",
+          "m": "Donella H. Meadows",
+          "img": "work/hub/books/thinking-in-systems.jpg",
+          "spine": {
+            "bg": "#f7f7f5",
+            "fg": "#333333",
+            "ac": "#e6a23c",
+            "font": "serif",
+            "h": 240
+          },
+          "pages": 240,
+          "year": 2008
+        },
+        {
+          "t": "The Inner Game of Tennis",
+          "m": "W. Timothy Gallwey",
+          "img": "work/hub/books/the-inner-game-of-tennis.jpg",
+          "spine": {
+            "bg": "#f4f4f2",
+            "fg": "#111111",
+            "font": "serif",
+            "h": 204,
+            "label": "The Inner Game"
+          },
+          "pages": 142,
+          "year": 1974
+        },
+        {
+          "t": "Great by Choice",
+          "m": "Jim Collins & Morten T. Hansen",
+          "img": "work/hub/books/great-by-choice.jpg",
+          "spine": {
+            "bg": "#1aa6d6",
+            "fg": "#ffffff",
+            "ac": "#e0352b",
+            "font": "sans",
+            "h": 234
+          },
+          "pages": 320,
+          "year": 2011
+        },
+        {
+          "t": "Influence",
+          "m": "Robert B. Cialdini",
+          "img": "work/hub/books/influence.jpg",
+          "spine": {
+            "bg": "#fdf8ec",
+            "fg": "#c4262e",
+            "ac": "#1d3a8a",
+            "font": "cond",
+            "h": 214
+          },
+          "pages": 287,
+          "year": 1983
+        },
+        {
+          "t": "Alchemy",
+          "m": "Rory Sutherland",
+          "img": "work/hub/books/alchemy.jpg",
+          "spine": {
+            "bg": "#f0ea4a",
+            "fg": "#111111",
+            "font": "cond",
+            "h": 222
+          },
+          "pages": 384,
+          "year": 2019
+        },
+        {
+          "t": "Key Person of Influence",
+          "m": "Daniel Priestley",
+          "img": "work/hub/books/key-person-of-influence.jpg",
+          "spine": {
+            "bg": "#f6f6f6",
+            "fg": "#1d4f91",
+            "ac": "#c8202f",
+            "font": "sans",
+            "h": 216,
+            "label": "Key Person"
+          },
+          "pages": 260,
+          "year": 2010
+        },
+        {
+          "t": "Emotion by Design",
+          "m": "Greg Hoffman",
+          "img": "work/hub/books/emotion-by-design.jpg",
+          "spine": {
+            "bg": "#141414",
+            "fg": "#e6e6e6",
+            "font": "cond",
+            "h": 226
+          },
+          "pages": 320,
+          "year": 2022
+        },
+        {
+          "t": "Psycho-Cybernetics",
+          "m": "Maxwell Maltz",
+          "img": "work/hub/books/psycho-cybernetics.jpg",
+          "spine": {
+            "bg": "#fafafa",
+            "fg": "#c8202f",
+            "font": "cond",
+            "h": 236
+          },
+          "pages": 270,
+          "year": 1960
+        },
+        {
+          "t": "The Obstacle Is the Way",
+          "m": "Ryan Holiday",
+          "img": "work/hub/books/the-obstacle-is-the-way.jpg",
+          "spine": {
+            "bg": "#efe6d9",
+            "fg": "#1b1b1b",
+            "ac": "#c8202f",
+            "font": "cond",
+            "h": 218,
+            "label": "The Obstacle"
+          },
+          "pages": 224,
+          "year": 2013
         }
       ],
       "about": true,
