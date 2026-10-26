@@ -36,6 +36,7 @@
     .name small { display: block; font-size: 1em; font-weight: 400; color: var(--muted); }
     .bio { margin-top: 28px; color: #444; }
     .bio p + p { margin-top: 14px; }
+    .bio p, .view .intro, .items .d { text-wrap: pretty; } /* no lone last word on its own line */
     .bio a { border-bottom: 1px solid var(--line); transition: border-color .15s; }
     .bio a:hover { border-color: var(--text); }
     .bio a.go { border: 0; color: var(--muted); }
