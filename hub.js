@@ -816,7 +816,7 @@ window.HUB = {
     },
     {
       "id": "role-models",
-      "title": "Role models",
+      "title": "Inspirations",
       "intro": "People I look up to.",
       "wall": true,
       "items": [
@@ -824,47 +824,64 @@ window.HUB = {
           "t": "Leonardo da Vinci",
           "credit": "Self-portrait, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg",
-          "img": "work/hub/people/leonardo-da-vinci.jpg"
-        },
-        {
-          "t": "Michael Jackson",
-          "img": "work/hub/people/michael-jackson.jpg",
-          "credit": "Matthew Rolston; Distributed by Epic Records, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1983_(3x4_cropped)_(contrast).jpg"
+          "img": "work/hub/people/leonardo-da-vinci.jpg",
+          "d": "Interdisciplinary creativity"
         },
         {
           "t": "Steve Jobs",
           "img": "work/hub/people/steve-jobs.jpg",
           "credit": "Matthew Yohe, CC BY-SA 3.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010_(cropped_4).jpg"
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010_(cropped_4).jpg",
+          "d": "Product vision"
         },
         {
-          "t": "Virgil Abloh",
-          "img": "work/hub/people/virgil-abloh.jpg",
-          "credit": "Myles Kalus Anak Jihem, CC BY-SA 4.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Virgil_Abloh_Paris_Fashion_Week_Autumn_Winter_2019_(cropped).jpg"
+          "t": "Michael Jackson",
+          "img": "work/hub/people/michael-jackson.jpg",
+          "credit": "Matthew Rolston; Distributed by Epic Records, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1983_(3x4_cropped)_(contrast).jpg",
+          "d": "High performance"
         },
         {
           "t": "Dieter Rams",
           "img": "work/hub/people/dieter-rams.jpg",
           "credit": "Vitsœ, CC BY-SA 3.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Designer-Dieter_Rams.jpg"
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Designer-Dieter_Rams.jpg",
+          "d": "Product & graphic design"
         },
         {
-          "t": "Benjamin Franklin",
-          "img": "work/hub/people/benjamin-franklin.jpg",
-          "credit": "Joseph-Siffred Duplessis, Public domain",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg"
+          "t": "Carl Jung",
+          "img": "",
+          "d": "Symbols & Archetypes"
         },
         {
-          "t": "Jony Ive",
-          "img": "work/hub/people/jony-ive.jpg",
-          "credit": "Marcus Dawes, CC BY-SA 3.0",
-          "creditUrl": "https://commons.wikimedia.org/wiki/File:Jonathan_Ive_(OTRS).jpg"
+          "t": "Charlie Munger",
+          "img": "",
+          "d": "Mental models"
         },
         {
-          "t": "Marcus Aurelius",
-          "img": ""
+          "t": "Charles Darwin",
+          "img": "",
+          "d": "Evolutionary Biology"
+        },
+        {
+          "t": "W. E. B. Du Bois",
+          "img": "",
+          "d": "Cultural analysis"
+        },
+        {
+          "t": "Miyamoto Musashi",
+          "img": "",
+          "d": "Disciplined practice"
+        },
+        {
+          "t": "Jean Giraud",
+          "img": "",
+          "d": "Visual world building"
+        },
+        {
+          "t": "Neri Oxman",
+          "img": "",
+          "d": "Interdisciplinary design"
         }
       ],
       "about": true
