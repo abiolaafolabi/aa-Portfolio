@@ -177,8 +177,8 @@ window.CONTENT = {
           "wide": true
         },
         "work/mothership/cover.jpg",
-        "work/mothership/panel-poster.jpg",
         "work/mothership/callout.jpg",
+        "work/mothership/panel-poster.jpg",
         "work/mothership/plates.jpg",
         "work/mothership/menus.jpg"
       ],
