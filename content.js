@@ -115,7 +115,7 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/cover.jpg",
+          "src": "work/anixvrs/abiola-portfolio-v1711.jpg",
           "wide": true
         },
         {
