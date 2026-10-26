@@ -226,7 +226,8 @@ window.HUB = {
             "label": "The 7 Habits"
           },
           "pages": 374,
-          "year": 1989
+          "year": 1989,
+          "d": "Proactivity. The idea that there’s a space between what happens to you and how you respond. You don’t have to be governed by your circumstances; you can choose your response. A lot of the book’s value only started clicking after I’d finished reading and began revisiting it."
         },
         {
           "t": "Mastery",
@@ -239,7 +240,8 @@ window.HUB = {
             "h": 232
           },
           "pages": 344,
-          "year": 2012
+          "year": 2012,
+          "d": "Becoming great requires an apprenticeship. Study the greats in your field, find mentors where possible, and value the learning process rather than rushing towards recognition, money, or success. Mastery is developed, not simply acquired."
         },
         {
           "t": "Same as Ever",
@@ -267,7 +269,8 @@ window.HUB = {
             "h": 200
           },
           "pages": 192,
-          "year": 2002
+          "year": 2002,
+          "d": "Resistance is the invisible force that works against your creative ambitions, preventing you from doing the work you know you should do. The way to overcome it is to take your craft seriously and do the work anyway."
         },
         {
           "t": "Made to Stick",
@@ -294,7 +297,8 @@ window.HUB = {
             "label": "Songbirds & Snakes"
           },
           "pages": 528,
-          "year": 2020
+          "year": 2020,
+          "d": "An enjoyable return to the world of The Hunger Games. It’s fascinating to see how Snow developed into the character we know, and the story ends on a melancholy note."
         },
         {
           "t": "The Creative Act",
@@ -307,7 +311,8 @@ window.HUB = {
             "h": 232
           },
           "pages": 432,
-          "year": 2023
+          "year": 2023,
+          "d": "Creativity isn’t an exclusive ability reserved for a particular kind of person. Everyone has the capacity to be creative, although I’m still exploring the book’s wider ideas."
         },
         {
           "t": "The Tipping Point",
@@ -321,7 +326,8 @@ window.HUB = {
             "h": 214
           },
           "pages": 288,
-          "year": 2000
+          "year": 2000,
+          "d": "Trends can spread through social networks until they reach a tipping point. Certain people, particularly those who connect different social circles, can play an important role in helping ideas travel from a niche audience to a much larger one."
         },
         {
           "t": "The Alchemist",
@@ -348,7 +354,8 @@ window.HUB = {
             "label": "Mental Models"
           },
           "pages": 190,
-          "year": 2020
+          "year": 2020,
+          "d": "A mental model is like a map of reality. It isn’t the territory itself, but it helps you navigate that territory by simplifying it into something you can understand and use."
         },
         {
           "t": "The Game of Life and How to Play It",
@@ -377,7 +384,8 @@ window.HUB = {
             "label": "The E-Myth"
           },
           "pages": 268,
-          "year": 1995
+          "year": 1995,
+          "d": "A business should be designed to work without depending entirely on its founder. Rather than simply creating a job for yourself, build systems and processes that allow the business to operate independently of you."
         },
         {
           "t": "Good Strategy, Bad Strategy",
@@ -391,7 +399,8 @@ window.HUB = {
             "label": "Good Strategy"
           },
           "pages": 329,
-          "year": 2011
+          "year": 2011,
+          "d": "A good strategy has a clear structure: diagnose the problem, establish a guiding policy, and take coherent actions. The strategic kernel is a useful framework for approaching problems across different fields."
         },
         {
           "t": "How to Get Rich",
@@ -404,7 +413,8 @@ window.HUB = {
             "h": 220
           },
           "pages": 304,
-          "year": 2006
+          "year": 2006,
+          "d": "A witty, entertaining account of wealth creation from someone who achieved extraordinary financial success. It offers insights into the mindset, decisions, risks, and sacrifices involved in building wealth."
         },
         {
           "t": "Hustle Harder, Hustle Smarter",
@@ -431,7 +441,8 @@ window.HUB = {
             "h": 230
           },
           "pages": 364,
-          "year": 2018
+          "year": 2018,
+          "d": "You’re often capable of much more than you believe. Goggins overcame extraordinary setbacks and circumstances, becoming an outlier among high performers. His story challenges me to question my own excuses and consider what I’m genuinely capable of achieving."
         },
         {
           "t": "The Alter Ego Effect",
@@ -445,7 +456,8 @@ window.HUB = {
             "label": "Alter Ego Effect"
           },
           "pages": 256,
-          "year": 2019
+          "year": 2019,
+          "d": "Embodying an identity different from your current one can make difficult actions easier. Rather than waiting to feel like the person you want to become, you can deliberately adopt the qualities and behaviours that person would demonstrate."
         },
         {
           "t": "Essentialism",
@@ -458,7 +470,8 @@ window.HUB = {
             "h": 212
           },
           "pages": 266,
-          "year": 2014
+          "year": 2014,
+          "d": "Simplify your life and focus on what matters. Even worthwhile opportunities can distract you from your most important work. Learning to say no is essential to doing a few things exceptionally well."
         },
         {
           "t": "The Way of the Superior Man",
@@ -486,7 +499,8 @@ window.HUB = {
             "h": 240
           },
           "pages": 240,
-          "year": 2008
+          "year": 2008,
+          "d": "An introduction to systems thinking, including stocks, flows, feedback loops, and how different parts of a system interact. It provides a useful vocabulary for understanding complex situations and recognising patterns that aren’t immediately obvious."
         },
         {
           "t": "The Inner Game of Tennis",
@@ -500,7 +514,8 @@ window.HUB = {
             "label": "The Inner Game"
           },
           "pages": 142,
-          "year": 1974
+          "year": 1974,
+          "d": "Trying too hard can make you inflexible. Learning to loosen up and trust your subconscious allows you to adapt more naturally to the challenge in front of you."
         },
         {
           "t": "Great by Choice",
@@ -528,7 +543,8 @@ window.HUB = {
             "h": 214
           },
           "pages": 287,
-          "year": 1983
+          "year": 1983,
+          "d": "An introduction to the psychological principles that influence human decisions and behaviour. The book helps explain why people comply with requests and how persuasion works."
         },
         {
           "t": "Alchemy",
@@ -541,7 +557,8 @@ window.HUB = {
             "h": 222
           },
           "pages": 384,
-          "year": 2019
+          "year": 2019,
+          "d": "When solving a problem, don’t automatically assume that more money, more technology, or better metrics are the answer. Sometimes changing people’s perceptions of a situation can produce better results than changing the situation itself."
         },
         {
           "t": "Key Person of Influence",
@@ -556,7 +573,8 @@ window.HUB = {
             "label": "Key Person"
           },
           "pages": 260,
-          "year": 2010
+          "year": 2010,
+          "d": "A framework for becoming influential in your field by deliberately developing your profile, reputation, network, and business opportunities."
         },
         {
           "t": "Emotion by Design",
@@ -569,7 +587,8 @@ window.HUB = {
             "h": 226
           },
           "pages": 320,
-          "year": 2022
+          "year": 2022,
+          "d": "Understand your audience and create campaigns that resonate emotionally. It shaped how I think about creative direction, especially for ANIXVRS."
         },
         {
           "t": "Psycho-Cybernetics",
@@ -582,7 +601,8 @@ window.HUB = {
             "h": 236
           },
           "pages": 270,
-          "year": 1960
+          "year": 1960,
+          "d": "Your subconscious operates like a goal-seeking mechanism, continually adjusting your behaviour towards the self-image and goals you hold. If you identify as someone who isn’t worthy of success, you may unconsciously act in ways that reinforce that identity. To change your behaviour sustainably, you need to examine your underlying self-image and consciously establish a new target."
         },
         {
           "t": "The Obstacle Is the Way",
@@ -597,7 +617,8 @@ window.HUB = {
             "label": "The Obstacle"
           },
           "pages": 224,
-          "year": 2013
+          "year": 2013,
+          "d": "The problem in front of you might be an opportunity rather than a hindrance. Changing how you interpret a difficult situation can change what you’re able to do with it. As Marcus Aurelius put it, what impedes action can advance action."
         },
         {
           "t": "Man's Search for Meaning",
@@ -611,7 +632,8 @@ window.HUB = {
             "label": "Man's Search"
           },
           "pages": 154,
-          "year": 1946
+          "year": 1946,
+          "d": "Purpose plays a fundamental role in perseverance. Having a reason to endure can help you withstand circumstances that would otherwise seem unbearable. Frankl explores this through his experiences in Nazi concentration camps and his work in psychology."
         },
         {
           "t": "The Courage to Be Disliked",
@@ -626,7 +648,8 @@ window.HUB = {
             "label": "The Courage"
           },
           "pages": 288,
-          "year": 2013
+          "year": 2013,
+          "d": "Your past experiences don’t automatically dictate your present actions. You have more agency than you might think, and changing your life requires the courage to act differently rather than treating your current identity as permanent."
         },
         {
           "t": "Building a StoryBrand",
@@ -640,7 +663,8 @@ window.HUB = {
             "label": "StoryBrand"
           },
           "pages": 240,
-          "year": 2017
+          "year": 2017,
+          "d": "Effective brand communication makes sense to people by using the structure of a story. A brand needs to communicate clearly, connect with what its audience wants, and explain how it helps them get there."
         },
         {
           "t": "The Pocket Universal Principles of Design",
@@ -655,7 +679,8 @@ window.HUB = {
             "by": "Lidwell"
           },
           "pages": 320,
-          "year": 2015
+          "year": 2015,
+          "d": "Design principles help you understand how people interact with the world. What interests me most is that good design isn’t simply about what something allows a person to do; it’s also about how its design influences what they feel comfortable doing."
         },
         {
           "t": "Surrounded by Idiots",
@@ -669,7 +694,8 @@ window.HUB = {
             "h": 228
           },
           "pages": 304,
-          "year": 2014
+          "year": 2014,
+          "d": "People have different communication styles. Having a rough understanding of those differences can help you adapt how you communicate to what another person needs."
         },
         {
           "t": "Parable of the Sower",
@@ -682,7 +708,8 @@ window.HUB = {
             "h": 234
           },
           "pages": 320,
-          "year": 1993
+          "year": 1993,
+          "d": "A strange, compelling, dystopian but hopeful story. Its exploration of change and adaptation feels particularly relevant in an increasingly disruptive world where stability can’t be taken for granted. Heart-wrenching and inspiring."
         },
         {
           "t": "Gone",
@@ -695,7 +722,8 @@ window.HUB = {
             "h": 232
           },
           "pages": 567,
-          "year": 2008
+          "year": 2008,
+          "d": "A wonderfully strange premise: everyone aged 15 and over suddenly disappears, leaving children trapped under a giant dome, with some developing extraordinary powers. A fun, gripping series I’d recommend, particularly to teenagers, although it moves into darker subject matter."
         },
         {
           "t": "How to Win Friends and Influence People",
@@ -709,7 +737,8 @@ window.HUB = {
             "label": "How to Win Friends"
           },
           "pages": 320,
-          "year": 1936
+          "year": 1936,
+          "d": "Avoid unnecessary criticism, which often makes people defensive rather than helping them change. Understand what other people want, appeal to their better qualities, and consider their perspective before trying to persuade them."
         },
         {
           "t": "Steal Like an Artist",
@@ -722,7 +751,8 @@ window.HUB = {
             "h": 224
           },
           "pages": 160,
-          "year": 2012
+          "year": 2012,
+          "d": "Creativity develops through studying, borrowing from, and combining existing ideas. Rather than being embarrassed about influence, learn to reference intelligently and use what inspires you to create something of your own."
         },
         {
           "t": "Poor Charlie's Almanack",
