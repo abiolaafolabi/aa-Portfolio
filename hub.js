@@ -10,9 +10,9 @@ window.HUB = {
         "I studied graphic design. I'm Nigerian and based in London."
       ],
       "b": [
-        "Hi, I'm Abiola. I make things: brands, clothes and products.",
-        "Some of my live projects include <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app for tracking and responding to your moods in the moment; <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a streetwear brand preserving African cultural heritage; and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, events imagining the future of the African diaspora.",
-        "Nigerian, based in London."
+        "I'm an artist. I give shape to things people feel, using strategy and design.",
+        "I'm currently building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app for responding to your moods in the moment; <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a streetwear brand preserving African cultural heritage; and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, an events company imagining the future of the African diaspora.",
+        "I graduated with a BA in Graphic Design. Nigerian, based in London."
       ],
       "c": [
         "I'm a designer. I work in strategy, visual identity, fashion and product design. I also come up with ideas and make them real.",
