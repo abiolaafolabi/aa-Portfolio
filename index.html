@@ -504,6 +504,23 @@
       if (b.img && coverRatio[b.img]) el.style.setProperty("--ar", coverRatio[b.img].toFixed(3));
       shelf.querySelectorAll(".book.on").forEach((x) => x !== el && x.classList.remove("on"));
       el.classList.add("on"); // a book with no cover yet opens its details beside the spine
+      bringIntoView(el);
+    }
+    // Shelf "camera": glide so an opened book and its details are fully in view (keeping clear of the glide zones)
+    const pan = { v: 0, wrap: null, raf: 0, x: 0, y: 0, lock: 0 };
+    const zoneOf = (wrap) => Math.min(120, wrap.clientWidth * 0.15);
+    function bringIntoView(el) {
+      const wrap = el.closest(".shelf-wrap"); if (!wrap || wrap.scrollWidth <= wrap.clientWidth) return;
+      setTimeout(() => {
+        if (!el.classList.contains("on")) return;
+        const w = wrap.getBoundingClientRect(), b = el.getBoundingClientRect(), m = zoneOf(wrap) + 8;
+        let d = 0;
+        if (b.right > w.right - m) d = b.right - (w.right - m);
+        if (b.left - d < w.left + 4) d = b.left - (w.left + 4); // never push its start out of view
+        if (Math.abs(d) < 2) return;
+        pan.lock = Date.now() + 600; // the shelf moves under the cursor; don't treat that as hovering a new book
+        wrap.scrollBy({ left: d, behavior: "smooth" });
+      }, 420);
     }
     function hideBooks(shelf) {
       shelf.querySelectorAll(".book.on").forEach((x) => x.classList.remove("on"));
@@ -511,13 +528,38 @@
     let bookTimer;
     document.addEventListener("pointerover", (e) => {
       const b = e.target.closest && e.target.closest(".book");
-      if (!b || e.pointerType !== "mouse" || b.classList.contains("on")) return;
+      if (!b || e.pointerType !== "mouse" || b.classList.contains("on") || pan.v || Date.now() < pan.lock) return;
       clearTimeout(bookTimer); bookTimer = setTimeout(() => showBook(b), 60); // ignore a cursor just passing through
     });
     document.addEventListener("pointerout", (e) => {
       const sh = e.target.closest && e.target.closest(".shelf");
       if (sh && e.pointerType === "mouse" && !sh.contains(e.relatedTarget)) { clearTimeout(bookTimer); hideBooks(sh); }
     });
+    // Near the shelf's left/right edges it glides along by itself, faster the closer you are to the edge
+    document.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
+      pan.x = e.clientX; pan.y = e.clientY;
+      const wrap = e.target.closest && e.target.closest(".shelf-wrap");
+      if (!wrap || wrap.scrollWidth <= wrap.clientWidth || (e.target.closest(".book.on"))) { pan.v = 0; return; }
+      const r = wrap.getBoundingClientRect(), zone = zoneOf(wrap), x = e.clientX - r.left;
+      let v = x > r.width - zone ? (x - (r.width - zone)) / zone : x < zone ? -(zone - x) / zone : 0;
+      v = Math.sign(v) * v * v * 11; // eases in; up to ~11px a frame at the very edge
+      pan.v = v; pan.wrap = wrap;
+      if (v && !pan.raf) pan.raf = requestAnimationFrame(glide);
+    });
+    document.addEventListener("pointerleave", (e) => { if (e.target.classList && e.target.classList.contains("shelf-wrap")) pan.v = 0; }, true);
+    function glide() {
+      const w = pan.wrap, max = w ? w.scrollWidth - w.clientWidth : 0;
+      if (!pan.v || !w || (pan.v > 0 && w.scrollLeft >= max - 1) || (pan.v < 0 && w.scrollLeft <= 0)) {
+        pan.raf = 0; pan.v = 0;
+        // stopped: open whichever book is under the cursor
+        const el = document.elementFromPoint(pan.x, pan.y), b = el && el.closest(".book");
+        if (b && !b.classList.contains("on") && matchMedia("(hover: hover)").matches) { clearTimeout(bookTimer); bookTimer = setTimeout(() => showBook(b), 120); }
+        return;
+      }
+      w.scrollLeft += pan.v;
+      pan.raf = requestAnimationFrame(glide);
+    }
     document.addEventListener("click", (e) => {
       const b = e.target.closest(".book"); if (!b) return;
       const touch = matchMedia("(hover: none)").matches;
