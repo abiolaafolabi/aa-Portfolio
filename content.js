@@ -232,44 +232,28 @@ window.CONTENT = {
       "c": "#000000",
       "fg": "#ffffff",
       "images": [
-        "work/wave/brand.jpg",
         {
-          "src": "work/wave/free-realistic-iphone-16-pro-in-hand-mockup2.png",
+          "src": "work/wave/screenshot-2026-02-10-at-21.14.30.png",
           "wide": false
+        },
+        "work/wave/screenshot-2026-02-10-at-21.14.36.png",
+        {
+          "src": "work/wave/wave-brand-id-4-300x-100.jpg",
+          "wide": true
         },
         {
           "src": "work/wave/post-1.jpg",
           "wide": false
         },
         {
-          "src": "work/wave/screens.jpg",
+          "src": "work/wave/free-realistic-iphone-16-pro-in-hand-mockup2.png",
           "wide": true
         }
       ],
       "process": [
         {
-          "src": "",
-          "cap": "Early mark: the infinity loop"
-        },
-        {
-          "src": "",
-          "cap": "Mono exploration"
-        },
-        {
-          "src": "work/wave/p-3.jpg",
-          "cap": "The circle 'w'"
-        },
-        {
           "src": "work/wave/mark.svg",
           "cap": "Final mark"
-        },
-        {
-          "src": "work/wave/p-5.jpg",
-          "cap": "The Wave Model"
-        },
-        {
-          "src": "",
-          "cap": "Working from first principles"
         }
       ],
       "role": "Founder, designer & builder",
