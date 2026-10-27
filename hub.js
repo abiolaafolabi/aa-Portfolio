@@ -989,7 +989,7 @@ window.HUB = {
         },
         {
           "t": "Dancing",
-          "d": "Musical or not, there's a fifty-fifty chance you'll see me busting a move. The 2016 Ayo & Teo era was a big influence."
+          "d": "Music or not, there's a fifty-fifty chance you'll see me busting a move. The 2016 Ayo & Teo era was a big influence."
         },
         {
           "t": "Chess",
