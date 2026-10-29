@@ -10,7 +10,8 @@ window.HUB = {
         "I studied graphic design. I'm Nigerian and based in London."
       ],
       "b": [
-        "I’m a designer & founder. Currently building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app to help you respond to your moods in the moment; <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a clothing brand preserving African cultural heritage; and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, an events company imagining positive visions of African futures. I have a BA in Graphic Design. Nigerian, based in London."
+        "I’m a designer & founder. Currently building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app to help you respond to your moods in the moment; <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a clothing brand preserving African cultural heritage; and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, an events company imagining positive visions of African futures.",
+        "I have a degree in Graphic Design. Nigerian born, based in London."
       ],
       "c": [
         "I'm a designer. I work in strategy, visual identity, fashion and product design. I also come up with ideas and make them real.",
