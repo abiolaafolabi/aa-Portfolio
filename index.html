@@ -28,24 +28,25 @@
       min-height: 100vh; display: flex; flex-direction: column;
       padding: clamp(32px, 7vh, 64px) clamp(20px, 5vw, 64px) 24px;
     }
-    .layout { flex: 1; display: grid; grid-template-columns: 200px 1fr; gap: clamp(40px, 7vw, 96px); }
+    .layout { flex: 1; display: grid; grid-template-columns: 192px 1fr; gap: clamp(40px, 7vw, 96px); }
     .layout > * { min-width: 0; }
 
     /* ---------- Left column ---------- */
     .side { align-self: start; position: sticky; top: clamp(32px, 7vh, 64px); }
-    .name { font-weight: 400; line-height: 1.4; }
+    .name { font-size: 14px; font-weight: 400; line-height: 1.4; }
     .name small { display: block; font-size: 1em; font-weight: 400; color: var(--muted); }
-    .bio { margin-top: 28px; color: #444; }
-    .bio p + p { margin-top: 14px; }
+    /* Bio reads as one quiet block: a touch smaller, lighter and airier than the titles */
+    .bio { margin-top: 26px; color: #6a6a6a; font-size: 11.5px; line-height: 1.8; }
+    .bio p + p { margin-top: 12px; }
     .bio p, .view .intro, .items .d { text-wrap: pretty; } /* no lone last word on its own line */
     .bio a { border-bottom: 1px solid var(--line); transition: border-color .15s; }
     .bio a:hover { border-color: var(--text); }
     .bio a.go { border: 0; color: var(--muted); }
     .bio a.go:hover { color: var(--text); }
-    .chip { display: inline-flex; align-items: center; gap: 6px; vertical-align: -3px; padding: 1px 9px 1px 4px; margin: 0 1px;
-      border: 1px solid var(--line) !important; border-radius: 999px; background: #fafafa; color: var(--text); line-height: 1.5; transition: background .15s, border-color .15s; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; vertical-align: -2px; padding: 0 7px 0 3px; margin: 0 1px;
+      border: 1px solid var(--line) !important; border-radius: 999px; background: #fafafa; color: #3a3a3a; line-height: 1.45; transition: background .15s, border-color .15s; }
     .chip:hover { background: #f0f0f0; border-color: #d8d8d8 !important; }
-    .chip img { width: 13px; height: 13px; object-fit: contain; }
+    .chip img { width: 11px; height: 11px; object-fit: contain; }
     #peek { position: fixed; z-index: 60; width: 260px; pointer-events: none; opacity: 0; transform: translate(16px, 16px) scale(.96); transition: opacity .18s, transform .18s; }
     #peek.on { opacity: 1; transform: translate(16px, 16px) scale(1); }
     #peek img { width: 100%; display: block; border-radius: 6px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.35); }
@@ -158,7 +159,7 @@
     /* ---------- Home grid ---------- */
     .index { display: grid; grid-template-columns: repeat(4, minmax(150px, 1fr)); gap: 48px 0; align-content: start; }
     .index section { padding-right: 20px; }
-    .index h2 { font-size: 1em; font-weight: 400; margin-bottom: 10px; }
+    .index h2 { font-size: 13.5px; font-weight: 500; margin-bottom: 10px; }
     .index h2 a:hover { color: var(--muted); }
     .index ul { list-style: none; }
     .index li { color: var(--muted); padding: 2px 0; }
@@ -281,8 +282,9 @@
       .in-section .bio, .in-section .links { display: none; }
       /* Phones: bigger type, like Sangeetha's mobile layout */
       body { font-size: 14px; line-height: 1.65; }
-      .name { font-size: 15px; }
-      .index h2 { font-size: 15px; }
+      .name { font-size: 16.5px; }
+      .index h2 { font-size: 16px; }
+      .bio { font-size: 13.5px; line-height: 1.75; }
       .index { gap: 44px 0; }
       .updates summary, .shelf-hint, .credits { font-size: 13px; }
       .shelf { --panel: 210px; }
