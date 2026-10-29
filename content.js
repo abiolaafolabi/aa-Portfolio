@@ -204,23 +204,15 @@ window.CONTENT = {
       "fg": "#ffffff",
       "images": [
         {
-          "src": "work/wave/free-realistic-iphone-16-pro-in-hand-mockup2.png",
+          "src": "work/wave/wave-iphone-mock-up-3-2.png",
           "wide": true
-        },
-        {
-          "src": "work/wave/artboard-37.png",
-          "wide": true
-        },
-        {
-          "src": "work/wave/post-1.jpg",
-          "wide": false
         }
       ],
       "process": [],
       "role": "Founder, designer & builder",
       "client": "Self-initiated",
       "team": "With a behavioural scientist",
-      "summary": "A journal for noticing how you're doing and finding better ways to respond in the moment.",
+      "summary": "A mood journal for noticing how you're doing and finding better ways to respond in the moment.",
       "body": [
         "A compass for life. Wave gives you back the one thing that gets lost during chaos: perspective. When you see emotional transitions as normal, temporary and useful, you bounce back faster.",
         "You slide a wave to where you are emotionally, log how you feel in seconds, and see whether you're in a phase of chaos or order, with guidance on how to respond to each. The mission is simple: to make sure everyone can say, “No matter what, I’ll be okay.”",
