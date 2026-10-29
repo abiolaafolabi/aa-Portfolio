@@ -65,7 +65,9 @@
     .updates li { padding: 2px 0; color: #444; }
     .updates li::marker { color: var(--faint); }
     .updates li span { color: var(--muted); margin-right: 6px; }
-    .updates li span.u { color: inherit; margin: 0; }
+    .updates li span.u { color: inherit; margin: 0; overflow-wrap: anywhere; }
+    .updates li span.u a { color: var(--text); border-bottom: 1px solid var(--line); white-space: nowrap; }
+    .updates li span.u a:hover { border-color: var(--text); }
     .earlier { margin-top: 6px; }
     .about-parts { max-width: 640px; border-top: 1px solid var(--line); }
     .about-part { border-bottom: 1px solid var(--line); }
@@ -149,12 +151,12 @@
 
     /* Left nav (inside a section) */
     .nav { margin-top: 28px; list-style: none; }
-    .nav > li { padding: 4px 0; }
+    .nav > li { padding: 4px 0; font-size: 13.5px; }
     .nav a { color: var(--muted); transition: color .15s; }
     .nav a:hover, .nav a.on { color: var(--text); }
-    .nav a.on { font-weight: 400; }
+    .nav a.on { font-weight: 500; }
     .nav ul { list-style: none; margin: 6px 0 6px 2px; padding-left: 16px; border-left: 1px solid var(--line); }
-    .nav ul li { padding: 3px 0; font-size: 1em; color: var(--faint); }
+    .nav ul li { padding: 3px 0; font-size: 12px; font-weight: 400; color: var(--faint); }
 
     /* ---------- Home grid ---------- */
     .index { display: grid; grid-template-columns: repeat(4, minmax(150px, 1fr)); gap: 48px 0; align-content: start; }
@@ -166,7 +168,7 @@
     .index li a:hover { color: var(--text); }
 
     /* ---------- Section view ---------- */
-    .view h1 { font-size: 1em; font-weight: 400; margin-bottom: 4px; }
+    .view h1 { font-size: 13.5px; font-weight: 500; margin-bottom: 4px; }
     .view .intro { color: var(--muted); max-width: 52ch; margin-bottom: 36px; }
     .items { list-style: none; max-width: 640px; }
     .items li + li { margin-top: 26px; }
@@ -283,7 +285,8 @@
       /* Phones: bigger type, like Sangeetha's mobile layout */
       body { font-size: 14px; line-height: 1.65; }
       .name { font-size: 16.5px; }
-      .index h2 { font-size: 16px; }
+      .index h2, .view h1, .nav > li { font-size: 16px; }
+      .nav ul li { font-size: 14px; }
       .bio { font-size: 13.5px; line-height: 1.75; }
       .index { gap: 44px 0; }
       .updates summary, .shelf-hint, .credits { font-size: 13px; }
@@ -367,7 +370,10 @@
     // Only links that are filled in show; add LinkedIn/Substack URLs in hub.js (me.links) to make them appear
     const socials = () => { const ls = (ME.links || []).filter((l) => live(l.url) && ICONS[l.label]); return ls.length ? `<div class="socials">${ls.map((l) => `<a href="${l.url}" target="_blank" rel="noopener" aria-label="${l.label}">${ICONS[l.label]}</a>`).join("")}</div>` : ""; };
 
-    const update = (u, k) => `<li${I(`me.updates.${k}`)}><span${E(`me.updates.${k}.m`)}>${u.m}</span><span class="u"${E(`me.updates.${k}.t`)}>${u.t}</span></li>`;
+    // A pasted link in an update becomes a short clickable one ("justgiving.com ↗"); edit mode keeps the raw text
+    const linkify = (t) => EDITING || /<a\s/i.test(t) ? t : t.replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)]/g, (url) =>
+      `<a href="${url}" target="_blank" rel="noopener">${url.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]} ↗</a>`);
+    const update = (u, k) => `<li${I(`me.updates.${k}`)}><span${E(`me.updates.${k}.m`)}>${u.m}</span><span class="u"${E(`me.updates.${k}.t`)}>${linkify(u.t)}</span></li>`;
 
     function renderHome() {
       document.body.classList.remove("in-section");
