@@ -849,7 +849,7 @@ window.HUB = {
         {
           "t": "Jesus Christ",
           "img": "work/hub/people/jesus-christ.jpg",
-          "d": "Love & a full life",
+          "d": "Love and a full life",
           "credit": "Unknown artist, Saint Catherine's Monastery, Public domain",
           "creditUrl": "https://commons.wikimedia.org/wiki/File:Spas_vsederzhitel_sinay.jpg"
         },
