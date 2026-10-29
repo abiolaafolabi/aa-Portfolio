@@ -214,9 +214,9 @@ window.CONTENT = {
       "team": "With a behavioural scientist",
       "summary": "A mood journal for noticing how you're doing and finding better ways to respond in the moment.",
       "body": [
-        "A compass for life. Wave gives you back the one thing that gets lost during chaos: perspective. When you see emotional transitions as normal, temporary and useful, you bounce back faster.",
-        "You slide a wave to where you are emotionally, log how you feel in seconds, and see whether you're in a phase of chaos or order, with guidance on how to respond to each. The mission is simple: to make sure everyone can say, “No matter what, I’ll be okay.”",
-        "I'm designing and building it with a behavioural scientist, grounded in a model of the ups and downs we all move through. Wave is in private testing now. <a href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" style=\"border-bottom:1px solid currentColor\">Join the waitlist →</a>"
+        "A compass for life. Wave is a mood journal that tracks how you feel on a continuous wave, giving you perspective through emotional transitions and helping you bounce back faster.",
+        "You slide a wave to where you are emotionally, log how you feel, and get guidance on how best to respond to each.",
+        "I'm designing and building it with a behavioural scientist. Wave is in private testing now. <a href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" style=\"border-bottom:1px solid currentColor\">Join the waitlist →</a>"
       ]
     },
     {
