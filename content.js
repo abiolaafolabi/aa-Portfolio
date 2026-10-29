@@ -204,7 +204,7 @@ window.CONTENT = {
       "fg": "#ffffff",
       "images": [
         {
-          "src": "work/wave/wave-iphone-mock-up-3-2.png",
+          "src": "work/wave/wave-iphone-mock-up-4.png",
           "wide": true
         }
       ],
