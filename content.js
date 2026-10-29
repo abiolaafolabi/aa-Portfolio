@@ -107,7 +107,7 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/typographyldpi.jpg",
+          "src": "work/anixvrs/garmetsldpi.jpg",
           "wide": true
         },
         {
@@ -115,15 +115,11 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/abiola-portfolio-v1711.jpg",
-          "wide": true
-        },
-        {
           "src": "work/anixvrs/anixvrs-techpack-b-bgldpi.jpg",
           "wide": true
         },
         {
-          "src": "work/anixvrs/garmetsldpi.jpg",
+          "src": "work/anixvrs/abiola-portfolio-v1711.jpg",
           "wide": true
         }
       ],
