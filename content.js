@@ -111,7 +111,7 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/anixvrs-techpack-b-bgldpi.jpg",
+          "src": "work/anixvrs/tag-size-fromatted-2.png",
           "wide": true
         },
         {
@@ -119,7 +119,7 @@ window.CONTENT = {
           "wide": true
         },
         {
-          "src": "work/anixvrs/tag-size-fromatted-2.png",
+          "src": "work/anixvrs/anixvrs-techpack-b-bgldpi.jpg",
           "wide": true
         },
         {
