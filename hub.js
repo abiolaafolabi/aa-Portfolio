@@ -11,8 +11,7 @@ window.HUB = {
       ],
       "b": [
         "I’m a designer and founder, obsessed with giving shape to things people feel.",
-        "Currently building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app for responding to your moods in the moment; <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a streetwear brand preserving African cultural heritage; and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, an events company imagining the future of the African diaspora.",
-        "I graduated with a BA in Graphic Design. Nigerian, based in London."
+        "Currently building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\">Wave</a>, an app for responding to your moods in the moment; <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\">ANIXVRS</a>, a streetwear brand preserving African cultural heritage; and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\">Mothership</a>, an events company imagining the future of the African diaspora. I graduated with a BA in Graphic Design. Nigerian, based in London."
       ],
       "c": [
         "I'm a designer. I work in strategy, visual identity, fashion and product design. I also come up with ideas and make them real.",
@@ -21,6 +20,10 @@ window.HUB = {
     },
     "now": "Right now I'm building <a class=\"chip\" href=\"https://abiolaafolabi.github.io/Wave-Onboarding/\" target=\"_blank\" rel=\"noopener\" data-peek=\"work/wave/screens.jpg\"><img src=\"work/wave/mark.svg\" alt=\"\" />Wave</a>, an app for noticing how you're doing. I run <a class=\"chip\" href=\"portfolio.html#anixvrs\" data-peek=\"work/anixvrs/lookbook.jpg\"><img src=\"work/anixvrs/icon-black.png\" alt=\"\" />ANIXVRS</a>, a streetwear brand preserving cultural heritage, and <a class=\"chip\" href=\"portfolio.html#mothership\" data-peek=\"work/mothership/cover.jpg\"><img src=\"work/mothership/mark.svg\" alt=\"\" />Mothership</a>, events imagining the future of the African diaspora.",
     "updates": [
+      {
+        "m": "Oct 2026",
+        "t": "Signed up to do 3000 push ups in November to raise money for mind charity https://www.justgiving.com/fundraising/abiola1792346148980"
+      },
       {
         "m": "Oct 2026",
         "t": "Launched this site"
