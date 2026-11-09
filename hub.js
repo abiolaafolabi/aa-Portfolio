@@ -861,6 +861,20 @@ window.HUB = {
           "d": "Interdisciplinary creativity"
         },
         {
+          "t": "Nikola Tesla",
+          "img": "work/hub/people/nikola-tesla.jpg",
+          "d": "Invention & imagination",
+          "credit": "Napoleon Sarony, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg"
+        },
+        {
+          "t": "Ernest Hemingway",
+          "img": "work/hub/people/ernest-hemingway.jpg",
+          "d": "Clear, honest writing",
+          "credit": "Lloyd Arnold, Public domain",
+          "creditUrl": "https://commons.wikimedia.org/wiki/File:ErnestHemingway.jpg"
+        },
+        {
           "t": "Steve Jobs",
           "img": "work/hub/people/steve-jobs.jpg",
           "credit": "Matthew Yohe, CC BY-SA 3.0",

@@ -38,13 +38,15 @@
     /* Bio reads as one quiet block: a touch smaller, lighter and airier than the titles */
     .bio { margin-top: 26px; color: #6a6a6a; font-size: 11.5px; line-height: 1.8; }
     .bio p + p { margin-top: 12px; }
-    .bio p, .view .intro, .items .d { text-wrap: pretty; } /* no lone last word on its own line */
+    .view .intro, .items .d { text-wrap: pretty; } /* no lone last word on its own line */
+    /* Not on the bio: iPhone Safari's "pretty" shortens every line to even them out, which left a gap down the right side */
     .bio a { border-bottom: 1px solid var(--line); transition: border-color .15s; }
     .bio a:hover { border-color: var(--text); }
     .bio a.go { border: 0; color: var(--muted); }
     .bio a.go:hover { color: var(--text); }
     .chip { display: inline-flex; align-items: center; gap: 6px; vertical-align: -2px; padding: 0 7px 0 3px; margin: 0 1px;
       border: 1px solid var(--line) !important; border-radius: 999px; background: #fafafa; color: #3a3a3a; line-height: 1.45; transition: background .15s, border-color .15s; }
+    .bio .nw { white-space: nowrap; }
     .chip:hover { background: #f0f0f0; border-color: #d8d8d8 !important; }
     .chip img { width: 11px; height: 11px; object-fit: contain; }
     #peek { position: fixed; z-index: 60; width: 260px; pointer-events: none; opacity: 0; transform: translate(16px, 16px) scale(.96); transition: opacity .18s, transform .18s; }
@@ -287,7 +289,9 @@
       .name { font-size: 16.5px; }
       .index h2, .view h1, .nav > li { font-size: 16px; }
       .nav ul li { font-size: 14px; }
-      .bio { font-size: 13.5px; line-height: 1.75; }
+      .bio { font-size: 14.5px; line-height: 1.7; }
+      .chip { padding: 1px 9px 1px 4px; vertical-align: -3px; }
+      .chip img { width: 13px; height: 13px; }
       .index { gap: 44px 0; }
       .updates summary, .shelf-hint, .credits { font-size: 13px; }
       .shelf { --panel: 210px; }
@@ -310,8 +314,8 @@
     <div id="zoom"><img alt="" /></div>
   </div>
 
-  <script src="content.js?v=1793273568"></script>
-  <script src="hub.js?v=1793273568"></script>
+  <script src="content.js?v=1794226551"></script>
+  <script src="hub.js?v=1794226551"></script>
   <script>
     const ME = window.HUB.me, SECTIONS = window.HUB.sections;
     const EDITING = new URLSearchParams(location.search).has("edit");
@@ -371,6 +375,8 @@
     const socials = () => { const ls = (ME.links || []).filter((l) => live(l.url) && ICONS[l.label]); return ls.length ? `<div class="socials">${ls.map((l) => `<a href="${l.url}" target="_blank" rel="noopener" aria-label="${l.label}">${ICONS[l.label]}</a>`).join("")}</div>` : ""; };
 
     // A pasted link in an update becomes a short clickable one ("justgiving.com ↗"); edit mode keeps the raw text
+    // Keep the comma after a project chip on the same line as the chip
+    const keepChip = (p) => p.replace(/(<a class="chip"[\s\S]*?<\/a>)([,;.:]?)/g, '<span class="nw">$1$2</span>');
     const linkify = (t) => EDITING || /<a\s/i.test(t) ? t : t.replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)]/g, (url) =>
       `<a href="${url}" target="_blank" rel="noopener">${url.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]} ↗</a>`);
     const update = (u, k) => `<li${I(`me.updates.${k}`)}><span${E(`me.updates.${k}.m`)}>${u.m}</span><span class="u"${E(`me.updates.${k}.t`)}>${linkify(u.t)}</span></li>`;
@@ -382,7 +388,7 @@
       const ups = ME.updates.map(update);
       $("#side").innerHTML = `
         <div class="name"><span${E("me.name")}>${ME.name}</span>${ME.tagline || EDITING ? `<small${E("me.tagline")} data-ph="Tagline">${ME.tagline || ""}</small>` : ""}</div>
-        <div class="bio"${Lst(`me.bios.${bio}`, "paragraph")}>${ME.bios[bio].map((p, k) => `<p${I(`me.bios.${bio}.${k}`)}${E(`me.bios.${bio}.${k}`)}>${p}</p>`).join("")}</div>
+        <div class="bio"${Lst(`me.bios.${bio}`, "paragraph")}>${ME.bios[bio].map((p, k) => `<p${I(`me.bios.${bio}.${k}`)}${E(`me.bios.${bio}.${k}`)}>${EDITING ? p : keepChip(p)}</p>`).join("")}</div>
         ${socials()}
         ${ME.updates.length || EDITING ? `<details class="updates"${EDITING ? " open" : ""}><summary>Updates</summary><ul${Lst("me.updates", "update")}>${(EDITING ? ups : ups.slice(0, 3)).join("")}</ul>${ME.updates.length > 3 && !EDITING ? `<details class="earlier"><summary>Earlier</summary><ul>${ups.slice(3).join("")}</ul></details>` : ""}</details>` : ""}`;
       const tiles = withAbout(SECTIONS.filter((s) => !s.about), { id: "about", title: "About me", items: aboutParts().map((s) => ({ t: s.title, id: s.id })) });
